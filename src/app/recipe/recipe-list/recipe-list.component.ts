@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TransferHttp } from '../../../modules/transfer-http/transfer-http';
 import { Observable } from 'rxjs/Observable';
-
+import { ANGULAR_APP_JSONAPI } from './../../../api/config';
 @Component({
   selector: 'ca-recipes',
   template: `<h3>Recipes</h3>
@@ -20,7 +20,7 @@ export class RecipeListComponent {
   constructor(private http: TransferHttp) {}
   
   ngOnInit() {
-    this.subs = this.http.get('http://localhost/contenta/CONTENTACMS/web/api/recipes').map(data => {
+    this.subs = this.http.get(`${ANGULAR_APP_JSONAPI}/api/recipes?sort=created&promote=true&limt=4`).map(data => {
       return data.data;
     });
   }
