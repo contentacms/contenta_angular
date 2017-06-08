@@ -1,1 +1,1 @@
-# contenta_angular2
+# contenta_angular
