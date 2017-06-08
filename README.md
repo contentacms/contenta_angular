@@ -1,5 +1,11 @@
 # contenta angular
 
+## Config the contenta URL inside the folder src/api/config.ts
+
+```
+export const ANGULAR_APP_JSONAPI = 'http://localhost/contenta/CONTENTACMS/web';
+```
+
 ## Get Started
 ```sh
 npm run start
