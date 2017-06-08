@@ -1,4 +1,4 @@
 export const data = {
   greeting: 'Hello',
-  name: 'World'
+  name: 'contenta CMS'
 };

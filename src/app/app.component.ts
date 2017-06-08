@@ -6,12 +6,12 @@ import { TransferState } from '../modules/transfer-state/transfer-state';
   template: `
     <h1>Contenta Angular</h1>
     <a routerLink="/">Home</a>
-    <a routerLink="/lazy">Lazy</a>
+    <a routerLink="/recipes">Recipes</a>
     <router-outlet></router-outlet>
   `
 })
 export class AppComponent implements OnInit {
-  constructor(private cache: TransferState) {}
+  constructor(private cache: TransferState) { }
   ngOnInit() {
     this.cache.set('cached', true);
   }
