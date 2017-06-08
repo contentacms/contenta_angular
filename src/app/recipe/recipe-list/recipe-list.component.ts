@@ -5,7 +5,12 @@ import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'ca-recipes',
   template: `<h3>Recipes</h3>
-  <div>{{subs | json}}</div>
+  <ul *ngFor="let recipe of subs | async">
+    <li>
+      <h3>{{recipe.attributes.title}}</h3>
+      <p>{{recipe.attributes.instructions}}</p>
+    </li>
+  </ul>
   `
 })
 export class RecipeListComponent {
@@ -16,7 +21,7 @@ export class RecipeListComponent {
   
   ngOnInit() {
     this.subs = this.http.get('http://localhost/contenta/CONTENTACMS/web/api/recipes').map(data => {
-      return data;
+      return data.data;
     });
   }
 }
