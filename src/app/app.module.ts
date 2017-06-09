@@ -1,4 +1,3 @@
-import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { APP_BASE_HREF, CommonModule } from '@angular/common';
@@ -12,14 +11,14 @@ import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   imports: [
+    HttpModule,
     SharedModule,
     RouterModule.forRoot([
       { path: '', component: HomeView, pathMatch: 'full' },
-      { path: 'recipes', component: RecipeListComponent, pathMatch: 'full' },
-      //{ path: 'recipes', loadChildren: './recipe/recipe.module#RecipeModule' }
+      { path: 'recipes', loadChildren: './recipe/recipe.module#RecipeModule' }
     ])
   ],
-  declarations: [AppComponent, HomeView, RecipeListComponent],
+  declarations: [AppComponent, HomeView],
   exports: [AppComponent]
 })
 export class AppModule { }
