@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { NewngtestPage } from './app.po';
 
 describe('newngtest App', () => {
@@ -5,6 +6,15 @@ describe('newngtest App', () => {
 
   beforeEach(() => {
     page = new NewngtestPage();
+=======
+import { ContentaAngularPage } from './app.po';
+
+describe('contenta-angular App', () => {
+  let page: ContentaAngularPage;
+
+  beforeEach(() => {
+    page = new ContentaAngularPage();
+>>>>>>> offline-sw
   });
 
   it('should display welcome message', () => {
