@@ -6,9 +6,14 @@
       "src": "assets/contenta.png",
       "sizes": "200x200",
       "type": "image\/png"
+    },
+    {
+      "src": "assets/contenta-lg.png",
+      "sizes":"351×351",
+      "type": "image\/png"
     }
   ],
-  "theme_color": "#b92b27",
+  "theme_color": "#FFFFFF",
   "background_color": "#ffffff",
   "display": "standalone",
   "start_url": "./?utm_source=web_app_manifest"
