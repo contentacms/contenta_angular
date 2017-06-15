@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+// Material theme
+@import '~@angular/material/theming';
+
+// NOTE: Theming is currently experimental and not yet publically released!
+
+@include mat-core();
+
+//Here the existing theme is being redfined
+$primary: mat-palette($mat-blue, 500,  600, 500);
+$accent:  mat-palette($mat-blue-grey, 900, 600, 500);
+
+$theme: mat-light-theme($primary, $accent);
+
+$_umbra-color: rgba(150, 150, 150, 0.2);
+$_penumbra-color: rgba(150, 150, 150, 0.14);
+$_ambient-color: rgba(150, 150, 150, 0.12);
+
+@include angular-material-theme($theme);
