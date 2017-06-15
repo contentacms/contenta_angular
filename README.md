@@ -12,7 +12,13 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. 
+
+## Production Build
+
+Use `ng build -prod -aot` flag for a production build.
+Then run `npm run precache` to create your service worker.
+And then `firebase deploy` (you'll need this configured first) to publish.
 
 ## Running unit tests
 
