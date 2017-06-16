@@ -2,6 +2,7 @@
   <button class="sidenav-toggle" aria-label="Toggle Sidebar" (click)="toggleSidenav()">
       <md-icon class="logo-icon" [svgIcon]="'logo'" alt="Contenta Logo" title="Contenta Logo"></md-icon>
   </button>
+  <span class="app-title">{{title}}</span>
   <div class="desktop-menu">
     <a class="logo"><md-icon class="logo-icon" [svgIcon]="'logo'" alt="Contenta Logo" title="Contenta Logo"></md-icon></a>
     <a *ngFor="let menu_item of menu; let i = index" class="menu-item" md-button>{{menu_item.name}}</a>
