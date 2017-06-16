@@ -1,5 +1,31 @@
+@import "./../../styles/settings/breakpoints.scss";
+
+.sidenav-toggle {
+    @include breakpoint($narrow-devices) {
+        display: none;
+    }
+    svg {
+        fill: white;
+    }
+}
+
+.desktop-menu {
+    display: none;
+    @include breakpoint($narrow-devices) {
+        display: flex;
+        width: 100%;
+    }
+}
+
 .logo {
-    max-height: 40px;
+    margin-left: auto;
+    @include breakpoint($narrow-devices) {
+        margin: 0;
+    }
+    .logo-icon {
+        width: 35px;
+        height: 35px;
+    }
 }
 
 .github-logo {
@@ -8,7 +34,11 @@
     }
 }
 
-a {
+.sidenav-toggle {
+    margin-right: 10px;
+}
+
+.menu-item {
     text-transform: uppercase;
     font-size: 13px;
 }

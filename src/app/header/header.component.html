@@ -1,8 +1,11 @@
 <md-toolbar class="mat-elevation-z6" [color]="'accent'">
-  <a><img class="logo" src="/assets/contenta.png" alt="Contenta Angular logo" title="Contenta Angular"/></a>
-  <a md-button>Home</a>
-  <a md-button>Recipes</a>
-  <a md-button>Features</a>
-  <span class="spacer"></span>
-  <a href="https://github.com/contentacms/contenta_angular" target="_blank" rel="noopener" md-button class="github-logo"><img class="logo" src="/assets/github.png" alt="Github" title="Github"/>Github</a>
+  <button class="sidenav-toggle" aria-label="Toggle Sidebar" (click)="toggleSidenav()">
+      <md-icon color="primary" [svgIcon]="'sort'"></md-icon>
+  </button>
+  <a class="logo"><md-icon class="logo-icon" [svgIcon]="'logo'" alt="Contenta Logo" title="Contenta Logo"></md-icon></a>
+  <div class="desktop-menu">
+    <a *ngFor="let menu_item of menu; let i = index" class="menu-item" md-button>{{menu_item.name}}</a>
+    <span class="spacer"></span>
+    <a href="https://github.com/contentacms/contenta_angular" target="_blank" rel="noopener" md-button class="github-logo"><img class="logo" src="/assets/github.png" alt="Github" title="Github"/>Github</a>
+  </div>
 </md-toolbar>
