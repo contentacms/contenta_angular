@@ -10,7 +10,7 @@ import { MaterialIconsService } from './material-icons.service';
 export class AppComponent implements OnInit {
   title = 'Contenta Angular';
   @ViewChild('sidenav') sidenav: MdSidenav;
-  menu: Object[] = [{ name: 'Home', url: '', icon: 'home' }, { name: 'Recipes', url: '', icon: 'room_service' }, { name: 'Features', url: '', icon: 'settings' }];
+  menu: Object[] = [{ name: 'Home', url: '', icon: 'home' },{ name: 'Features', url: '', icon: 'settings' }, { name: 'Recipes', url: '', icon: 'room_service' },{ name: 'Magazine', url: '', icon: 'map' }];
 
   constructor(private materialIconsService: MaterialIconsService) {}
 
