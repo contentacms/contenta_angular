@@ -1,3 +1,4 @@
+import { MdIconRegistry } from '@angular/material';
 import { TestBed, inject } from '@angular/core/testing';
 
 import { MaterialIconsService } from './material-icons.service';
@@ -5,7 +6,7 @@ import { MaterialIconsService } from './material-icons.service';
 describe('MaterialIconsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [MaterialIconsService]
+      providers: [MdIconRegistry, MaterialIconsService]
     });
   });
 
