@@ -1,11 +1,15 @@
 @import "./../../styles/settings/breakpoints.scss";
 
+:host {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 .sidenav-toggle {
     @include breakpoint($narrow-devices) {
         display: none;
-    }
-    svg {
-        fill: white;
     }
 }
 
@@ -18,10 +22,6 @@
 }
 
 .logo {
-    margin-left: auto;
-    @include breakpoint($narrow-devices) {
-        margin: 0;
-    }
     .logo-icon {
         width: 35px;
         height: 35px;
@@ -35,7 +35,13 @@
 }
 
 .sidenav-toggle {
+    cursor: pointer;
     margin-right: 10px;
+    &:focus,
+    &:hover,
+    &:active {
+        outline: none;
+    }
 }
 
 .menu-item {

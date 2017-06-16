@@ -10,3 +10,7 @@
 .sidenav {
     min-width: 300px;
 }
+
+:host /deep/.mat-sidenav-container {
+    top: 55px;
+}
