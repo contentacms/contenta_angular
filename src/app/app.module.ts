@@ -1,3 +1,4 @@
+import { MaterialIconsService } from './material-icons.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
@@ -24,7 +25,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     MdListModule,
   ],
   providers: [
-    MdIconRegistry
+    MdIconRegistry,
+    MaterialIconsService
   ],
   bootstrap: [AppComponent]
 })

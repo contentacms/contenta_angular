@@ -6,10 +6,17 @@
     width: 100%;
     text-align: left;
     height: 100%;
-    line-height: 45px;
+    line-height: 40px;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: bold;
+}
+
+.menu-item-icon {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    margin-right: 10px;
 }
 
 :host /deep/.mat-list .mat-list-item .mat-list-item-content {
