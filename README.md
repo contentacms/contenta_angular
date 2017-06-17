@@ -8,7 +8,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Live demo
 
-This project auto deploys to Firebase, and the latest version can always be seen at [angular.contentacms.io](angular.contentacms.io).
+This project auto deploys to Firebase, and the latest version can always be seen at [angular.contentacms.io](http://angular.contentacms.io).
 
 ## Development server
 
