@@ -1,0 +1,15 @@
+/*Breakpoints*/
+
+$narrow-devices: 768px;
+$medium-devices: 1200px;
+
+/*
+* @file
+* Media breakpoints for mobile
+*/
+
+@mixin breakpoint($media-query, $media-type:min-width){
+  @media($media-type:$media-query){
+    @content;
+  }
+}

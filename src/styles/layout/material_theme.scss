@@ -7,7 +7,7 @@
 @include mat-core();
 
 //Here the existing theme is being redfined
-$primary: mat-palette($mat-blue, 500,  600, 500);
+$primary: mat-palette($mat-light-blue, 300,  600, 500);
 $accent:  mat-palette($mat-blue-grey, 900, 600, 500);
 
 $theme: mat-light-theme($primary, $accent);

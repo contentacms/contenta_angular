@@ -1,0 +1,15 @@
+<md-list class="sidenav-menu">
+  <md-list-item *ngFor="let menu_item of menu; let i = index">
+    <a class="sidenav-menu-item" md-button>
+      <md-icon [color]="'primary'" class="menu-item-icon" [svgIcon]="menu_item.icon" [alt]="menu_item.name" [title]="menu_item.name"></md-icon>
+      <span>{{menu_item.name}}</span>
+    </a>
+  </md-list-item>
+  <div class="separator"></div>
+  <md-list-item>
+    <a class="sidenav-menu-item" md-button>
+      <md-icon [color]="'secondary'" class="menu-item-icon" [svgIcon]="'person'" alt="Login" title="Login"></md-icon>
+      <span>Login</span>
+    </a>
+  </md-list-item>
+</md-list>
