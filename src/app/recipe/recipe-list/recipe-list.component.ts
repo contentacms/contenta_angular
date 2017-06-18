@@ -1,6 +1,10 @@
+import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 import { RecipeService } from './../services/recipe.service';
+import { AppState } from './../../store/appState';
+import { RecipeJSONContentTypeResp } from './../model/recipe.model';
 
 @Component({
   selector: 'app-recipe-list',
@@ -9,9 +13,15 @@ import { RecipeService } from './../services/recipe.service';
 })
 export class RecipeListComponent implements OnInit {
 
-  constructor(private recipeService: RecipeService) { }
+  /**
+   * Recipes list.
+   */
+  public recipes: Observable<RecipeJSONContentTypeResp[]>;
+
+  constructor(private recipeService: RecipeService, public store: Store<AppState>) { }
 
   ngOnInit() {
+    this.recipes = this.store.select('recipes');
     this.getRecipes();
   }
 
