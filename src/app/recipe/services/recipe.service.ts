@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
-import { ANGULAR_APP_JSONAPI } from './../../../../config';
+import { environment } from '../../../environments/environment';
 import { RecipeJSONResponse, Recipe } from './../model/recipe.model';
 import { AppState } from './../../store/appState';
 import { RECIPES_ACTION_TYPES } from './../../store/recipes.store';
@@ -17,7 +17,8 @@ export class RecipeService {
    * Get the list of recipes.
    */
   getRecipes(): void {
-    this.http.get(`${ANGULAR_APP_JSONAPI}/api/recipes?sort=created&promote=true&limt=4`).map((data: Response) => {
+    let domain = environment.jsonapi;
+    this.http.get(`${domain}/api/recipes?sort=created&promote=true&limt=4`).map((data: Response) => {
       return JSON.parse(data.text());
     }).map((recipeResponse: RecipeJSONResponse) => {
       return recipeResponse.data;
