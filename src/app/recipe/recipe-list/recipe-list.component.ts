@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { RecipeService } from './../services/recipe.service';
 import { AppState } from './../../store/appState';
-import { RecipeJSONContentTypeResp } from './../model/recipe.model';
+import { Recipe } from './../model/recipe.model';
 
 @Component({
   selector: 'app-recipe-list',
@@ -16,7 +16,7 @@ export class RecipeListComponent implements OnInit {
   /**
    * Recipes list.
    */
-  public recipes: Observable<RecipeJSONContentTypeResp[]>;
+  public recipes: Observable<Recipe[]>;
 
   constructor(private recipeService: RecipeService, public store: Store<AppState>) { }
 
