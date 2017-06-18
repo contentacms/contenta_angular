@@ -5,9 +5,8 @@
   <span class="app-title">{{title}}</span>
   <div class="desktop-menu">
     <a class="logo"><md-icon class="logo-icon" [svgIcon]="'logo'" alt="Contenta Logo" title="Contenta Logo"></md-icon></a>
-    <a *ngFor="let menu_item of menu; let i = index" class="menu-item" md-button>{{menu_item.name}}</a>
+    <a *ngFor="let menu_item of menu; let i = index" class="menu-item" md-button [routerLink]="[menu_item.url]">{{menu_item.name}}</a>
     <span class="spacer"></span>
-    <a class="menu-item" md-button>Login</a>
     <a href="https://github.com/contentacms/contenta_angular" target="_blank" rel="noopener" md-button class="github-logo"><img class="logo" src="/assets/github.png" alt="Github" title="Github"/>Github</a>
   </div>
 </md-toolbar>

@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HeaderComponent } from './header/header.component';
 
-import { MaterialIconsService } from './material-icons.service';
+import { MaterialIconsService } from './services/material-icons/material-icons.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
