@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { RecipeService } from './../services/recipe.service';
-import { AppState } from './../../store/appState';
+import { AppState } from './../../../store/appState';
 import { Recipe } from './../model/recipe.model';
 
 @Component({

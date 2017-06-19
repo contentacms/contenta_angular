@@ -7,17 +7,17 @@ import { DebugElement } from '@angular/core';
  */
 import { HttpModule } from '@angular/http';
 import { MdToolbarModule, MdButtonModule, MdSidenavModule, MdIconModule, MdIconRegistry, MdListModule } from '@angular/material';
-import { MaterialIconsService } from './../material-icons.service';
-import { SidenavComponent } from './sidenav.component';
+import { MaterialIconsService } from './../../services/material-icons/material-icons.service';
+import { HeaderComponent } from './header.component';
 
-describe('SidenavComponent', () => {
-  let component: SidenavComponent;
-  let fixture: ComponentFixture<SidenavComponent>;
+describe('HeaderComponent', () => {
+  let component: HeaderComponent;
+  let fixture: ComponentFixture<HeaderComponent>;
   let element: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [SidenavComponent],
+      declarations: [HeaderComponent],
       imports: [
         MdToolbarModule,
         MdButtonModule,
@@ -35,7 +35,7 @@ describe('SidenavComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SidenavComponent);
+    fixture = TestBed.createComponent(HeaderComponent);
     element = fixture.debugElement;
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -45,13 +45,27 @@ describe('SidenavComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should render title input in the template', () => {
+    component.title = 'Contenta Angular';
+    fixture.detectChanges();
+    let elm = element.query(By.css('.app-title')).nativeElement;;
+    expect(elm.innerHTML).toBe('Contenta Angular');
+  });
+
+  it('should call toggle sidebar event when clicked', () => {
+    spyOn(component.toggleSidebar, 'emit').and.callThrough();
+    fixture.detectChanges();
+    element.query(By.css('.sidenav-toggle')).triggerEventHandler('click', null);
+    expect(component.toggleSidebar.emit).toHaveBeenCalled();
+  });
+
   it('should render as much menu items as passed through input', () => {
     component.menu = [
       { name: 'Menu 1', url: '', icon: '' },
       { name: 'Menu 2', url: '', icon: '' },
     ];
     fixture.detectChanges();
-    let elm = element.queryAll(By.css('.sidenav-menu-item'));
+    let elm = element.queryAll(By.css('.menu-item'));
     expect(elm.length).toBe(2);
   });
 });

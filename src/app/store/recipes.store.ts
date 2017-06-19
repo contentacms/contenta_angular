@@ -1,5 +1,5 @@
 import { ActionReducer, Action } from '@ngrx/store';
-import { Recipe } from './../recipe/model/recipe.model';
+import { Recipe } from './../components/recipe/model/recipe.model';
 
 export const RECIPES_ACTION_TYPES = {
     SAVE_RECIPES: 'SAVE_RECIPES',
