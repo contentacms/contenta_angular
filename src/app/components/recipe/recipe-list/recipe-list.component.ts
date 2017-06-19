@@ -1,4 +1,4 @@
-import { Observable } from '../../../../../node_modules/rxjs/Observable.d';
+import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
