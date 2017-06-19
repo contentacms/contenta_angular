@@ -1,6 +1,6 @@
 {
-  "name": "Contenta Angular Drupal Distribution",
-  "short_name": "Contenta8A",
+  "name": "Contenta Angular",
+  "short_name": "Contenta",
   "icons": [
     {
       "src": "assets/contenta.png",
@@ -8,13 +8,13 @@
       "type": "image\/png"
     },
     {
-      "src": "assets/contenta-lg.png",
+      "src": "assets/contenta.png",
       "sizes":"351×351",
       "type": "image\/png"
     }
   ],
-  "theme_color": "#FFFFFF",
-  "background_color": "#ffffff",
+  "theme_color": "#263238",
+  "background_color": "#f9f9f9",
   "display": "standalone",
   "start_url": "./?utm_source=web_app_manifest"
 }
