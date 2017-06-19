@@ -17,6 +17,7 @@ export class MaterialIconsService {
     { name: 'room_service', icon: 'room_service' },
     { name: 'map', icon: 'map' },
     { name: 'person', icon: 'person' },
+    { name: 'code', icon: 'code' },
   ];
 
   constructor(private iconRegistry: MdIconRegistry, private sanitizer: DomSanitizer) {
