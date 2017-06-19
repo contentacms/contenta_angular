@@ -4,7 +4,7 @@ import { MdToolbarModule, MdButtonModule, MdSidenavModule, MdIconModule, MdIconR
 
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 
 import { MaterialIconsService } from './services/material-icons/material-icons.service';
 

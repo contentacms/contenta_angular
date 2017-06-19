@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from '../../../../../node_modules/rxjs/Observable.d';
 import { Store } from '@ngrx/store';
 
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 import { RecipeJSONResponse, Recipe } from './../model/recipe.model';
-import { AppState } from './../../store/appState';
-import { RECIPES_ACTION_TYPES } from './../../store/recipes.store';
+import { AppState } from './../../../store/appState';
+import { RECIPES_ACTION_TYPES } from './../../../store/recipes.store';
 
 @Injectable()
 export class RecipeService {

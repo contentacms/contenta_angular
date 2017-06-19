@@ -8,7 +8,7 @@ import { DebugElement } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { MdToolbarModule, MdButtonModule, MdSidenavModule, MdIconModule, MdIconRegistry, MdListModule } from '@angular/material';
 import { MaterialIconsService } from './../material-icons.service';
-import { HeaderComponent } from './header.component';
+import { HeaderComponent } from './header.component.ts';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
