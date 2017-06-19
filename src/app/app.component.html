@@ -2,7 +2,7 @@
 <app-header [title]="title" [menu]="menu" (toggleSidebar)="toggleSidenav()"></app-header>
 <md-sidenav-container>
   <md-sidenav #sidenav [mode]="'over'" class="sidenav">
-    <app-sidenav [menu]="menu"></app-sidenav>
+    <app-sidenav [menu]="menu" (onRouteChange)="toggleSidenav()"></app-sidenav>
   </md-sidenav>
   <div class="main-content">
     <router-outlet></router-outlet>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Output, Input, ChangeDetectionStrategy, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav',
@@ -8,10 +8,17 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
 })
 export class SidenavComponent implements OnInit {
   @Input() menu: Object[];
+  @Output() onRouteChange = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  /**
+   * Emit an event that the route was changed.
+   */
+  changeRoute() {
+    this.onRouteChange.emit();
+  }
 }
