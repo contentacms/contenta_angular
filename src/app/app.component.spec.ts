@@ -3,7 +3,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { MdToolbarModule, MdButtonModule, MdSidenavModule, MdIconModule, MdIconRegistry, MdListModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HeaderComponent } from './components/header/header.component';
 
 import { MaterialIconsService } from './services/material-icons/material-icons.service';
