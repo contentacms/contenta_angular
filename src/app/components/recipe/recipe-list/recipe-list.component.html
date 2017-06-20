@@ -1,4 +1,11 @@
-<div class="recipe-item" *ngFor="let recipe of recipes | async">
-  <h2>{{recipe.attributes.title}}</h2>
-  <div class="description">{{recipe.attributes.instructions}}</div>
+<div *ngIf="loaded | async; else spinloading">
+  <div class="recipe-item" *ngFor="let recipe of recipes | async">
+    <h2>{{recipe.attributes.title}}</h2>
+    <div class="description">{{recipe.attributes.instructions}}</div>
+  </div>
 </div>
+<ng-template #spinloading>
+  <div class="loading_spinner">
+    <md-spinner></md-spinner>
+  </div>
+</ng-template>

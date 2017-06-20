@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
-import { MdToolbarModule, MdButtonModule, MdSidenavModule, MdIconModule, MdIconRegistry, MdListModule } from '@angular/material';
+import { MdToolbarModule, MdButtonModule, MdSidenavModule, MdIconModule, MdIconRegistry, MdListModule, MdProgressSpinnerModule } from '@angular/material';
 
 import { MaterialIconsService } from './../services/material-icons/material-icons.service';
 
@@ -13,6 +13,7 @@ const SHARED_MODULES = [
   MdSidenavModule,
   MdIconModule,
   MdListModule,
+  MdProgressSpinnerModule,
 ];
 
 @NgModule({

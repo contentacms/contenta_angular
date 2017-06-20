@@ -29,6 +29,13 @@ export class RecipeService {
           'recipes': response
         }
       });
+
+      this.store.dispatch({
+        type: RECIPES_ACTION_TYPES.LOADED_RECIPES,
+        payload: {
+          'loaded': true
+        }
+      });
     });
   }
 }

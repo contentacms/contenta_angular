@@ -1,6 +1,6 @@
 <!--The whole content below can be removed with the new code.-->
 <app-header [title]="title" [menu]="menu" (toggleSidebar)="toggleSidenav()"></app-header>
-<md-sidenav-container>
+<md-sidenav-container fullscreen>
   <md-sidenav #sidenav [mode]="'over'" class="sidenav">
     <app-sidenav [menu]="menu" (onRouteChange)="toggleSidenav()"></app-sidenav>
   </md-sidenav>
