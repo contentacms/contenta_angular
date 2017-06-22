@@ -1,16 +1,16 @@
 .main-content {
-    padding: 15px;
-    display: flex;
+    padding: {
+        left:15px;
+        right: 15px;
+    }
     height: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    overflow: auto;
 }
 
 .sidenav {
     min-width: 300px;
 }
 
-:host /deep/.mat-sidenav-container {
+:host /deep/.mat-sidenav-container[fullscreen] {
     top: 55px;
 }

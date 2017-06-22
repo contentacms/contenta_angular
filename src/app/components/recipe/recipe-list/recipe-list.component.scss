@@ -1,0 +1,11 @@
+.loading_spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    md-spinner {
+        flex: 1;
+    }
+}

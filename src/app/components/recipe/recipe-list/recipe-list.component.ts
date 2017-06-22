@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { RecipeService } from './../services/recipe.service';
 import { AppState } from './../../../store/appState';
+import { RECIPES_ACTION_TYPES } from './../../../store/recipes.store';
 import { Recipe } from './../model/recipe.model';
 
 @Component({
@@ -14,6 +15,11 @@ import { Recipe } from './../model/recipe.model';
 export class RecipeListComponent implements OnInit {
 
   /**
+   * Loading recipes
+   */
+  public loaded: Observable<boolean>;
+
+  /**
    * Recipes list.
    */
   public recipes: Observable<Recipe[]>;
@@ -22,6 +28,7 @@ export class RecipeListComponent implements OnInit {
 
   ngOnInit() {
     this.recipes = this.store.select('recipes');
+    this.loaded = this.store.select('loadedRecipes');
     this.getRecipes();
   }
 
