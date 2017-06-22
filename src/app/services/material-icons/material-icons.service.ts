@@ -18,6 +18,7 @@ export class MaterialIconsService {
     { name: 'map', icon: 'map' },
     { name: 'person', icon: 'person' },
     { name: 'code', icon: 'code' },
+    { name: 'umami-logo', icon: 'umami-logo' },
   ];
 
   constructor(private iconRegistry: MdIconRegistry, private sanitizer: DomSanitizer) {

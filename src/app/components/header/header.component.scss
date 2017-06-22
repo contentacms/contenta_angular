@@ -28,13 +28,23 @@
         display: flex;
         width: 100%;
     }
+
+    .app-title {
+        display: flex;
+        margin-top: 10px;
+        margin-left: 10px;
+        float: right;
+    }
 }
 
-.logo {
-    .logo-icon {
-        width: 35px;
-        height: 35px;
-    }
+.menu-icon,
+.home-link {
+    color: white;
+}
+
+.logo-icon {
+    width: 35px;
+    height: 35px;
 }
 
 .github-logo {
