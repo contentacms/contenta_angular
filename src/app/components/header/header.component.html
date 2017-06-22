@@ -4,7 +4,7 @@
   </button>
   <span class="app-title">{{title}}</span>
   <div class="desktop-menu">
-    <a [routerLink]="''" class="home-link"><md-icon class="logo-icon" [svgIcon]="'umami-logo'"></md-icon><span class="app-title">{{title}}</span></a>
+    <a [routerLink]="''" md-button><md-icon [svgIcon]="'umami-logo'"></md-icon><span class="app-title">{{title}}</span></a>
     <span class="spacer"></span>
     <a *ngFor="let menu_item of menu; let i = index" class="menu-item" md-button [routerLink]="[menu_item.url]">{{menu_item.name}}</a>
     <a href="https://github.com/contentacms/contenta_angular" target="_blank" rel="noopener" md-button class="github-logo"><img class="logo" src="/assets/github.png" alt="Github" title="Github"/>Github</a>
