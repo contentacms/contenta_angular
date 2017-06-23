@@ -1,10 +1,10 @@
 @import "./../../../../styles/settings/breakpoints.scss";
 
 .recipes {
+    margin-top: 15px;
     @include breakpoint($narrow-devices) {
-        margin-top: 15px;
+        margin-top: 40px;
     }
-    margin-top: 40px;
 }
 
 .recipe-list {
