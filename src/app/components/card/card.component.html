@@ -3,7 +3,7 @@
   <md-card-content>
     <md-card-title class="card-title" *ngIf="title">{{title}}</md-card-title>
     <md-card-subtitle *ngIf="subTitle">{{subTitle}}</md-card-subtitle>
-    <p>
+    <p *ngIf="description">
       {{description}}
     </p>
   </md-card-content>
