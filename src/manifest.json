@@ -3,17 +3,17 @@
   "short_name": "Contenta",
   "icons": [
     {
-      "src": "assets/contenta.png",
+      "src": "assets/umami-logo.png",
       "sizes": "200x200",
       "type": "image\/png"
     },
     {
-      "src": "assets/contenta.png",
+      "src": "assets/umami-logo.png",
       "sizes":"351×351",
       "type": "image\/png"
     }
   ],
-  "theme_color": "#263238",
+  "theme_color": "#E64A19",
   "background_color": "#f9f9f9",
   "display": "standalone",
   "start_url": "./?utm_source=web_app_manifest"
