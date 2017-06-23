@@ -1,3 +1,29 @@
+@import "./../../../../styles/settings/breakpoints.scss";
+
+.recipes {
+    margin-top: 40px;
+}
+
+.recipe-list {
+    display: block;
+    @include breakpoint($narrow-devices) {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row;
+        flex-wrap: wrap;
+    }
+}
+
+.recipe-item {
+    margin-top: 15px;
+    margin-bottom: 15px;   
+    @include breakpoint($narrow-devices) {
+        width: 32%;
+        margin-top: 1%;
+        margin-bottom: 1%;   
+    }
+}
+
 .loading_spinner {
     display: flex;
     flex-direction: column;

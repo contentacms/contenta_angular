@@ -20,7 +20,7 @@ let rootReducer = { recipes: recipesReducer, loadedRecipes: loadedRecipesReducer
     HeaderComponent,
     SidenavComponent,
     HomeComponent,
-    FeaturesComponent
+    FeaturesComponent,
   ],
   imports: [
     BrowserModule,
