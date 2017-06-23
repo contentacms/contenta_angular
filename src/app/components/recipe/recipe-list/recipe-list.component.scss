@@ -1,13 +1,16 @@
 @import "./../../../../styles/settings/breakpoints.scss";
 
 .recipes {
+    @include breakpoint($narrow-devices) {
+        margin-top: 15px;
+    }
     margin-top: 40px;
 }
 
 .recipe-list {
-    display: block;
+    display: flex;
+    flex-flow: column;
     @include breakpoint($narrow-devices) {
-        display: flex;
         justify-content: space-between;
         flex-flow: row;
         flex-wrap: wrap;
@@ -16,7 +19,7 @@
 
 .recipe-item {
     margin-top: 15px;
-    margin-bottom: 15px;   
+    flex: 1;
     @include breakpoint($narrow-devices) {
         width: 32%;
         margin-top: 1%;
