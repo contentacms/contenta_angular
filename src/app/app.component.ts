@@ -8,7 +8,7 @@ import { MaterialIconsService } from './services/material-icons/material-icons.s
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'Contenta Angular';
+  title = 'Umami Magazine';
   @ViewChild('sidenav') sidenav: MdSidenav;
   menu: Object[] = [{ name: 'Home', url: '', icon: 'home' },{ name: 'Features', url: './features', icon: 'settings' }, { name: 'Recipes', url: './recipes', icon: 'room_service' }];
 

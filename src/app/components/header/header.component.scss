@@ -28,13 +28,15 @@
         display: flex;
         width: 100%;
     }
+
+    .app-title {
+        display: inline-block;
+        margin-left: 10px;
+    }
 }
 
-.logo {
-    .logo-icon {
-        width: 35px;
-        height: 35px;
-    }
+.menu-icon {
+    color: white;
 }
 
 .github-logo {
