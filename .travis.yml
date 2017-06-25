@@ -16,10 +16,14 @@ script:
   - ng build --prod --aot
   - npm run precache
 
-after_success:
-  - firebase deploy --token $FIREBASE_TOKEN
-
 notifications:
   email:
     on_failure: change
     on_success: change
+
+deploy:
+  provider: firebase
+  token:
+    secure: $FIREBASE_TOKEN
+  on:
+    branch: master
