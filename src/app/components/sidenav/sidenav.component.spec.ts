@@ -8,7 +8,7 @@ import { DebugElement } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { MdToolbarModule, MdButtonModule, MdSidenavModule, MdIconModule, MdIconRegistry, MdListModule } from '@angular/material';
 import { MaterialIconsService } from './../../services/material-icons/material-icons.service';
-import { SidenavComponent } from './sidenav.component.ts';
+import { SidenavComponent } from './sidenav.component';
 
 describe('SidenavComponent', () => {
   let component: SidenavComponent;
