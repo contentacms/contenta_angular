@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
 import { DebugElement } from '@angular/core';
 import { MdCardModule } from '@angular/material';
 
@@ -15,6 +16,7 @@ describe('CardComponent', () => {
       declarations: [ CardComponent ],
       imports: [
         MdCardModule,
+        RouterTestingModule.withRoutes([]),
       ],
     })
     .compileComponents();
