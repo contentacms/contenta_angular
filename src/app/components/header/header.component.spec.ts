@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
 
 /**
  * Test dependencies.
@@ -21,14 +22,13 @@ describe('HeaderComponent', () => {
       imports: [
         MdToolbarModule,
         MdButtonModule,
-        MdSidenavModule,
         MdIconModule,
         HttpModule,
-        MdListModule,
+        RouterTestingModule.withRoutes([]),
       ],
       providers: [
         MdIconRegistry,
-        MaterialIconsService
+        MaterialIconsService,
       ],
     })
       .compileComponents();
@@ -38,6 +38,12 @@ describe('HeaderComponent', () => {
     fixture = TestBed.createComponent(HeaderComponent);
     element = fixture.debugElement;
     component = fixture.componentInstance;
+
+    component.title = 'Contenta Angular';
+    component.menu = [
+      { name: 'Menu 1', url: '', icon: '' },
+      { name: 'Menu 2', url: '', icon: '' },
+    ];
     fixture.detectChanges();
   });
 
@@ -46,9 +52,7 @@ describe('HeaderComponent', () => {
   });
 
   it('should render title input in the template', () => {
-    component.title = 'Contenta Angular';
-    fixture.detectChanges();
-    let elm = element.query(By.css('.app-title')).nativeElement;;
+    let elm = element.query(By.css('.app-title')).nativeElement;
     expect(elm.innerHTML).toBe('Contenta Angular');
   });
 
@@ -60,11 +64,6 @@ describe('HeaderComponent', () => {
   });
 
   it('should render as much menu items as passed through input', () => {
-    component.menu = [
-      { name: 'Menu 1', url: '', icon: '' },
-      { name: 'Menu 2', url: '', icon: '' },
-    ];
-    fixture.detectChanges();
     let elm = element.queryAll(By.css('.menu-item'));
     expect(elm.length).toBe(2);
   });
