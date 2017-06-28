@@ -1,5 +1,8 @@
 import { HttpModule } from '@angular/http';
-import { TestBed, async } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
 import { MdToolbarModule, MdButtonModule, MdSidenavModule, MdIconModule, MdIconRegistry, MdListModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -9,6 +12,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { MaterialIconsService } from './services/material-icons/material-icons.service';
 
 describe('AppComponent', () => {
+  
+  let component: HeaderComponent;
+  let fixture: ComponentFixture<HeaderComponent>;
+  let element: DebugElement;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -23,6 +31,7 @@ describe('AppComponent', () => {
         MdIconModule,
         HttpModule,
         MdListModule,
+        RouterTestingModule.withRoutes([]),
       ],
       providers: [
         MdIconRegistry,
@@ -31,22 +40,19 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
+  beforeEach(() => {
+    fixture = TestBed.createComponent(HeaderComponent);
+    element = fixture.debugElement;
+    component = fixture.componentInstance;
+    component.title = 'Contenta Angular';
+    fixture.detectChanges();
+  });
+
   it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   }));
 
   it(`should have as title 'Contenta Angular'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Contenta Angular');
-  }));
-
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Contenta Angular!!');
+    expect(component.title).toEqual('Contenta Angular');
   }));
 });

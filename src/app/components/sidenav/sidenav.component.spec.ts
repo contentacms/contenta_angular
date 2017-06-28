@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
 
 /**
  * Test dependencies.
@@ -8,7 +9,7 @@ import { DebugElement } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { MdToolbarModule, MdButtonModule, MdSidenavModule, MdIconModule, MdIconRegistry, MdListModule } from '@angular/material';
 import { MaterialIconsService } from './../../services/material-icons/material-icons.service';
-import { SidenavComponent } from './sidenav.component.ts';
+import { SidenavComponent } from './sidenav.component';
 
 describe('SidenavComponent', () => {
   let component: SidenavComponent;
@@ -25,6 +26,7 @@ describe('SidenavComponent', () => {
         MdIconModule,
         HttpModule,
         MdListModule,
+        RouterTestingModule.withRoutes([]),
       ],
       providers: [
         MdIconRegistry,
@@ -38,6 +40,10 @@ describe('SidenavComponent', () => {
     fixture = TestBed.createComponent(SidenavComponent);
     element = fixture.debugElement;
     component = fixture.componentInstance;
+    component.menu = [
+      { name: 'Menu 1', url: '', icon: '' },
+      { name: 'Menu 2', url: '', icon: '' },
+    ];
     fixture.detectChanges();
   });
 
@@ -46,10 +52,6 @@ describe('SidenavComponent', () => {
   });
 
   it('should render as much menu items as passed through input', () => {
-    component.menu = [
-      { name: 'Menu 1', url: '', icon: '' },
-      { name: 'Menu 2', url: '', icon: '' },
-    ];
     fixture.detectChanges();
     let elm = element.queryAll(By.css('.sidenav-menu-item'));
     expect(elm.length).toBe(2);
