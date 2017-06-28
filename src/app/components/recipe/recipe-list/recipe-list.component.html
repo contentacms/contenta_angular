@@ -1,7 +1,12 @@
-<div *ngIf="loaded | async; else spinloading">
-  <div class="recipe-item" *ngFor="let recipe of recipes | async">
-    <h2>{{recipe.attributes.title}}</h2>
-    <div class="description">{{recipe.attributes.instructions}}</div>
+<div class="recipes" *ngIf="loaded | async; else spinloading">
+  <div>
+    <h1 class="list-title">Latest Recipes</h1>
+  </div>
+  <div class="recipe-list">
+    <div class="recipe-item" *ngFor="let recipe of recipes | async; let i = index">
+      <app-card [title]="recipe.attributes.title" [image]="getRandomImage(i)"
+        [subTitle]="recipe.attributes.createdAt" [link]="''" [linkText]="'More'"></app-card>
+    </div>
   </div>
 </div>
 <ng-template #spinloading>

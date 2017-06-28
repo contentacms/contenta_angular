@@ -1,0 +1,13 @@
+<md-card class="card">
+  <img *ngIf="image" md-card-image [src]="image">
+  <md-card-content>
+    <md-card-title class="card-title" *ngIf="title">{{title}}</md-card-title>
+    <md-card-subtitle *ngIf="subTitle">{{subTitle}}</md-card-subtitle>
+    <p *ngIf="description">
+      {{description}}
+    </p>
+  </md-card-content>
+  <md-card-actions class="actions">
+    <a [color]="'accent'" md-button md-raised-button [routerLink]="link">{{linkText}}</a>
+  </md-card-actions>
+</md-card>

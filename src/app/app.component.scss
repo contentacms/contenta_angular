@@ -1,7 +1,15 @@
+@import "./../styles/settings/breakpoints.scss";
+
 .main-content {
     padding: {
         left:15px;
         right: 15px;
+    }
+    @include breakpoint($narrow-devices) {
+        padding: {
+            left: 30px;
+            right: 30px;
+        }
     }
     height: 100%;
     overflow: auto;
