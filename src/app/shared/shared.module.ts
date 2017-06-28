@@ -14,6 +14,7 @@ import {
 } from '@angular/material';
 
 import { MaterialIconsService } from './../services/material-icons/material-icons.service';
+import { JsonapiService } from './../services/jsonapi/jsonapi.service';
 
 import { CardComponent } from './../components/card/card.component';
 
@@ -49,6 +50,7 @@ export class SharedModule {
       providers: [
         MdIconRegistry,
         MaterialIconsService,
+        JsonapiService,
       ]
     }
   }

@@ -1,9 +1,6 @@
-export interface JSONRelationship {
-    data: { id: string, type: string },
-    links: { related: string, self: string },
-}
-
-export interface RecipeAttributes {
+export interface Recipe {
+    id: string,
+    type: string,
     createdAt: string,
     difficulty: string,
     ingredients: string[],
@@ -12,28 +9,17 @@ export interface RecipeAttributes {
     isPromoted: boolean,
     isPublished: boolean,
     numberOfServices: number,
-    path: string,
     preparationTime: number,
     title: string,
     totalTime: number,
     updatedAt: string,
+    image: string,
+    category: number,
+    owner: string,
+    tags: Term[],
 }
 
-export interface Recipe {
-    attributes: RecipeAttributes,
-    id: string,
-    links: { self: string },
-    relationships: {
-        category: JSONRelationship,
-        contentType: JSONRelationship,
-        image: JSONRelationship,
-        owner: JSONRelationship,
-        tags: JSONRelationship,
-    },
-    type: string,
-}
-
-export interface RecipeJSONResponse {
-    data: Recipe[],
-    links: { self: string }
+export interface Term {
+    id: number,
+    name: string,
 }
