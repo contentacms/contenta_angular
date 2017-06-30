@@ -18,7 +18,7 @@ export class RecipeService {
    */
   getRecipes(): void {
     let domain = environment.jsonapi;
-    this.http.get(`${domain}/api/recipes?sort=created&promote=true&limt=4`).map((data: Response) => {
+    this.http.get(`${domain}/api/recipes?page[limit]=12&page[offset]=0`).map((data: Response) => {
       return JSON.parse(data.text());
     }).map((recipeResponse: RecipeJSONResponse) => {
       return recipeResponse.data;
