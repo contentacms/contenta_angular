@@ -8,7 +8,6 @@ import { routes } from './app.routes';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { HomeComponent } from './components/home/home.component';
 import { recipesReducer, loadedRecipesReducer } from './store/recipes.store';
 import { FeaturesComponent } from './components/features/features.component';
 
@@ -19,7 +18,6 @@ let rootReducer = { recipes: recipesReducer, loadedRecipes: loadedRecipesReducer
     AppComponent,
     HeaderComponent,
     SidenavComponent,
-    HomeComponent,
     FeaturesComponent,
   ],
   imports: [
