@@ -32,13 +32,6 @@ export class RecipeListComponent implements OnInit {
     this.getRecipes();
   }
 
-  /**
-   * Return a random image of food.
-   */
-  getRandomImage(index: number): string {
-    return `http://lorempixel.com/400/200/food/${index}`;
-  }
-
   getRecipes() {
     this.recipeService.getRecipes();
   }

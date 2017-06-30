@@ -3,11 +3,11 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
-import { environment } from '../../../../environments/environment';
-import { Recipe } from './../model/recipe.model';
+import { Recipe, Term } from './../model/recipe.model';
 import { AppState } from './../../../store/appState';
 import { RECIPES_ACTION_TYPES } from './../../../store/recipes.store';
 import { JsonapiService } from './../../../services/jsonapi/jsonapi.service';
+import { jsonApiRequestObject } from 'd8-jsonapi-querystring';
 
 @Injectable()
 export class RecipeService {
@@ -18,14 +18,7 @@ export class RecipeService {
    * Get the list of recipes.
    */
   getRecipes(): void {
-    let domain = environment.jsonapi;
-    let query = this.jsonApiService.buildQuery(this.AllRecipesQuery());
-    
-    this.http.get(`${domain}/api/recipes?${query}`).map((data: Response) => {
-    return JSON.parse(data.text());
-    }).map((recipeResponse: any) => {
-      return recipeResponse.data;
-    }).subscribe((response: Recipe[]) => {
+    this.jsonApiService.get('recipes', this.AllRecipesQuery()).subscribe((response: any) => {
       this.store.dispatch({
         type: RECIPES_ACTION_TYPES.SAVE_RECIPES,
         payload: {
@@ -45,7 +38,7 @@ export class RecipeService {
   /**
    * Build query for all recipes.
    */
-  AllRecipesQuery(): any {
+  AllRecipesQuery(): jsonApiRequestObject {
     return {
       sort: {
         sortCreated: {
@@ -53,7 +46,7 @@ export class RecipeService {
           direction: 'DESC'
         }
       },
-      include: ['tags', 'image'],
+      include: ['tags', 'image', 'image.thumbnail'],
       page: {
         offset: 0,
         limit: 4

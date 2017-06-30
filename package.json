@@ -26,6 +26,9 @@
     "@ngrx/core": "^1.2.0",
     "@ngrx/store": "^2.2.2",
     "core-js": "^2.4.1",
+    "install": "^0.10.1",
+    "jsonapi-parse": "^1.2.0",
+    "npm": "^5.0.4",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },
