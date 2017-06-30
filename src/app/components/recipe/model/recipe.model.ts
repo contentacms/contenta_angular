@@ -19,6 +19,14 @@ export interface Recipe {
     tags: Term[],
 }
 
+export interface Category {
+    id: string,
+    description: string,
+    name: string,
+    path: string,
+    updatedAt: string,
+}
+
 export interface Term {
     id: number,
     name: string,

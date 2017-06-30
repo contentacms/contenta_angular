@@ -6,6 +6,7 @@ import { Store } from '@ngrx/store';
 import { Recipe, Term } from './../model/recipe.model';
 import { AppState } from './../../../store/appState';
 import { RECIPES_ACTION_TYPES } from './../../../store/recipes.store';
+import { CATEGORIES_ACTION_TYPES } from './../../../store/categories.store';
 import { JsonapiService } from './../../../services/jsonapi/jsonapi.service';
 import { jsonApiRequestObject } from 'd8-jsonapi-querystring';
 
@@ -15,7 +16,7 @@ export class RecipeService {
   constructor(private http: Http, private store: Store<AppState>, private jsonApiService: JsonapiService) { }
 
   /**
-   * Get the list of recipes.
+   * Get the list of recipes and save to the store.
    */
   getRecipes(): void {
     this.jsonApiService.get('recipes', this.AllRecipesQuery()).subscribe((response: any) => {
@@ -50,6 +51,31 @@ export class RecipeService {
       page: {
         offset: 0,
         limit: 4
+      }
+    };
+  }
+
+  /**
+   * Get the list of categories and save to the store.
+   */
+  getCategories(): void {
+    this.jsonApiService.get('categories', this.AllCategoriesQuery()).subscribe((response: any) => {
+      this.store.dispatch({
+        type: CATEGORIES_ACTION_TYPES.SAVE_CATEGORIES,
+        payload: {
+          'recipes': response
+        }
+      });
+    });
+  }
+
+  /**
+   * Build query for all recipes.
+   */
+  AllCategoriesQuery(): jsonApiRequestObject {
+    return {
+      page: {
+        limit: 10
       }
     };
   }

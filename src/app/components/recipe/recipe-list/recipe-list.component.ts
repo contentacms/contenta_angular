@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { RecipeService } from './../services/recipe.service';
 import { AppState } from './../../../store/appState';
 import { RECIPES_ACTION_TYPES } from './../../../store/recipes.store';
-import { Recipe } from './../model/recipe.model';
+import { Recipe, Category } from './../model/recipe.model';
 
 @Component({
   selector: 'app-recipe-list',
@@ -22,17 +22,24 @@ export class RecipeListComponent implements OnInit {
   /**
    * Recipes list.
    */
+  public categories: Observable<Category[]>;
+
+  /**
+   * Recipes list.
+   */
   public recipes: Observable<Recipe[]>;
 
   constructor(private recipeService: RecipeService, public store: Store<AppState>) { }
 
   ngOnInit() {
+    this.categories = this.store.select('categories');
     this.recipes = this.store.select('recipes');
     this.loaded = this.store.select('loadedRecipes');
     this.getRecipes();
   }
 
   getRecipes() {
+    this.recipeService.getCategories();
     this.recipeService.getRecipes();
   }
 }

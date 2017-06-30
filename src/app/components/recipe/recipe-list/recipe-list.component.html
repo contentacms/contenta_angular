@@ -1,6 +1,8 @@
 <div class="recipes" *ngIf="loaded | async; else spinloading">
-  <div>
-    <h1 class="list-title">Latest Recipes</h1>
+  <div class="category-list">
+    <div class="category-item" *ngFor="let category of categories | async; let i = index">
+      <h2>{{ category.name }}</h2>
+    </div>
   </div>
   <div class="recipe-list">
     <div class="recipe-item" *ngFor="let recipe of recipes | async; let i = index">
