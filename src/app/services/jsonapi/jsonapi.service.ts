@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-const buildQueryString = require('d8-jsonapi-querystring').buildQueryString
+import { buildQueryString } from 'd8-jsonapi-querystring';
+
 declare var require: any;
 @Injectable()
 export class JsonapiService {
