@@ -1,4 +1,5 @@
 import { Observable } from 'rxjs/Observable';
+
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
@@ -24,22 +25,15 @@ export class RecipeListComponent implements OnInit {
    */
   public categories: Observable<Category[]>;
 
-  /**
-   * Recipes list.
-   */
-  public recipes: Observable<Recipe[]>;
-
   constructor(private recipeService: RecipeService, public store: Store<AppState>) { }
 
   ngOnInit() {
     this.categories = this.store.select('categories');
-    this.recipes = this.store.select('recipes');
     this.loaded = this.store.select('loadedRecipes');
     this.getRecipes();
   }
 
   getRecipes() {
     this.recipeService.getCategories();
-    this.recipeService.getRecipes();
   }
 }

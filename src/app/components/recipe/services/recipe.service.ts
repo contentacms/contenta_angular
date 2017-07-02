@@ -3,12 +3,13 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
-import { Recipe, Term } from './../model/recipe.model';
+import { Recipe, Term, Category } from './../model/recipe.model';
 import { AppState } from './../../../store/appState';
 import { RECIPES_ACTION_TYPES } from './../../../store/recipes.store';
 import { CATEGORIES_ACTION_TYPES } from './../../../store/categories.store';
 import { JsonapiService } from './../../../services/jsonapi/jsonapi.service';
 import { jsonApiRequestObject } from 'd8-jsonapi-querystring';
+import 'rxjs/add/operator/take';
 
 @Injectable()
 export class RecipeService {
@@ -18,28 +19,14 @@ export class RecipeService {
   /**
    * Get the list of recipes and save to the store.
    */
-  getRecipes(): void {
-    this.jsonApiService.get('recipes', this.AllRecipesQuery()).subscribe((response: any) => {
-      this.store.dispatch({
-        type: RECIPES_ACTION_TYPES.SAVE_RECIPES,
-        payload: {
-          'recipes': response
-        }
-      });
-
-      this.store.dispatch({
-        type: RECIPES_ACTION_TYPES.LOADED_RECIPES,
-        payload: {
-          'loaded': true
-        }
-      });
-    });
+  getCategoryRecipes(categoryName: string): Observable<any> {
+    return this.jsonApiService.get('recipes', this.CategoryRecipesQuery(categoryName, 4));
   }
 
   /**
    * Build query for all recipes.
    */
-  AllRecipesQuery(): jsonApiRequestObject {
+  CategoryRecipesQuery(categoryName: string, limit: number): jsonApiRequestObject {
     return {
       sort: {
         sortCreated: {
@@ -47,10 +34,21 @@ export class RecipeService {
           direction: 'DESC'
         }
       },
-      include: ['tags', 'image', 'image.thumbnail'],
+      include: ['image', 'image.thumbnail'],
+      filter: {
+        categoryName: {
+          condition: {
+            path: 'category.name',
+            value: categoryName
+          }
+        },
+      },
+      fields: {
+        images: ['name', 'thumbnail'],
+      },
       page: {
         offset: 0,
-        limit: 4
+        limit: limit,
       }
     };
   }
