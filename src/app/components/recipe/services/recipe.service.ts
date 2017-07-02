@@ -59,6 +59,12 @@ export class RecipeService {
   getCategories(): void {
     this.jsonApiService.get('categories', this.AllCategoriesQuery()).subscribe((response: any) => {
       this.store.dispatch({
+        type: RECIPES_ACTION_TYPES.LOADED_RECIPES,
+        payload: {
+          'loaded': true
+        }
+      });
+      this.store.dispatch({
         type: CATEGORIES_ACTION_TYPES.SAVE_CATEGORIES,
         payload: {
           'recipes': response

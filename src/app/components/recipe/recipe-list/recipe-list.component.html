@@ -1,4 +1,4 @@
-<div class="recipes">
+<div class="recipes" *ngIf="loaded | async; else spinloading;">
   <div class="category-list">
     <div class="category-item" *ngFor="let category of categories | async; let i = index">
         <app-category-recipes [category]="category"></app-category-recipes>
