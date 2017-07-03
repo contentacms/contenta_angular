@@ -38,7 +38,7 @@
     "@angular/language-service": "^4.0.0",
     "@types/jasmine": "2.5.45",
     "codelyzer": "~3.0.1",
-    "d8-jsonapi-querystring": "0.0.4",
+    "d8-jsonapi-querystring": "0.0.6",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
