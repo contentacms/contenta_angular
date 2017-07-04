@@ -78,11 +78,4 @@ describe('JsonapiService', () => {
       }
     })).toBe('sort[sortCreated][path]=created&sort[sortCreated][direction]=DESC&fields[recipes]=title&include=tags,image&filter[categoryName][condition][path]=category.name&filter[categoryName][condition][value]=Main%20course&page[offset]=0&page[limit]=4');
   }));
-
-  /*it('should get categories', inject([JsonapiService, Http], (service: JsonapiService, http: Http) => {
-    spyOn(http, 'get').and.returnValue(createHttpResponse([...categories]));
-    service.get('', '').subscribe((result) => {
-      console.log(result);
-    });
-  }));*/
 });
