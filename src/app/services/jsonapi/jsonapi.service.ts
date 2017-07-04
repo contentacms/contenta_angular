@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { environment } from '../../../environments/environment';
 
-import jsonapiParse from "jsonapi-parse";
+import { jsonapiParse } from 'jsonapi-parse';
 import { buildQueryString, jsonApiRequestObject } from 'd8-jsonapi-querystring';
 
 declare var require: any;
@@ -22,7 +22,7 @@ export class JsonapiService {
     return buildQueryString(queryObject);
   }
 
-  get(uri:string, queryParams: jsonApiRequestObject = {}): Observable<any> {
+  get(uri: string, queryParams: jsonApiRequestObject = {}): Observable<any> {
     let domain = environment.jsonapi;
     let query = this.buildQuery(queryParams);
     return this.http.get(`${domain}/api/${uri}?${query}`).map((data) => {

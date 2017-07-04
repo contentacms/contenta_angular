@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
@@ -14,7 +13,7 @@ import 'rxjs/add/operator/take';
 @Injectable()
 export class RecipeService {
 
-  constructor(private http: Http, private store: Store<AppState>, private jsonApiService: JsonapiService) { }
+  constructor(private store: Store<AppState>, private jsonApiService: JsonapiService) { }
 
   /**
    * Get the list of recipes and save to the store.

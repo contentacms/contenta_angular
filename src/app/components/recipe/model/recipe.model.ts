@@ -16,7 +16,7 @@ export interface Recipe {
     image: string,
     category: number,
     owner: string,
-    tags: Term[],
+    tags?: Term[],
 }
 
 export interface Category {
