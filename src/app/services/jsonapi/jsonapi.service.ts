@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { environment } from '../../../environments/environment';
 
-import { jsonapiParse } from 'jsonapi-parse';
+import jsonapiParse from 'jsonapi-parse';
 import { buildQueryString, jsonApiRequestObject } from 'd8-jsonapi-querystring';
 
 declare var require: any;
