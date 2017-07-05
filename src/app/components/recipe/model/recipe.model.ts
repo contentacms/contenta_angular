@@ -13,7 +13,7 @@ export interface Recipe {
     title: string,
     totalTime: number,
     updatedAt: string,
-    image: string,
+    image: any,
     category: number,
     owner: string,
     tags?: Term[],
