@@ -8,15 +8,13 @@ import { RecipeService } from './recipe.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/Observable/of';
 
-function createHttpResponse(body) {
-  return Observable.of(
-    new Response(new ResponseOptions({ body: body }))
-  );
+function createResponse(body) {
+  return Observable.of(body);
 }
 
 class MockJsonAPI {
   get() {
-    return createHttpResponse(recipes);
+    return createResponse(recipes);
   }
 }
 
@@ -81,9 +79,9 @@ describe('RecipeService', () => {
   }));
 
   it('should get 2 recipes', inject([RecipeService, JsonapiService], (service: RecipeService, jsonApiService: MockJsonAPI) => {
-    spyOn(jsonApiService, 'get').and.returnValue(createHttpResponse([...recipes]));
+    spyOn(jsonApiService, 'get').and.returnValue(createResponse([...recipes]));
     service.getCategoryRecipes('starter').subscribe((result) => {
-      expect(result._body.length).toBe(2);
+      expect(result.length).toBe(2);
     });
   }));
 

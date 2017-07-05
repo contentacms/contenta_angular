@@ -14,7 +14,7 @@ import { Recipe } from './../model/recipe.model';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/Observable/of';
 
-function createHttpResponse(items): Observable<any> {
+function createResponse(items): Observable<any> {
   return Observable.of(
     items
   );
@@ -22,7 +22,7 @@ function createHttpResponse(items): Observable<any> {
 
 class MockedRecipeService {
   getCategoryRecipes(): Observable<any> {
-    return createHttpResponse([]);
+    return createResponse([]);
   }
 }
 
@@ -125,7 +125,7 @@ describe('CategoryRecipesComponent', () => {
   }));
 
   it('should render 2 recipes in template', inject([RecipeService], (service: RecipeService) => {
-    spyOn(service, 'getCategoryRecipes').and.returnValue(createHttpResponse([...recipes]));
+    spyOn(service, 'getCategoryRecipes').and.returnValue(createResponse([...recipes]));
     component.category = {
       id: 'new',
       name: 'Starters',
