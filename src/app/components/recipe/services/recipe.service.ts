@@ -1,14 +1,17 @@
+
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
-import { Recipe, Term, Category } from './../model/recipe.model';
 import { AppState } from './../../../store/appState';
 import { RECIPES_ACTION_TYPES } from './../../../store/recipes.store';
 import { CATEGORIES_ACTION_TYPES } from './../../../store/categories.store';
 import { JsonapiService } from './../../../services/jsonapi/jsonapi.service';
 import { jsonApiRequestObject } from 'd8-jsonapi-querystring';
 import 'rxjs/add/operator/take';
+
+import { Category } from './../../../models/category.model';
+import { Recipe } from './../../../models/recipe.model';
 
 @Injectable()
 export class RecipeService {
@@ -19,7 +22,7 @@ export class RecipeService {
    * Get the list of recipes and save to the store.
    */
   getCategoryRecipes(categoryName: string): Observable<any> {
-    return this.jsonApiService.get('recipes', this.CategoryRecipesQuery(categoryName, 4));
+    return this.jsonApiService.getQuery(Recipe, this.CategoryRecipesQuery(categoryName, 4));
   }
 
   /**
@@ -30,20 +33,20 @@ export class RecipeService {
       sort: {
         sortCreated: {
           path: 'created',
-          direction: 'DESC'
+          direction: 'DESC',
         }
       },
-      include: ['image', 'image.thumbnail'],
+      include: 'image,image.thumbnail',
       filter: {
         categoryName: {
           condition: {
             path: 'category.name',
-            value: categoryName
+            value: categoryName,
           }
         },
       },
       fields: {
-        images: ['name', 'thumbnail'],
+        images: 'name,thumbnail',
       },
       page: {
         offset: 0,
@@ -52,11 +55,10 @@ export class RecipeService {
     };
   }
 
-  /**
-   * Get the list of categories and save to the store.
-   */
   getCategories(): void {
-    this.jsonApiService.get('categories', this.AllCategoriesQuery()).subscribe((response: any) => {
+    this.jsonApiService.getQuery(Category, {
+      page: { limit: 10 }
+    }).subscribe((response) => {
       this.store.dispatch({
         type: RECIPES_ACTION_TYPES.LOADED_RECIPES,
         payload: {
@@ -70,16 +72,5 @@ export class RecipeService {
         }
       });
     });
-  }
-
-  /**
-   * Build query for all recipes.
-   */
-  AllCategoriesQuery(): jsonApiRequestObject {
-    return {
-      page: {
-        limit: 10
-      }
-    };
   }
 }
