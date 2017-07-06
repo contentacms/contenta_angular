@@ -2,6 +2,7 @@ import { Category } from './../../components/recipe/model/recipe.model';
 import { TestBed, inject } from '@angular/core/testing';
 import { Http, Response, ResponseOptions } from '@angular/http';
 import { JsonapiService } from './jsonapi.service';
+import { DatastoreService } from './../datastore/datastore.service';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/Observable/of';
@@ -43,6 +44,7 @@ describe('JsonapiService', () => {
     TestBed.configureTestingModule({
       providers: [
         JsonapiService,
+        DatastoreService,
         { provide: Http, useClass: MockHttp }
       ]
     });
@@ -50,32 +52,5 @@ describe('JsonapiService', () => {
 
   it('should be created', inject([JsonapiService], (service: JsonapiService) => {
     expect(service).toBeTruthy();
-  }));
-
-  it('should correctly build querystring', inject([JsonapiService], (service: JsonapiService) => {
-    expect(service.buildQuery({
-      sort: {
-        sortCreated: {
-          path: 'created',
-          direction: 'DESC'
-        }
-      },
-      fields: {
-        recipes: ['title']
-      },
-      include: ['tags', 'image'],
-      filter: {
-        categoryName: {
-          condition: {
-            path: 'category.name',
-            value: "Main course"
-          }
-        },
-      },
-      page: {
-        offset: 0,
-        limit: 4
-      }
-    })).toBe('sort[sortCreated][path]=created&sort[sortCreated][direction]=DESC&fields[recipes]=title&include=tags,image&filter[categoryName][condition][path]=category.name&filter[categoryName][condition][value]=Main%20course&page[offset]=0&page[limit]=4');
   }));
 });

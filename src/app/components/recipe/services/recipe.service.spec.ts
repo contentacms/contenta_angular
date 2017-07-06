@@ -91,34 +91,24 @@ describe('RecipeService', () => {
         sort: {
           sortCreated: {
             path: 'created',
-            direction: 'DESC'
+            direction: 'DESC',
           }
         },
-        include: ['image', 'image.thumbnail'],
+        include: 'image,image.thumbnail',
         filter: {
           categoryName: {
             condition: {
               path: 'category.name',
-              value: 'starter'
+              value: 'starter',
             }
           },
         },
         fields: {
-          images: ['name', 'thumbnail'],
+          images: 'name,thumbnail',
         },
         page: {
           offset: 0,
           limit: 10,
-        }
-      }
-    );
-  }));
-
-  it('should build all categories query', inject([RecipeService, JsonapiService], (service: RecipeService, jsonApiService: MockJsonAPI) => {
-    expect(service.AllCategoriesQuery()).toEqual(
-      {
-        page: {
-          limit: 10
         }
       }
     );

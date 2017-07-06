@@ -22,7 +22,7 @@ export class RecipeService {
    * Get the list of recipes and save to the store.
    */
   getCategoryRecipes(categoryName: string): Observable<any> {
-    return this.jsonApiService.getQuery(Recipe, this.CategoryRecipesQuery(categoryName, 4));
+    return this.jsonApiService.get(Recipe, this.CategoryRecipesQuery(categoryName, 4));
   }
 
   /**
@@ -56,7 +56,7 @@ export class RecipeService {
   }
 
   getCategories(): void {
-    this.jsonApiService.getQuery(Category, {
+    this.jsonApiService.get(Category, {
       page: { limit: 10 }
     }).subscribe((response) => {
       this.store.dispatch({

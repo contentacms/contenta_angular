@@ -15,28 +15,15 @@ export class JsonapiService {
   constructor(private http: Http, private datastore: DatastoreService) { }
 
   /**
-   * Build a query for d8 json api.
+   * Performa a query to the datastore.
    * 
-   * @param queryObject 
-   *   The query object to make the string for.
+   * @param item
+   *  The model to query.
+   *  
+   * @param query 
+   *  The query to make in the format of a json object.
    */
-  buildQuery(queryObject: jsonApiRequestObject): string {
-    return buildQueryString(queryObject);
-  }
-
-  getQuery(item: any, query: any): Observable<any> {
+  get(item: any, query: any): Observable<any> {
     return this.datastore.query(item, query);
-  }
-
-  get(uri: string, queryParams: jsonApiRequestObject = {}): Observable<any> {
-    let domain = environment.jsonapi;
-    let query = this.buildQuery(queryParams);
-    console.log(query);
-    return this.http.get(`${domain}/api/${uri}?${query}`).map((data) => {
-      return JSON.parse(data.text());
-    }).map((recipeResponse: any) => {
-      const parsedJson = jsonapiParse.parse(recipeResponse);
-      return parsedJson.data;
-    });
   }
 }
