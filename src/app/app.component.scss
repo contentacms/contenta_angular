@@ -1,6 +1,16 @@
 @import "./../styles/settings/breakpoints.scss";
+@import "./../styles/settings/layout.scss";
 
 .main-content {
+    & /deep/ div {
+        @include breakpoint($narrow-devices) {
+            max-width: $page-max-width;
+            margin: {
+                left: auto;
+                right: auto;
+            }
+        }
+    }
     padding: {
         left:15px;
         right: 15px;

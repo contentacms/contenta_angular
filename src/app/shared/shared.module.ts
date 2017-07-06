@@ -14,6 +14,10 @@ import {
 } from '@angular/material';
 
 import { MaterialIconsService } from './../services/material-icons/material-icons.service';
+import { JsonapiService } from './../services/jsonapi/jsonapi.service';
+import { DatastoreService } from './../services/datastore/datastore.service';
+
+import { JsonApiModule } from 'angular2-jsonapi';
 
 import { CardComponent } from './../components/card/card.component';
 
@@ -28,6 +32,7 @@ const SHARED_MODULES = [
   MdProgressSpinnerModule,
   MdCardModule,
   RouterModule,
+  JsonApiModule,
 ];
 
 @NgModule({
@@ -49,6 +54,8 @@ export class SharedModule {
       providers: [
         MdIconRegistry,
         MaterialIconsService,
+        JsonapiService,
+        DatastoreService,
       ]
     }
   }

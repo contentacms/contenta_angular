@@ -9,9 +9,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { recipesReducer, loadedRecipesReducer } from './store/recipes.store';
+import { categoriesReducer } from './store/categories.store';
 import { FeaturesComponent } from './components/features/features.component';
 
-let rootReducer = { recipes: recipesReducer, loadedRecipes: loadedRecipesReducer, };
+let rootReducer = { categories: categoriesReducer, loadedRecipes: loadedRecipesReducer, };
 
 @NgModule({
   declarations: [

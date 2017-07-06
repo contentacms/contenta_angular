@@ -1,11 +1,13 @@
 import { Observable } from 'rxjs/Observable';
+
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { RecipeService } from './../services/recipe.service';
 import { AppState } from './../../../store/appState';
 import { RECIPES_ACTION_TYPES } from './../../../store/recipes.store';
-import { Recipe } from './../model/recipe.model';
+import { Category } from './../../../models/category.model';
+import { Recipe } from './../../../models/recipe.model';
 
 @Component({
   selector: 'app-recipe-list',
@@ -22,24 +24,17 @@ export class RecipeListComponent implements OnInit {
   /**
    * Recipes list.
    */
-  public recipes: Observable<Recipe[]>;
+  public categories: Observable<Category[]>;
 
   constructor(private recipeService: RecipeService, public store: Store<AppState>) { }
 
   ngOnInit() {
-    this.recipes = this.store.select('recipes');
+    this.categories = this.store.select('categories');
     this.loaded = this.store.select('loadedRecipes');
     this.getRecipes();
   }
 
-  /**
-   * Return a random image of food.
-   */
-  getRandomImage(index: number): string {
-    return `http://lorempixel.com/400/200/food/${index}`;
-  }
-
   getRecipes() {
-    this.recipeService.getRecipes();
+    this.recipeService.getCategories();
   }
 }
