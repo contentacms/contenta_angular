@@ -1,4 +1,3 @@
-import { Category } from './../../components/recipe/model/recipe.model';
 import { TestBed, inject } from '@angular/core/testing';
 import { Http, Response, ResponseOptions } from '@angular/http';
 import { JsonapiService } from './jsonapi.service';
@@ -7,7 +6,7 @@ import { DatastoreService } from './../datastore/datastore.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/Observable/of';
 
-import jsonapiParse from "jsonapi-parse";
+import { Category } from './../../models/category.model';
 
 function createHttpResponse(body) {
   return Observable.of(
@@ -21,22 +20,27 @@ class MockHttp {
   }
 }
 
-const categories: Category[] = [
+const categoriesItems: any[] = [
   {
-    id: '1',
+    internalId: 1,
     name: 'Salad',
     description: 'Nice salad',
     path: '',
-    updatedAt: '',
+    updatedAt: null,
+    weight: 1,
   },
   {
-    id: '2',
+    id: 2,
     name: 'Fruit',
     description: 'Nice fruit',
     path: '',
-    updatedAt: '',
+    updatedAt: null,
+    weight: 2,
   }
 ];
+const categories: Category[] = categoriesItems.map((category) => {
+  return new Category(null, category);
+});
 
 describe('JsonapiService', () => {
 

@@ -1,3 +1,4 @@
+import { DatastoreService } from './../../../services/datastore/datastore.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Http, Response, ResponseOptions } from '@angular/http';
 import { DebugElement } from '@angular/core';
@@ -9,10 +10,12 @@ import { CardComponent } from './../../card/card.component';
 import { MdCardModule, MdButtonModule } from '@angular/material';
 
 import { CategoryRecipesComponent } from './category-recipes.component';
-import { Recipe } from './../model/recipe.model';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/Observable/of';
+
+import { Recipe } from './../../../models/recipe.model';
+import { Category } from './../../../models/category.model';
 
 function createResponse(items): Observable<any> {
   return Observable.of(
@@ -26,55 +29,45 @@ class MockedRecipeService {
   }
 }
 
-const recipes: Recipe[] = [
+const recipes: any[] = [
   {
-    id: '1',
-    type: 'recipe',
-    createdAt: '',
-    difficulty: '',
-    ingredients: [],
-    instructions: '',
     internalId: 1,
-    isPromoted: true,
+    createdAt: null,
+    title: 'Recipe 1',
+    updatedAt: null,
+    difficulty: '',
+    instructions: '',
+    path: '',
+    numberOfServices: 2,
+    ingredients: [],
+    isPromoted: false,
     isPublished: true,
-    numberOfServices: 1,
-    preparationTime: 10,
-    title: 'Test Recipe 1',
+    preparationTime: 100,
     totalTime: 100,
-    updatedAt: '',
-    image: {
-      thumbnail: {
-        url: ''
-      },
-    },
-    category: 3,
-    owner: '',
-    tags: [],
+    category: null,
+    image: null,
+    tags: null,
+    owner: null,
   },
   {
-    id: '2',
-    type: 'recipe',
-    createdAt: '',
+    internalId: 2,
+    createdAt: null,
+    title: 'Recipe 2',
+    updatedAt: null,
     difficulty: '',
-    ingredients: [],
     instructions: '',
-    internalId: 1,
-    isPromoted: true,
+    path: '',
+    numberOfServices: 2,
+    ingredients: [],
+    isPromoted: false,
     isPublished: true,
-    numberOfServices: 1,
-    preparationTime: 10,
-    title: 'Test Recipe 2',
+    preparationTime: 100,
     totalTime: 100,
-    updatedAt: '',
-    image: {
-      thumbnail: {
-        url: ''
-      },
-    },
-    category: 3,
-    owner: '',
-    tags: [],
-  }
+    category: null,
+    image: null,
+    tags: null,
+    owner: null,
+  },
 ];
 
 describe('CategoryRecipesComponent', () => {
@@ -91,6 +84,8 @@ describe('CategoryRecipesComponent', () => {
       ],
       providers: [
         { provide: RecipeService, useClass: MockedRecipeService },
+        Http,
+        DatastoreService,
       ],
       declarations: [
         CategoryRecipesComponent,
@@ -104,35 +99,45 @@ describe('CategoryRecipesComponent', () => {
     fixture = TestBed.createComponent(CategoryRecipesComponent);
     element = fixture.debugElement;
     component = fixture.componentInstance;
-    component.category = {
-      id: 'starters',
-      name: 'Starters',
-      description: 'Sample starter description',
-      path: '',
-      updatedAt: '',
-    };
   });
 
-  it('should be created', inject([RecipeService], (service: RecipeService) => {
+  it('should be created', inject([RecipeService, DatastoreService], (service: RecipeService, datastore: DatastoreService) => {
+    component.category = new Category(datastore, {
+      internalId: 1,
+      name: 'Starters',
+      description: 'Starters',
+      path: '',
+      updatedAt: null,
+      weight: 1,
+    });
     fixture.detectChanges();
     expect(component).toBeTruthy();
   }));
 
-  it('should render category title', inject([RecipeService], (service: RecipeService) => {
+  it('should render category title', inject([RecipeService, DatastoreService], (service: RecipeService, datastore: DatastoreService) => {
+    component.category = new Category(null, {
+      internalId: 1,
+      name: 'Starters',
+      description: 'Starters',
+      path: '',
+      updatedAt: null,
+      weight: 1,
+    });
     fixture.detectChanges();
-    let elm = element.query(By.css('.category-title')).nativeElement;;
+    let elm = element.query(By.css('.category-title')).nativeElement;
     expect(elm.innerHTML).toBe('Starters');
   }));
 
-  it('should render 2 recipes in template', inject([RecipeService], (service: RecipeService) => {
+  it('should render 2 recipes in template', inject([RecipeService, DatastoreService], (service: RecipeService, datastore: DatastoreService) => {
     spyOn(service, 'getCategoryRecipes').and.returnValue(createResponse([...recipes]));
-    component.category = {
-      id: 'new',
+    component.category = new Category(null, {
+      internalId: 1,
       name: 'Starters',
-      description: 'Sample starter description',
+      description: 'Starters',
       path: '',
-      updatedAt: '',
-    };
+      updatedAt: null,
+      weight: 1,
+    });
     component.ngOnInit();
     fixture.detectChanges();
     let elm = element.queryAll(By.css('.recipe-item'));

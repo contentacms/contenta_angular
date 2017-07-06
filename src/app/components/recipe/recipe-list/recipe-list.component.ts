@@ -6,7 +6,8 @@ import { Store } from '@ngrx/store';
 import { RecipeService } from './../services/recipe.service';
 import { AppState } from './../../../store/appState';
 import { RECIPES_ACTION_TYPES } from './../../../store/recipes.store';
-import { Recipe, Category } from './../model/recipe.model';
+import { Category } from './../../../models/category.model';
+import { Recipe } from './../../../models/recipe.model';
 
 @Component({
   selector: 'app-recipe-list',

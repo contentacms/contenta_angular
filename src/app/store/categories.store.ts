@@ -1,5 +1,5 @@
 import { ActionReducer, Action } from '@ngrx/store';
-import { Category } from './../components/recipe/model/recipe.model';
+import { Category } from './../models/category.model';
 
 export const CATEGORIES_ACTION_TYPES = {
     SAVE_CATEGORIES: 'SAVE_CATEGORIES',

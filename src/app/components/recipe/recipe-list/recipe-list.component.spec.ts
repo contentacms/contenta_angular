@@ -1,8 +1,8 @@
-import { Category } from './../model/recipe.model';
 import { By } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Observable';
 import { RouterTestingModule } from '@angular/router/testing';
 import { CardComponent } from './../../card/card.component';
+import { Category } from './../../../models/category.model';
 import { CategoryRecipesComponent } from './../category-recipes/category-recipes.component';
 import { DebugElement } from '@angular/core';
 import { RecipeService } from './../services/recipe.service';
@@ -27,22 +27,27 @@ class MockedRecipeService {
   }
 }
 
-const categories: Category[] = [
+const categoriesItems: any[] = [
   {
-    id: '1',
+    internalId: 1,
     name: 'Salad',
     description: 'Nice salad',
     path: '',
-    updatedAt: '',
+    updatedAt: null,
+    weight: 1,
   },
   {
-    id: '2',
+    id: 2,
     name: 'Fruit',
     description: 'Nice fruit',
     path: '',
-    updatedAt: '',
+    updatedAt: null,
+    weight: 2,
   }
 ];
+const categories: Category[] = categoriesItems.map((category) => {
+  return new Category(null, category);
+});
 
 describe('RecipeListComponent', () => {
   let component: RecipeListComponent;

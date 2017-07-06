@@ -1,9 +1,9 @@
-import { Recipe } from './../model/recipe.model';
 import { JsonapiService } from './../../../services/jsonapi/jsonapi.service';
 import { Http, Response, ResponseOptions } from '@angular/http';
 import { TestBed, inject } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
 import { RecipeService } from './recipe.service';
+import { Recipe } from './../../../models/recipe.model';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/Observable/of';
@@ -18,48 +18,49 @@ class MockJsonAPI {
   }
 }
 
-const recipes: Recipe[] = [
+const recipesItems: any[] = [
   {
-    id: '1',
-    type: 'recipe',
-    createdAt: '',
-    difficulty: '',
-    ingredients: [],
-    instructions: '',
     internalId: 1,
-    isPromoted: true,
+    createdAt: null,
+    title: 'Recipe 1',
+    updatedAt: null,
+    difficulty: '',
+    instructions: '',
+    path: '',
+    numberOfServices: 2,
+    ingredients: [],
+    isPromoted: false,
     isPublished: true,
-    numberOfServices: 1,
-    preparationTime: 10,
-    title: 'Test Recipe 1',
+    preparationTime: 100,
     totalTime: 100,
-    updatedAt: '',
-    image: '',
-    category: 3,
-    owner: '',
-    tags: [],
+    category: null,
+    image: null,
+    tags: null,
+    owner: null,
   },
   {
-    id: '2',
-    type: 'recipe',
-    createdAt: '',
+    internalId: 2,
+    createdAt: null,
+    title: 'Recipe 2',
+    updatedAt: null,
     difficulty: '',
-    ingredients: [],
     instructions: '',
-    internalId: 1,
-    isPromoted: true,
+    path: '',
+    numberOfServices: 2,
+    ingredients: [],
+    isPromoted: false,
     isPublished: true,
-    numberOfServices: 1,
-    preparationTime: 10,
-    title: 'Test Recipe 2',
+    preparationTime: 100,
     totalTime: 100,
-    updatedAt: '',
-    image: '',
-    category: 3,
-    owner: '',
-    tags: [],
-  }
+    category: null,
+    image: null,
+    tags: null,
+    owner: null,
+  },
 ];
+const recipes: Recipe[] = recipesItems.map((recipe) => {
+  return new Recipe(null, recipe);
+});
 
 describe('RecipeService', () => {
   beforeEach(() => {

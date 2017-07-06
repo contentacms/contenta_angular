@@ -1,6 +1,6 @@
 <h2 class="category-title">{{ category.name }}</h2>
 <div class="recipe-list">
   <div class="recipe-item" *ngFor="let recipe of recipes | async; let i = index">
-    <app-card [title]="recipe.title" [image]="recipe.image.thumbnail.url" [subTitle]="recipe.createdAt" [link]="''" [linkText]="'More'"></app-card>
+    <app-card [title]="recipe.title" [image]="recipe.image ? recipe.image.thumbnail.url : null" [subTitle]="recipe.createdAt" [link]="''" [linkText]="'More'"></app-card>
   </div>
 </div>
