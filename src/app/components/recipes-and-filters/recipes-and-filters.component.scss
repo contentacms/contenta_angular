@@ -1,0 +1,7 @@
+@import "./../../../styles/settings/breakpoints.scss";
+
+.recipes {
+    @include breakpoint($narrow-devices) {
+        margin-top: 40px;
+    }
+}

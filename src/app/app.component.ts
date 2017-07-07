@@ -7,7 +7,7 @@ import { MaterialIconsService } from './services/material-icons/material-icons.s
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'Umami Magazine';
   @ViewChild('sidenav') sidenav: MdSidenav;
   menu: Object[] = [{ name: 'Home', url: '', icon: 'home' },{ name: 'Features', url: './features', icon: 'settings' }];

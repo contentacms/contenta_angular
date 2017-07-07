@@ -1,0 +1,9 @@
+<div class="recipes">
+    <filters-cmp [filters]="filters|async" (filtersChange)="handleFiltersChange($event)"></filters-cmp>
+    <recipes-cmp *ngIf="recipes|async; else spinloading" [recipes]="recipes|async"></recipes-cmp>
+</div>
+<ng-template #spinloading>
+  <div class="loading_spinner">
+    <md-spinner></md-spinner>
+  </div>
+</ng-template>
