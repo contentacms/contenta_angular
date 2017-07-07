@@ -7,6 +7,7 @@ import { environment } from '../../../../environments/environment';
 import { RecipeJSONResponse, Recipe } from './../model/recipe.model';
 import { AppState } from './../../../store/appState';
 import { RECIPES_ACTION_TYPES } from './../../../store/recipes.store';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class RecipeService {
