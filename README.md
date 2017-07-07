@@ -6,13 +6,17 @@ Contenta Angular is a best practices showcase of decoupled Drupal with Angular. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1.
 
+In the last version, links to recipes are not working.
+
 ## Live demo
 
 This project auto deploys to Firebase, and the latest version can always be seen at [angular.contentacms.io](http://angular.contentacms.io).
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm install` and then `ng serve` for a dev server.
+Then navigate to `http://localhost:4200/`.
+The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
