@@ -52,7 +52,7 @@ describe('HeaderComponent', () => {
   });
 
   it('should render title input in the template', () => {
-    let elm = element.query(By.css('.app-title')).nativeElement;
+    const elm = element.query(By.css('.app-title')).nativeElement;
     expect(elm.innerHTML).toBe('Contenta Angular');
   });
 
@@ -64,7 +64,7 @@ describe('HeaderComponent', () => {
   });
 
   it('should render as much menu items as passed through input', () => {
-    let elm = element.queryAll(By.css('.menu-item'));
+    const elm = element.queryAll(By.css('.menu-item'));
     expect(elm.length).toBe(2);
   });
 });

@@ -1,5 +1,5 @@
-import {Action} from "../actions/actions";
-import {AppState} from "../../models/state.model";
+import {Action} from '../actions/actions';
+import {AppState} from '../../models/state.model';
 
 // Reducers
 export function appReducer(state: AppState, action: Action): AppState {

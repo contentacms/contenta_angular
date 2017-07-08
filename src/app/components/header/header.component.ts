@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
   @Input() menu: Object[];
   @Input() title: string;
   @Output() toggleSidebar = new EventEmitter();
-  sidebarOpened: boolean = false;
+  sidebarOpened = false;
 
   ngOnInit() {
   }

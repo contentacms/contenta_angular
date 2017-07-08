@@ -12,7 +12,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MaterialIconsService } from './services/material-icons/material-icons.service';
 
 describe('AppComponent', () => {
-  
+
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
   let element: DebugElement;

@@ -1,5 +1,5 @@
 // state
-export type Recipe = {
+export interface Recipe {
   data: {
     id: string,
     type: string,

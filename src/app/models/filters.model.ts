@@ -1,4 +1,4 @@
-export type Filters = {
+export interface Filters {
   title: string,
   difficulty: string,
   prepTime: number,

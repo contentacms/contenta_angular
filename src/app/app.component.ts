@@ -10,7 +10,10 @@ import { MaterialIconsService } from './services/material-icons/material-icons.s
 export class AppComponent implements OnInit  {
   title = 'Umami Magazine';
   @ViewChild('sidenav') sidenav: MdSidenav;
-  menu: Object[] = [{ name: 'Home', url: '', icon: 'home' },{ name: 'Features', url: './features', icon: 'settings' }];
+  menu: Object[] = [
+    { name: 'Home', url: '', icon: 'home' },
+    { name: 'Features', url: './features', icon: 'settings' }
+  ];
 
   constructor(private materialIconsService: MaterialIconsService) {}
 

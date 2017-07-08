@@ -1,10 +1,10 @@
-import {Component, Inject} from "@angular/core";
-import { Router, Params } from "@angular/router";
-import { Filters } from "../../models/filters.model";
-import { State } from "../../models/state.model";
-import { Recipe } from "../../models/recipe.model";
-import { Store } from "@ngrx/store";
-import { Observable } from "rxjs/Observable";
+import {Component, Inject} from '@angular/core';
+import { Router, Params } from '@angular/router';
+import { Filters } from '../../models/filters.model';
+import { State } from '../../models/state.model';
+import { Recipe } from '../../models/recipe.model';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -22,15 +22,15 @@ export class RecipesAndFiltersComponent {
   }
 
   handleFiltersChange(filters: Filters): void {
-    this.router.navigate(["/recipes", this.createParams(filters)]);
+    this.router.navigate(['/recipes', this.createParams(filters)]);
   }
 
   private createParams(filters: Filters): Params {
     const r: any = {};
-    if (filters.title) r.title = filters.title;
-    if (filters.difficulty) r.difficulty = filters.difficulty;
-    if (filters.prepTime) r.prepTime = filters.prepTime
-    if (filters.limit) r.limit = filters.limit;
+    if (filters.title) { r.title = filters.title };
+    if (filters.difficulty) { r.difficulty = filters.difficulty };
+    if (filters.prepTime) { r.prepTime = filters.prepTime };
+    if (filters.limit) { r.limit = filters.limit };
     return r;
   }
 }

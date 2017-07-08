@@ -1,8 +1,8 @@
 import {Component, Input} from '@angular/core';
-import {Recipe} from "../../models/recipe.model";
+import {Recipe} from '../../models/recipe.model';
 
 @Component({
-  selector: 'recipes-cmp',
+  selector: 'app-recipes-cmp',
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.scss']
 })

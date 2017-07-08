@@ -1,10 +1,10 @@
-import {Component, EventEmitter, Output, Inject, Input} from "@angular/core";
-import {FormGroup, FormControl} from "@angular/forms";
+import {Component, EventEmitter, Output, Inject, Input} from '@angular/core';
+import {FormGroup, FormControl} from '@angular/forms';
 import 'rxjs/add/operator/debounceTime';
-import {Filters} from "../../models/filters.model";
+import {Filters} from '../../models/filters.model';
 
 @Component({
-  selector: 'filters-cmp',
+  selector: 'app-filters-cmp',
   templateUrl: './filters.component.html'
 })
 export class FiltersComponent {
@@ -54,7 +54,10 @@ export class FiltersComponent {
     });
   }
 
-  private createFiltersObject({title, difficulty, prepTime, limit}: { title: string, difficulty: string, prepTime: number, limit: number}): Filters {
+  private createFiltersObject(
+    {title, difficulty, prepTime, limit}:
+    { title: string, difficulty: string, prepTime: number, limit: number}
+  ): Filters {
     return {title: title || null, difficulty: difficulty || null, prepTime: prepTime || null, limit: limit || null};
   }
 }

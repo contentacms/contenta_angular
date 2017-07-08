@@ -19,8 +19,8 @@ import {
 } from '@angular/material';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from "@ngrx/effects";
-import { StoreRouterConnectingModule } from "@ngrx/router-store";
+import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -33,7 +33,7 @@ import { FiltersComponent } from './components/filters/filters.component';
 import { CardComponent } from './components/card/card.component';
 import { FeaturesComponent } from './components/features/features.component';
 
-import { Backend } from "./services/backend";
+import { Backend } from './services/backend';
 import { MaterialIconsService } from './services/material-icons/material-icons.service';
 import { Recipe} from './models/recipe.model';
 import { appReducer } from './store/reducers/reducers';
