@@ -9,8 +9,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Quick start
 
 `git clone git@github.com:contentacms/contenta_angular.git`
+
 `cd contenta_angular`
+
 `npm install`
+
 `ng serve`
 
 Your Contenta Angular build will be at: `http://localhost:4200/`.
