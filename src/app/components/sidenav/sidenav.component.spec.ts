@@ -53,7 +53,7 @@ describe('SidenavComponent', () => {
 
   it('should render as much menu items as passed through input', () => {
     fixture.detectChanges();
-    let elm = element.queryAll(By.css('.sidenav-menu-item'));
+    const elm = element.queryAll(By.css('.sidenav-menu-item'));
     expect(elm.length).toBe(2);
   });
 });

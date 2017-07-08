@@ -37,7 +37,7 @@ describe('CardComponent', () => {
   it('should render title input in the template', () => {
     component.title = 'Contenta card';
     fixture.detectChanges();
-    let elm = element.query(By.css('.card-title')).nativeElement;;
+    const elm = element.query(By.css('.card-title')).nativeElement;
     expect(elm.innerHTML).toBe('Contenta card');
   });
 });

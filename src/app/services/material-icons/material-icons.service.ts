@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MdSidenav, MdIconRegistry } from '@angular/material';
 
-interface iconMapItem {
+interface IconMapItem {
   name: string,
   icon: string,
 }
 
 @Injectable()
 export class MaterialIconsService {
-  icons: iconMapItem[] = [
+  icons: IconMapItem[] = [
     { name: 'sort', icon: 'sort' },
     { name: 'logo', icon: 'contenta-logo' },
     { name: 'home', icon: 'home' },
