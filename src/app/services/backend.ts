@@ -4,10 +4,12 @@ import {Injectable} from '@angular/core';
 import {Recipe} from '../models/recipe.model';
 import {Filters} from '../models/filters.model';
 import 'rxjs/add/operator/map';
+import { environment } from './../../environments/environment';
 
 @Injectable()
 export class Backend {
-  private url = 'https://dev-contentacms.pantheonsite.io/api';
+  private baseUrl = environment.jsonapi;
+  private url = this.baseUrl + '/api';
 
   constructor(private http: Http) {}
 
