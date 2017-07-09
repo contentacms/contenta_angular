@@ -26,7 +26,7 @@ before_script:
 script:
   - ng lint
   - ng test --watch=false
-  - ng build --prod --aot
+  - ng build --prod --sm
   - npm run precache
 
 after_success:
