@@ -2,13 +2,12 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { RouterTestingModule } from '@angular/router/testing';
 import { DebugElement } from '@angular/core';
 import { MdInputModule, MdSelectModule } from '@angular/material';
 
 import { FiltersComponent } from './filters.component';
 
-describe('CardComponent', () => {
+describe('FiltersComponent', () => {
     let component: FiltersComponent;
     let fixture: ComponentFixture<FiltersComponent>;
     let element: DebugElement;
