@@ -1,15 +1,15 @@
 import { browser, by, element } from 'protractor';
 
-<<<<<<< HEAD
-export class NewngtestPage {
-=======
 export class ContentaAngularPage {
->>>>>>> offline-sw
   navigateTo() {
     return browser.get('/');
   }
 
+  getTitle() {
+    return browser.getTitle();
+  }
+
   getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+    return element(by.className('app-title')).getText();
   }
 }

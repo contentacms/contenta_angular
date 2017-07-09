@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-import { NewngtestPage } from './app.po';
-
-describe('newngtest App', () => {
-  let page: NewngtestPage;
-
-  beforeEach(() => {
-    page = new NewngtestPage();
-=======
 import { ContentaAngularPage } from './app.po';
 
 describe('contenta-angular App', () => {
@@ -14,11 +5,15 @@ describe('contenta-angular App', () => {
 
   beforeEach(() => {
     page = new ContentaAngularPage();
->>>>>>> offline-sw
   });
 
-  it('should display welcome message', () => {
+  it('should have an Umami title', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!!');
+    expect(page.getTitle()).toEqual('Umami Magazine');
+  });
+
+  it('should display Umami headers', () => {
+    page.navigateTo();
+    expect(page.getParagraphText()).toEqual('Umami Magazine');
   });
 });
