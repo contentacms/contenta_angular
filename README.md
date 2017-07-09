@@ -1,6 +1,7 @@
 # Contenta Angular
 
 [![Build Status](https://travis-ci.org/contentacms/contenta_angular.svg?branch=master)](https://travis-ci.org/contentacms/contenta_angular)
+[![codecov](https://codecov.io/gh/contentacms/contenta_angular/branch/master/graph/badge.svg)](https://codecov.io/gh/contentacms/contenta_angular)
 
 Contenta Angular is a best practices showcase of decoupled Drupal with Angular. It is part of the wider [Contenta](http://www.contentacms.org) Drupal distribution. This project is under heavy development right now and we can use your help!
 
