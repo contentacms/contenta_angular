@@ -26,6 +26,7 @@ before_script:
 script:
   - ng lint
   - ng test --watch=false --cc
+  - codecov -f coverage/*.json
   - ng build --prod --sm
   - npm run precache
 
