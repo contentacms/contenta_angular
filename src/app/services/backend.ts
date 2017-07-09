@@ -15,7 +15,11 @@ export class Backend {
 
   findRecipes(filters: Filters): Observable<{recipes: {[id: string]: Recipe}, list: number[]}> {
     let filterString = '?';
-    const title = `filter[title][condition][path]=title&filter[title][condition][value]=${filters.title}&filter[title][condition][operator]=CONTAINS&`;
+
+    let title = 'filter[title][condition][path]=title&';
+       title += `filter[title][condition][value]=${filters.title}&`;
+       title += 'filter[title][condition][operator]=CONTAINS&';
+
     filterString += filters.title ? title : '';
     filterString += filters.difficulty ? `filter[difficulty][value]=${filters.difficulty}&` : '';
     const prepTime = `filter[totalTime][condition][path]=totalTime&filter[totalTime][condition][value]=${filters.prepTime}
