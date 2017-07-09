@@ -44,7 +44,7 @@ describe('FiltersComponent', () => {
 
     it('should call emitter when title on form changes', fakeAsync(() => {
         spyOn(component.filtersChange, 'next').and.callThrough();
-        let input = element.query(By.css('md-input-container input')).nativeElement;
+        const input = element.query(By.css('md-input-container input')).nativeElement;
         input.value = 'Contenta';
         input.dispatchEvent(new Event('input'));
         fixture.detectChanges();

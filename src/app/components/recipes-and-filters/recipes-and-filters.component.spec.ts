@@ -87,13 +87,13 @@ describe('RecipesAndFiltersComponent', () => {
     it('should show loading spinner when empty recipe list', inject([Store], (store: Store<AppState>) => {
         component.recipes = null;
         fixture.detectChanges();
-        let spinner: HTMLElement = element.query(By.css('.loading_spinner')).nativeElement;
+        const spinner: HTMLElement = element.query(By.css('.loading_spinner')).nativeElement;
         expect(spinner).toBeTruthy();
     }));
 
     it('should show recipes list component when not empty recipe list', inject([Store], (store: Store<AppState>) => {
         spyOn(store, 'select').and.returnValue(createResponse(appState));
-        let recipes: HTMLElement = element.query(By.css('app-recipes-cmp')).nativeElement;
+        const recipes: HTMLElement = element.query(By.css('app-recipes-cmp')).nativeElement;
         expect(recipes).toBeTruthy();
     }));
 });

@@ -63,7 +63,7 @@ describe('RecipesComponent', () => {
     });
 
     it('should display recipes input in template', () => {
-        let elm = element.queryAll(By.css('.recipe-item'));
+        const elm = element.queryAll(By.css('.recipe-item'));
         expect(elm.length).toBe(2);
     });
 });

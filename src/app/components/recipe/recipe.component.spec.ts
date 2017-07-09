@@ -48,12 +48,12 @@ describe('RecipeComponent', () => {
     });
 
     it('should render image inside component', () => {
-        let imageElement = element.query(By.css('img')).nativeElement;
+        const imageElement = element.query(By.css('img')).nativeElement;
         expect(imageElement).toBeTruthy();
     });
 
     it('should render title inside component', () => {
-        let imageElement = element.query(By.css('#title')).nativeElement;
+        const imageElement = element.query(By.css('#title')).nativeElement;
         expect(imageElement).toBeTruthy();
     });
 });

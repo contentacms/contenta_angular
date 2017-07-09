@@ -58,7 +58,7 @@ describe('RecipeDetailsComponent', () => {
                     provide: ActivatedRoute, useValue: {
                         snapshot: {
                             paramMap: {
-                                get: (name: string) => { return '1'; },
+                                get: (name: string) => '1',
                             }
                         },
                     }
@@ -82,7 +82,7 @@ describe('RecipeDetailsComponent', () => {
     }));
 
     it('should render title inside component', () => {
-        let imageElement: HTMLElement = element.query(By.css('#title')).nativeElement;
+        const imageElement: HTMLElement = element.query(By.css('#title')).nativeElement;
         expect(imageElement.innerHTML).toBe('Angular salad');
     });
 });
