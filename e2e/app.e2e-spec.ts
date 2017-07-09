@@ -11,9 +11,4 @@ describe('contenta-angular App', () => {
     page.navigateTo();
     expect(page.getTitle()).toEqual('Umami Magazine');
   });
-
-  it('should display Umami headers', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Umami Magazine');
-  });
 });

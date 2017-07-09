@@ -8,8 +8,4 @@ export class ContentaAngularPage {
   getTitle() {
     return browser.getTitle();
   }
-
-  getParagraphText() {
-    return element(by.className('app-title')).getText();
-  }
 }
