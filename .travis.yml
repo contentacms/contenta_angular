@@ -13,6 +13,7 @@ before_script:
   - npm install -g @angular/cli
 
 script:
+  - ng test
   - ng build --prod --aot
   - npm run precache
 
