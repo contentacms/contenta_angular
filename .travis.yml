@@ -1,4 +1,6 @@
 #.travis.yml
+sudo: required
+dist: trusty
 
 language: node_js
 node_js:
@@ -8,12 +10,22 @@ branches:
   only:
     - master
 
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
 before_script:
+  - export DISPLAY=:99.0
   - npm install -g firebase-tools
   - npm install -g @angular/cli
 
 script:
+  - ng lint
   - ng test
+  - ng e2e
   - ng build --prod --aot
   - npm run precache
 
