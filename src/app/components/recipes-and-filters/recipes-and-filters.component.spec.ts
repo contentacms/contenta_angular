@@ -1,6 +1,6 @@
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
-import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, tick, fakeAsync, inject } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { MdProgressSpinnerModule, MdInputModule, MdSelectModule, MdButtonModule, MdCardModule } from '@angular/material';
@@ -97,10 +97,14 @@ describe('RecipesAndFiltersComponent', () => {
         expect(recipes).toBeTruthy();
     }));
 
-    it('should navigate to recipes with correct params on filter change', () => {
+    it('should navigate to recipes with correct params on filter change', fakeAsync(() => {
         let component = fixture.componentInstance;
         let navigateSpy = spyOn((<any>component).router, 'navigate');
-        component.handleFiltersChange({ title: '', difficulty: '', prepTime: 0, limit: 24 });
-        expect(navigateSpy).toHaveBeenCalledWith(['/recipes', { limit: 24 }]);
-    });
+        const input = element.query(By.css('md-input-container input')).nativeElement;
+        input.value = 'lamb';
+        input.dispatchEvent(new Event('input'));
+        fixture.detectChanges();
+        tick(200);
+        expect(navigateSpy).toHaveBeenCalledWith(['/recipes', { title: 'lamb', limit: 12 }]);
+    }));
 });
