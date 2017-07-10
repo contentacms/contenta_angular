@@ -96,4 +96,11 @@ describe('RecipesAndFiltersComponent', () => {
         const recipes: HTMLElement = element.query(By.css('app-recipes-cmp')).nativeElement;
         expect(recipes).toBeTruthy();
     }));
+
+    it('should navigate to recipes with correct params on filter change', () => {
+        let component = fixture.componentInstance;
+        let navigateSpy = spyOn((<any>component).router, 'navigate');
+        component.handleFiltersChange({ title: '', difficulty: '', prepTime: 0, limit: 24 });
+        expect(navigateSpy).toHaveBeenCalledWith(['/recipes', { limit: 24 }]);
+    });
 });
