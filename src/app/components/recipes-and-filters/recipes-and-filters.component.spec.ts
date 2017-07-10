@@ -14,7 +14,7 @@ import { RecipeComponent } from './../recipe/recipe.component';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/Observable/of';
+import 'rxjs/add/observable/of';
 
 function createResponse(item): Observable<any> {
     return Observable.of(

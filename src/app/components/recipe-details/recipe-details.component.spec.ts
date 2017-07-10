@@ -7,7 +7,7 @@ import { DebugElement } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/Observable/of';
+import 'rxjs/add/observable/of';
 
 import { MdCardModule, MdButtonModule } from '@angular/material';
 import { RecipeDetailsComponent } from './recipe-details.component';
