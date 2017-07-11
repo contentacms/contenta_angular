@@ -1,7 +1,14 @@
-<app-card [title]="recipe.data.attributes.title" [image]="image" [link]="['/recipe', recipe.data.id]"
-  [linkText]="'More'">
+<app-card [image]="image" [linkText]="'More'">
+  <div class="title">
+    <a [routerLink]="['/recipe', recipe.data.id]">{{recipe.data.attributes.title}}</a>
+  </div>
   <div class="subtitle">
-     <div><span> Difficulty : {{recipe.data.attributes.difficulty}}</span></div>
-     <div><md-icon class="subtitle-icon" [color]="'primary'" [svgIcon]="'timer'"></md-icon><span> {{recipe.data.attributes.preparationTime}} min</span></div>
+    <div>
+      <md-chip-list>
+        <md-chip selected="true">{{recipe.data.attributes.difficulty}}</md-chip>
+      </md-chip-list>
+    </div>
+    <div>
+      <md-icon class="subtitle-icon" [color]="'primary'" [svgIcon]="'timer'"></md-icon><span> {{recipe.data.attributes.preparationTime}} min</span></div>
   </div>
 </app-card>

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { DebugElement } from '@angular/core';
@@ -35,9 +35,9 @@ describe('CardComponent', () => {
   });
 
   it('should render title input in the template', () => {
-    component.title = 'Contenta card';
+    component.description = 'Contenta Angular';
     fixture.detectChanges();
-    const elm = element.query(By.css('.card-title')).nativeElement;
-    expect(elm.innerHTML).toBe('Contenta card');
+    const elm = element.query(By.css('.card-description')).nativeElement;
+    expect(elm.innerHTML).toBe('Contenta Angular');
   });
 });
