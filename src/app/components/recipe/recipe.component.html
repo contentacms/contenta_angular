@@ -1,11 +1,11 @@
-<app-card [image]="image" [linkText]="'More'">
+<app-card [image]="image" [linkText]="'Read full recipe'">
   <div class="title">
     <a [routerLink]="['/recipe', recipe.data.id]">{{recipe.data.attributes.title}}</a>
   </div>
   <div class="subtitle">
     <div>
       <md-chip-list>
-        <md-chip selected="true">{{recipe.data.attributes.difficulty}}</md-chip>
+        <md-chip>{{recipe.data.attributes.difficulty}}</md-chip>
       </md-chip-list>
     </div>
     <div>
