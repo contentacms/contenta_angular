@@ -41,4 +41,12 @@ describe('CardComponent', () => {
     const elm: HTMLElement = element.query(By.css('.actions a')).nativeElement;
     expect(elm.innerText).toBe('Read more');
   });
+
+  it('should render link href in the template', () => {
+    component.link = '[/recipes]';
+    component.linkText = 'Read more';
+    fixture.detectChanges();
+    const elm: HTMLElement = element.query(By.css('.actions a')).nativeElement;
+    expect(elm.attributes.getNamedItem('href').value).toBe('/%5B/recipes%5D');
+  });
 });
