@@ -1,3 +1,4 @@
+@import "./../../../styles/settings/breakpoints.scss";
 .card .actions {
     padding-left: 15px;
     padding-bottom: 15px;
@@ -5,5 +6,7 @@
 
 .card-title {
     font-size: 1.1rem;
-    min-height: 3rem;
+    @include breakpoint($narrow-devices) {
+        min-height: 3rem;
+    }
 }
