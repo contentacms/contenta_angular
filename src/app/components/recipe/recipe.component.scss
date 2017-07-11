@@ -1,13 +1,10 @@
-:host {
-  margin: 10px;
+
+.subtitle-icon {
+  height: 20px;
+  width: 20px;
+  vertical-align: bottom;
 }
 
-#title {
-  display: block;
-  font-size: 20px;
-}
-
-.card .actions {
-    padding-left: 15px;
-    padding-bottom: 15px;
+.subtitle > div {
+  margin-top: 10px;
 }

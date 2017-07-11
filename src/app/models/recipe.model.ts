@@ -6,7 +6,8 @@ export interface Recipe {
     attributes: {
       title: string,
       difficulty: string,
-      instructions: string
+      instructions: string,
+      preparationTime: number,
     }
   }
 };
