@@ -3,7 +3,15 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { async, ComponentFixture, TestBed, tick, fakeAsync, inject } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import { MdProgressSpinnerModule, MdInputModule, MdIconModule, MdSelectModule, MdButtonModule, MdCardModule, MdChipsModule } from '@angular/material';
+import {
+    MdProgressSpinnerModule,
+    MdInputModule,
+    MdIconModule,
+    MdSelectModule,
+    MdButtonModule,
+    MdCardModule,
+    MdChipsModule,
+} from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppState } from './../../models/state.model';
