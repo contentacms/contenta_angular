@@ -34,10 +34,11 @@ describe('CardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render title input in the template', () => {
-    component.description = 'Contenta Angular';
+  it('should render link in the template', () => {
+    component.link = '[/recipes]';
+    component.linkText = 'Read more';
     fixture.detectChanges();
-    const elm = element.query(By.css('.card-description')).nativeElement;
-    expect(elm.innerHTML).toBe('Contenta Angular');
+    const elm: HTMLElement = element.query(By.css('.actions a')).nativeElement;
+    expect(elm.innerText).toBe('Read more');
   });
 });

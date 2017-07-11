@@ -7,7 +7,6 @@
     <md-card-subtitle>
       <ng-content select=".subtitle"></ng-content>
     </md-card-subtitle>
-    <p class="card-description" *ngIf="description">{{description}}</p>
   </md-card-content>
   <md-card-actions class="actions">
     <a [color]="'primary'" md-button md-raised-button [routerLink]="link">{{linkText}}</a>
