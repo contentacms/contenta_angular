@@ -34,6 +34,13 @@ describe('CardComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should render image in the template', () => {
+    component.image = 'http://via.placeholder.com/350x150';
+    fixture.detectChanges();
+    const elm: HTMLElement = element.query(By.css('img')).nativeElement;
+    expect(elm.attributes.getNamedItem('src').value).toBe('http://via.placeholder.com/350x150');
+  });
+  
   it('should render link in the template', () => {
     component.link = '[/recipes]';
     component.linkText = 'Read more';
