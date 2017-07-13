@@ -6,7 +6,7 @@ import { JsonApiModelConfig, JsonApiModel, Attribute } from 'angular2-jsonapi';
 export class Recipe extends JsonApiModel {
 
   @Attribute()
-  internalId: number;
+  id: string;
 
   @Attribute()
   createdAt: Date;

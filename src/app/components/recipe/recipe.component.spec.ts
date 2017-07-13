@@ -32,16 +32,13 @@ describe('RecipeComponent', () => {
         component = fixture.componentInstance;
         component.image = 'http://via.placeholder.com/350x150';
         component.recipe = {
-            data: {
-                id: '1',
-                type: 'Salad',
-                attributes: {
-                    title: 'Angular salad',
-                    difficulty: 'easy',
-                    instructions: '',
-                    preparationTime: 10,
-                }
-            }
+            id: '1',
+            type: 'Salad',
+            title: 'Angular salad',
+            difficulty: 'easy',
+            instructions: '',
+            preparationTime: 10,
+            totalTime: 30,
         }
         fixture.detectChanges();
     });
