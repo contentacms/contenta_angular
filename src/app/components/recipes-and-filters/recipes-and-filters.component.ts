@@ -1,4 +1,4 @@
-import {Component, Inject} from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Router, Params } from '@angular/router';
 import { Filters } from '../../models/filters.model';
 import { State } from '../../models/state.model';
