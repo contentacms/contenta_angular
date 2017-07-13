@@ -35,8 +35,8 @@ export class Backend {
 
     filterString += filters.title ? title : '';
     filterString += filters.difficulty ? `filter[difficulty][value]=${filters.difficulty}&` : '';
-    const prepTime = `filter[totalTime][condition][path]=totalTime&filter[totalTime][condition][value]=${filters.prepTime}
-                      &filter[totalTime][condition][operator]=<&`;
+    const prepTime = `filter[preparationTime][condition][path]=preparationTime&filter[preparationTime][condition][value]=${filters.prepTime}
+                      &filter[preparationTime][condition][operator]=<&`;
     filterString += filters.prepTime > 0 ? prepTime : '';
     filterString += filters.limit ? `page[limit]=${filters.limit}` : '';
     return this.http.get(`${this.url}/recipes` + filterString).map(this.normalizeData);

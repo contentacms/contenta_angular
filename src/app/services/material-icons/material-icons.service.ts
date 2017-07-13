@@ -19,6 +19,8 @@ export class MaterialIconsService {
     { name: 'person', icon: 'person' },
     { name: 'code', icon: 'code' },
     { name: 'umami-logo', icon: 'umami-logo' },
+    { name: 'opacity', icon: 'opacity' },
+    { name: 'timer', icon: 'timer' },
   ];
 
   constructor(private iconRegistry: MdIconRegistry, private sanitizer: DomSanitizer) {
