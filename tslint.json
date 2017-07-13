@@ -2,7 +2,11 @@
   "rulesDirectory": [
     "node_modules/codelyzer"
   ],
+  "extends": [
+    "tslint-eslint-rules"
+  ],
   "rules": {
+    "object-curly-spacing": true,
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,

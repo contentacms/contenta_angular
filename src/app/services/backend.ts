@@ -1,8 +1,8 @@
-import {Http} from '@angular/http';
-import {Observable} from 'rxjs/Observable';
-import {Injectable} from '@angular/core';
-import {Recipe} from '../models/recipe.model';
-import {Filters} from '../models/filters.model';
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
+import { Recipe } from '../models/recipe.model';
+import { Filters } from '../models/filters.model';
 import 'rxjs/add/operator/map';
 import { environment } from './../../environments/environment';
 
@@ -39,7 +39,7 @@ export class Backend {
       if (key === 'data') {
         // console.log('number of recipes: ' + response[key].length);
         for (let num = 0; num < response[key].length; num++) {
-          normalized.recipes[response[key][num]['id']] = {'data': response[key][num]};
+          normalized.recipes[response[key][num]['id']] = { 'data': response[key][num] };
           normalized.list.push(response[key][num]['id']);
         }
       }
