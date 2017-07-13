@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { MdCardModule, MdButtonModule } from '@angular/material';
+import { MdCardModule, MdButtonModule, MdChipsModule, MdIconModule } from '@angular/material';
 import { RecipeComponent } from './recipe.component';
 import { CardComponent } from './../card/card.component';
 
@@ -14,9 +14,11 @@ describe('RecipeComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [RecipeComponent, CardComponent],
+            declarations: [RecipeComponent, CardComponent, CardComponent],
             imports: [
                 MdCardModule,
+                MdChipsModule,
+                MdIconModule,
                 MdButtonModule,
                 RouterTestingModule.withRoutes([]),
             ],
@@ -37,6 +39,7 @@ describe('RecipeComponent', () => {
                     title: 'Angular salad',
                     difficulty: 'easy',
                     instructions: '',
+                    preparationTime: 10,
                 }
             }
         }
@@ -53,7 +56,7 @@ describe('RecipeComponent', () => {
     });
 
     it('should render title inside component', () => {
-        const imageElement = element.query(By.css('#title')).nativeElement;
-        expect(imageElement).toBeTruthy();
+        const title = element.query(By.css('.title')).nativeElement;
+        expect(title).toBeTruthy();
     });
 });

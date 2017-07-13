@@ -1,4 +1,5 @@
 @import "./../styles/settings/breakpoints.scss";
+@import "./../styles/settings/layout.scss";
 
 .main-content {
     padding: {
@@ -22,4 +23,16 @@
 
 :host /deep/.mat-sidenav-container[fullscreen] {
     top: 55px;
+}
+
+.main-content {
+    & /deep/ div {
+        @include breakpoint($narrow-devices) {
+                max-width: $page-max-width;
+                margin: {
+                    left: auto;
+                    right: auto;
+                }
+        }
+    }
 }

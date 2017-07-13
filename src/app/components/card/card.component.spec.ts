@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { DebugElement } from '@angular/core';
@@ -13,14 +13,14 @@ describe('CardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardComponent ],
+      declarations: [CardComponent],
       imports: [
         MdCardModule,
         MdButtonModule,
         RouterTestingModule.withRoutes([]),
       ],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -34,10 +34,26 @@ describe('CardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render title input in the template', () => {
-    component.title = 'Contenta card';
+  it('should render image in the template', () => {
+    component.image = 'http://via.placeholder.com/350x150';
     fixture.detectChanges();
-    const elm = element.query(By.css('.card-title')).nativeElement;
-    expect(elm.innerHTML).toBe('Contenta card');
+    const elm: HTMLElement = element.query(By.css('img')).nativeElement;
+    expect(elm.attributes.getNamedItem('src').value).toBe('http://via.placeholder.com/350x150');
+  });
+
+  it('should render link in the template', () => {
+    component.link = '[/recipes]';
+    component.linkText = 'Read more';
+    fixture.detectChanges();
+    const elm: HTMLElement = element.query(By.css('.actions a')).nativeElement;
+    expect(elm.innerText).toBe('Read more');
+  });
+
+  it('should render link href in the template', () => {
+    component.link = '[/recipes]';
+    component.linkText = 'Read more';
+    fixture.detectChanges();
+    const elm: HTMLElement = element.query(By.css('.actions a')).nativeElement;
+    expect(elm.attributes.getNamedItem('href').value).toBe('/%5B/recipes%5D');
   });
 });

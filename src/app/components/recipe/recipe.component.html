@@ -1,10 +1,14 @@
-<md-card class="card">
-  <img *ngIf="image" md-card-image [src]="image">
-  <md-card-content>
-    <span id="title"><a [routerLink]="['/recipe', recipe.data.id]">{{recipe.data.attributes.title}}</a></span>
-    <span id="difficulty">Difficulty: {{recipe.data.attributes.difficulty}}</span>
-  </md-card-content>
-  <md-card-actions class="actions">
-    <a [color]="'accent'" md-button md-raised-button [routerLink]="['/recipe', recipe.data.id]">More</a>
-  </md-card-actions>
-</md-card>
+<app-card [image]="image" [linkText]="'Read full recipe'">
+  <div class="title">
+    <a [routerLink]="['/recipe', recipe.data.id]">{{recipe.data.attributes.title}}</a>
+  </div>
+  <div class="subtitle">
+    <div>
+      <md-chip-list>
+        <md-chip>{{recipe.data.attributes.difficulty}}</md-chip>
+      </md-chip-list>
+    </div>
+    <div>
+      <md-icon class="subtitle-icon" [color]="'primary'" [svgIcon]="'timer'"></md-icon><span> {{recipe.data.attributes.preparationTime}} min</span></div>
+  </div>
+</app-card>

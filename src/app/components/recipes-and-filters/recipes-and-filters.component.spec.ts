@@ -3,7 +3,15 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { async, ComponentFixture, TestBed, tick, fakeAsync, inject } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import { MdProgressSpinnerModule, MdInputModule, MdSelectModule, MdButtonModule, MdCardModule } from '@angular/material';
+import {
+    MdProgressSpinnerModule,
+    MdInputModule,
+    MdIconModule,
+    MdSelectModule,
+    MdButtonModule,
+    MdCardModule,
+    MdChipsModule,
+} from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppState } from './../../models/state.model';
@@ -11,6 +19,7 @@ import { RecipesAndFiltersComponent } from './recipes-and-filters.component';
 import { FiltersComponent } from './../filters/filters.component';
 import { RecipesComponent } from './../recipes/recipes.component';
 import { RecipeComponent } from './../recipe/recipe.component';
+import { CardComponent } from './../card/card.component';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
@@ -54,12 +63,14 @@ describe('RecipesAndFiltersComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [RecipesAndFiltersComponent, FiltersComponent, RecipesComponent, RecipeComponent],
+            declarations: [RecipesAndFiltersComponent, FiltersComponent, RecipesComponent, RecipeComponent, CardComponent],
             imports: [
                 NoopAnimationsModule,
                 ReactiveFormsModule,
                 MdProgressSpinnerModule,
                 MdInputModule,
+                MdChipsModule,
+                MdIconModule,
                 MdSelectModule,
                 MdButtonModule,
                 MdCardModule,

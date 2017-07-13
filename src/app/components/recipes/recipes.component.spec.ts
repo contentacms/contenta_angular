@@ -1,5 +1,4 @@
-import { MdCardModule, MdButtonModule } from '@angular/material';
-import { CardComponent } from './../card/card.component';
+import { MdCardModule, MdButtonModule, MdChipsModule, MdIconModule } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
 import { RecipeComponent } from './../recipe/recipe.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -7,6 +6,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { RecipesComponent } from './recipes.component';
+import { CardComponent } from './../card/card.component';
 
 const recipes = [
     {
@@ -17,6 +17,7 @@ const recipes = [
                 title: 'Angular salad',
                 difficulty: 'easy',
                 instructions: '',
+                preparationTime: 10,
             }
         }
     },
@@ -28,6 +29,7 @@ const recipes = [
                 title: 'Angular chilli',
                 difficulty: 'difficult',
                 instructions: '',
+                preparationTime: 10,
             }
         }
     }
@@ -40,9 +42,11 @@ describe('RecipesComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [RecipesComponent, RecipeComponent],
+            declarations: [RecipesComponent, RecipeComponent, CardComponent],
             imports: [
                 MdCardModule,
+                MdChipsModule,
+                MdIconModule,
                 MdButtonModule,
                 RouterTestingModule.withRoutes([]),
             ],
