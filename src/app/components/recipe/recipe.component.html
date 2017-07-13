@@ -1,10 +1,10 @@
 <md-card class="card">
   <img *ngIf="image" md-card-image [src]="image">
   <md-card-content>
-    <span id="title"><a [routerLink]="['/recipe', recipe.data.id]">{{recipe.data.attributes.title}}</a></span>
-    <span id="difficulty">Difficulty: {{recipe.data.attributes.difficulty}}</span>
+    <span id="title"><a [routerLink]="['/recipe', recipe.id]">{{recipe.title}}</a></span>
+    <span id="difficulty">Difficulty: {{recipe.difficulty}}</span>
   </md-card-content>
   <md-card-actions class="actions">
-    <a [color]="'accent'" md-button md-raised-button [routerLink]="['/recipe', recipe.data.id]">More</a>
+    <a [color]="'accent'" md-button md-raised-button [routerLink]="['/recipe', recipe.id]">More</a>
   </md-card-actions>
 </md-card>

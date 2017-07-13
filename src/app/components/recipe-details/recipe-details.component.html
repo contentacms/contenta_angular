@@ -1,10 +1,10 @@
 <md-card *ngIf="recipe">
   <div>
-    <span id="title">{{recipe.data.attributes.title}}</span>
-    <span id="difficulty">{{recipe.data.attributes.difficulty}}</span>
+    <span id="title">{{recipe.title}}</span>
+    <span id="difficulty">{{recipe.difficulty}}</span>
 
     <div id="description">
-      {{recipe.data.attributes.instructions}}
+      {{recipe.instructions}}
     </div>
 
   </div>

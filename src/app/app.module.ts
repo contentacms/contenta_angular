@@ -21,6 +21,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { JsonApiModule } from 'angular2-jsonapi';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -39,6 +40,7 @@ import { Recipe} from './models/recipe.model';
 import { appReducer } from './store/reducers/reducers';
 import { RecipesEffects } from './store/effects/effects';
 import { initialState } from './models/state.model';
+import {Datastore} from "./services/datastore.service";
 
 @NgModule({
   declarations: [
@@ -57,6 +59,7 @@ import { initialState } from './models/state.model';
     BrowserModule,
     ReactiveFormsModule,
     HttpModule,
+    JsonApiModule,
     NoopAnimationsModule,
     MdInputModule,
     MdCheckboxModule,
@@ -86,6 +89,7 @@ import { initialState } from './models/state.model';
   ],
   providers: [
     Backend,
+    Datastore,
     RecipesEffects,
     MdIconRegistry,
     MaterialIconsService

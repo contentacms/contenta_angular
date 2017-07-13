@@ -1,17 +1,30 @@
 import {Http} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
-import {Injectable} from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import {Recipe} from '../models/recipe.model';
 import {Filters} from '../models/filters.model';
 import 'rxjs/add/operator/map';
 import { environment } from './../../environments/environment';
+import { Datastore } from './datastore.service';
 
 @Injectable()
 export class Backend {
+  public recipes: Recipe[] = [];
+  private datastore;
   private baseUrl = environment.jsonapi;
   private url = this.baseUrl + '/api';
 
-  constructor(private http: Http) {}
+  constructor(private http: Http, @Inject(Datastore) datastore: Datastore) {
+    this.datastore = datastore;
+  }
+
+  loadRecipes(filters: Filters) {
+    let query = this.datastore.query(Recipe, {
+      page: { limit: filters.limit }
+    });
+    query.subscribe(this.normalizeData);
+    return query;
+  }
 
   findRecipes(filters: Filters): Observable<{recipes: {[id: string]: Recipe}, list: number[]}> {
     let filterString = '?';
@@ -30,24 +43,21 @@ export class Backend {
   }
 
   private normalizeData(res) {
-    const response = res.json();
     const normalized = {
       recipes: {},
       list: []
     };
-    for (const key in response) {
-      if (key === 'data') {
-        // console.log('number of recipes: ' + response[key].length);
-        for (let num = 0; num < response[key].length; num++) {
-          normalized.recipes[response[key][num]['id']] = {'data': response[key][num]};
-          normalized.list.push(response[key][num]['id']);
-        }
-      }
+    for (const recipe of res) {
+      normalized.recipes[recipe.id] = recipe;
+      normalized.list.push(recipe.id);
     }
+    console.log(normalized);
     return normalized;
   }
 
   findRecipe(id: string): Observable<Recipe> {
-    return this.http.get(`${this.url}/recipes/${id}`).map(r => r.json());
+    let query = this.datastore.query(Recipe, id, {});
+    query.subscribe(this.normalizeData);
+    return query;
   }
 }

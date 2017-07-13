@@ -20,7 +20,7 @@ import {State} from '../../models/state.model';
 export class RecipesEffects {
   @Effect() navigateToRecipes = this.handleNavigation('recipes', (r: ActivatedRouteSnapshot) => {
     const filters = createFilters(r.params);
-    return this.backend.findRecipes(filters).map(resp => ({type: 'RECIPES_UPDATED', payload: {...resp, filters}}));
+    return this.backend.loadRecipes(filters).map(resp => ({type: 'RECIPES_UPDATED', payload: {...resp, filters}}));
   });
 
   @Effect() navigateToRecipe = this.handleNavigation('recipe/:id', (r: ActivatedRouteSnapshot, state: State) => {
