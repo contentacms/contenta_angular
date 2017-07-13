@@ -19,7 +19,7 @@ export class Backend {
   }
 
   loadRecipes(filters: Filters) {
-    let query = this.datastore.query(Recipe, {
+    const query = this.datastore.query(Recipe, {
       page: { limit: filters.limit }
     });
     query.subscribe(this.normalizeData);
@@ -56,7 +56,7 @@ export class Backend {
   }
 
   findRecipe(id: string): Observable<Recipe> {
-    let query = this.datastore.query(Recipe, id, {});
+    const query = this.datastore.query(Recipe, id, {});
     query.subscribe(this.normalizeData);
     return query;
   }
