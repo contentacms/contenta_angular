@@ -22,8 +22,7 @@ export class Backend {
     const query = this.datastore.query(Recipe, {
       page: { limit: filters.limit }
     });
-    query.subscribe(this.normalizeData);
-    return query;
+    return query.map(this.normalizeData);
   }
 
   findRecipes(filters: Filters): Observable<{recipes: {[id: string]: Recipe}, list: number[]}> {
