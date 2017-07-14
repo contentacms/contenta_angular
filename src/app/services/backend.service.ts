@@ -24,9 +24,9 @@ export class Backend {
       filter: {
         title: {
           condition: {
-            path: "title",
+            path: 'title',
             value: filters.title,
-            operator: "CONTAINS"
+            operator: 'CONTAINS'
           }
         }
       }

@@ -12,7 +12,7 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/catch';
 
-import { Backend } from '../../services/backend';
+import { Backend } from '../../services/backend.service';
 import { Filters } from '../../models/filters.model';
 import { State } from '../../models/state.model';
 
