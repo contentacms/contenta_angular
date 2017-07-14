@@ -1,8 +1,8 @@
-import {RouterAction} from '@ngrx/router-store';
+import { RouterAction } from '@ngrx/router-store';
 
-import {Recipe} from '../../models/recipe.model';
-import {Filters} from '../../models/filters.model';
-import {State} from '../../models/state.model';
+import { Recipe } from '../../models/recipe.model';
+import { Filters } from '../../models/filters.model';
+import { State } from '../../models/state.model';
 
 // actions
 export interface RecipesUpdated {

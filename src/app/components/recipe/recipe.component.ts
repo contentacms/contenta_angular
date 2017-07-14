@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {Recipe} from '../../models/recipe.model';
+import { Component, Input } from '@angular/core';
+import { Recipe } from '../../models/recipe.model';
 
 @Component({
   selector: 'app-recipe-cmp',

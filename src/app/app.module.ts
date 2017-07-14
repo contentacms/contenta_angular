@@ -37,7 +37,7 @@ import { FeaturesComponent } from './components/features/features.component';
 
 import { Backend } from './services/backend';
 import { MaterialIconsService } from './services/material-icons/material-icons.service';
-import { Recipe} from './models/recipe.model';
+import { Recipe } from './models/recipe.model';
 import { appReducer } from './store/reducers/reducers';
 import { RecipesEffects } from './store/effects/effects';
 import { initialState } from './models/state.model';
@@ -81,7 +81,7 @@ import {Datastore} from './services/datastore.service';
       { path: 'recipe/:id', component: RecipeDetailsComponent }
     ]),
 
-    StoreModule.forRoot(<any>{app: appReducer}, {initialState}),
+    StoreModule.forRoot(<any>{ app: appReducer }, { initialState }),
 
     EffectsModule.forRoot([
       RecipesEffects

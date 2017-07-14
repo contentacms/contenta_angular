@@ -1,8 +1,8 @@
-import {Http} from '@angular/http';
-import {Observable} from 'rxjs/Observable';
-import {Inject, Injectable} from '@angular/core';
-import {Recipe} from '../models/recipe.model';
-import {Filters} from '../models/filters.model';
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import { Inject, Injectable } from '@angular/core';
+import { Recipe } from '../models/recipe.model';
+import { Filters } from '../models/filters.model';
 import 'rxjs/add/operator/map';
 import { environment } from './../../environments/environment';
 import { Datastore } from './datastore.service';
