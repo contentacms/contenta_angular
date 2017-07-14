@@ -18,27 +18,20 @@ export class Backend {
     this.datastore = datastore;
   }
 
-  loadRecipes(filters: Filters) {
+  findRecipes(filters: Filters) {
     const query = this.datastore.query(Recipe, {
-      page: { limit: filters.limit }
+      page: { limit: filters.limit },
+      filter: {
+        title: {
+          condition: {
+            path: "title",
+            value: filters.title,
+            operator: "CONTAINS"
+          }
+        }
+      }
     });
     return query.map(this.normalizeData);
-  }
-
-  findRecipes(filters: Filters): Observable<{recipes: {[id: string]: Recipe}, list: number[]}> {
-    let filterString = '?';
-
-    let title = 'filter[title][condition][path]=title&';
-       title += `filter[title][condition][value]=${filters.title}&`;
-       title += 'filter[title][condition][operator]=CONTAINS&';
-
-    filterString += filters.title ? title : '';
-    filterString += filters.difficulty ? `filter[difficulty][value]=${filters.difficulty}&` : '';
-    const prepTime = `filter[preparationTime][condition][path]=preparationTime&filter[preparationTime][condition][value]=${filters.prepTime}
-                      &filter[preparationTime][condition][operator]=<&`;
-    filterString += filters.prepTime > 0 ? prepTime : '';
-    filterString += filters.limit ? `page[limit]=${filters.limit}` : '';
-    return this.http.get(`${this.url}/recipes` + filterString).map(this.normalizeData);
   }
 
   private normalizeData(res) {
@@ -50,7 +43,6 @@ export class Backend {
       normalized.recipes[recipe.id] = recipe;
       normalized.list.push(recipe.id);
     }
-    console.log(normalized);
     return normalized;
   }
 
