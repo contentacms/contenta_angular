@@ -41,7 +41,7 @@ import { Recipe } from './models/recipe.model';
 import { appReducer } from './store/reducers/reducers';
 import { RecipesEffects } from './store/effects/effects';
 import { initialState } from './models/state.model';
-import {Datastore} from './services/datastore.service';
+import { Datastore } from './services/datastore.service';
 
 @NgModule({
   declarations: [
