@@ -1,5 +1,5 @@
 <div class="recipe-list">
     <div class="recipe-item" *ngFor="let t of recipes; let i = index">
-        <app-recipe-cmp [recipe]="t" [image]="getRandomImage(i)"></app-recipe-cmp>
+        <app-recipe-cmp [recipe]="t" [image]="t.image.name"></app-recipe-cmp>
     </div>
 </div>

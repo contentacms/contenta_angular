@@ -29,7 +29,8 @@ export class Backend {
             operator: 'CONTAINS'
           }
         }
-      }
+      },
+      include: 'image'
     });
     return query.map(this.normalizeData);
   }

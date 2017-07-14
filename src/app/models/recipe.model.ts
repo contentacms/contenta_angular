@@ -1,4 +1,5 @@
-import { JsonApiModelConfig, JsonApiModel, Attribute } from 'angular2-jsonapi';
+import { JsonApiModelConfig, JsonApiModel, Attribute, BelongsTo } from 'angular2-jsonapi';
+import { Image } from './image.model';
 
 @JsonApiModelConfig({
   type: 'recipes'
@@ -43,5 +44,8 @@ export class Recipe extends JsonApiModel {
 
   @Attribute()
   totalTime: number;
+
+  @BelongsTo()
+  image: Image;
 
 }
