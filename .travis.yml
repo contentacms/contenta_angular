@@ -1,5 +1,5 @@
 #.travis.yml
-sudo: required
+sudo: false
 dist: trusty
 
 language: node_js
