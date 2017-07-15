@@ -1,3 +1,5 @@
+import { Image } from './../../models/image.model';
+import { Recipe } from './../../models/recipe.model';
 import { MdCardModule, MdButtonModule, MdChipsModule, MdIconModule } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
 import { RecipeComponent } from './../recipe/recipe.component';
@@ -8,26 +10,32 @@ import { DebugElement } from '@angular/core';
 import { RecipesComponent } from './recipes.component';
 import { CardComponent } from './../card/card.component';
 
-const recipes = [
+const RECIPES_DATA = [
     {
         id: '1',
-        type: 'Salad',
-        title: 'Angular salad',
-        difficulty: 'easy',
-        instructions: '',
-        preparationTime: 10,
-        totalTime: 30,
+        attributes: {
+            title: 'Recipe title',
+            image: {
+                id: '1',
+                name: 'image name'
+            }
+        }
     },
     {
-        id: '2',
-        type: 'Chilli',
-        title: 'Angular chilli',
-        difficulty: 'difficult',
-        instructions: '',
-        preparationTime: 10,
-        totalTime: 45,
+        id: '1',
+        attributes: {
+            title: 'Recipe title',
+            image: {
+                id: '1',
+                name: 'image name'
+            }
+        }
     }
 ];
+const recipes = [];
+RECIPES_DATA.forEach((recipe) => {
+    recipes.push(new Recipe(null, recipe));
+});
 
 describe('RecipesComponent', () => {
     let component: RecipesComponent;
