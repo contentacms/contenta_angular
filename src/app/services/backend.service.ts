@@ -19,7 +19,7 @@ export class Backend {
   }
 
   findRecipes(filters: Filters) {
-    let queryParams = {
+    const queryParams = {
       page: { limit: filters.limit },
       include: 'image',
       filter: this.filterParams(filters),
@@ -29,7 +29,7 @@ export class Backend {
   }
 
   private filterParams(filters) {
-    let params = {};
+    const params = {};
     // Title filter
     if (filters.title) {
       params['title'] = {
@@ -51,7 +51,7 @@ export class Backend {
       }
     }
     // Difficulty filter
-    if (filters.difficulty != '')  {
+    if (filters.difficulty !== '')  {
       params['difficulty'] = {
         value: filters.difficulty
       };
