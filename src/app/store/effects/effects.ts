@@ -47,7 +47,7 @@ export class RecipesEffects {
 }
 
 function createFilters(p: Params): Filters {
-  return { title: p['title'] || null, difficulty: p['difficulty'] || '', prepTime: p['prepTime'] || 0, limit: p['limit'] || 12 };
+  return { title: p['title'] || null, difficulty: p['difficulty'] || '', preparationTime: p['preparationTime'] || 0, limit: p['limit'] || 12 };
 }
 
 function firstSegment(r: RouterNavigationAction) {

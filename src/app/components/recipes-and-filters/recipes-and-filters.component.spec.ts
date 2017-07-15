@@ -37,7 +37,7 @@ class MockedStore {
     }
 }
 
-const filters = { title: '', difficulty: '', prepTime: 0, limit: 12 };
+const filters = { title: '', difficulty: '', preparationTime: 0, limit: 12 };
 
 const appState = {
     list: [],

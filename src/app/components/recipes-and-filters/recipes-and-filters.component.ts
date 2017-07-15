@@ -29,7 +29,7 @@ export class RecipesAndFiltersComponent {
     const r: any = {};
     if (filters.title) { r.title = filters.title };
     if (filters.difficulty) { r.difficulty = filters.difficulty };
-    if (filters.prepTime) { r.prepTime = filters.prepTime };
+    if (filters.preparationTime) { r.preparationTime = filters.preparationTime };
     if (filters.limit) { r.limit = filters.limit };
     return r;
   }

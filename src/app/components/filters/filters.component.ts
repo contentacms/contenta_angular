@@ -22,7 +22,7 @@ export class FiltersComponent {
     { value: 48, name: '48' }
   ];
 
-  prepTimeList = [
+  preparationTimeList = [
     { value: 0, name: 'Any' },
     { value: 15, name: '<15 Minutes' },
     { value: 30, name: '<30 Minutes' },
@@ -36,7 +36,7 @@ export class FiltersComponent {
     this.filtersForm.setValue({
       title: v.title,
       difficulty: v.difficulty,
-      prepTime: v.prepTime,
+      preparationTime: v.preparationTime,
       limit: v.limit,
     }, { emitEvent: false });
   }
@@ -44,7 +44,7 @@ export class FiltersComponent {
   filtersForm = new FormGroup({
     title: new FormControl(),
     difficulty: new FormControl(),
-    prepTime: new FormControl(),
+    preparationTime: new FormControl(),
     limit: new FormControl(),
   });
 
@@ -55,9 +55,9 @@ export class FiltersComponent {
   }
 
   private createFiltersObject(
-    { title, difficulty, prepTime, limit }:
-    { title: string, difficulty: string, prepTime: number, limit: number }
+    { title, difficulty, preparationTime, limit }:
+    { title: string, difficulty: string, preparationTime: number, limit: number }
   ): Filters {
-    return { title: title || null, difficulty: difficulty || null, prepTime: prepTime || null, limit: limit || null };
+    return { title: title || null, difficulty: difficulty || null, preparationTime: preparationTime || null, limit: limit || null };
   }
 }

@@ -41,11 +41,11 @@ export class Backend {
       }
     }
     // Prep Time filter
-    if (filters.prepTime) {
+    if (filters.preparationTime) {
       params['preperationTime'] = {
         condition: {
           path: 'preperationTime',
-          value: filters.prepTime,
+          value: filters.preparationTime,
           operator: '<'
         }
       }
