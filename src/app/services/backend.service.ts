@@ -19,20 +19,44 @@ export class Backend {
   }
 
   findRecipes(filters: Filters) {
-    const query = this.datastore.query(Recipe, {
+    let queryParams = {
       page: { limit: filters.limit },
-      filter: {
-        title: {
-          condition: {
-            path: 'title',
-            value: filters.title,
-            operator: 'CONTAINS'
-          }
-        }
-      },
-      include: 'image'
-    });
+      include: 'image',
+      filter: this.filterParams(filters),
+    };
+    const query = this.datastore.query(Recipe, queryParams);
     return query.map(this.normalizeData);
+  }
+
+  private filterParams(filters) {
+    let params = {};
+    // Title filter
+    if (filters.title) {
+      params['title'] = {
+        condition: {
+          path: 'title',
+          value: filters.title,
+          operator: 'CONTAINS'
+        }
+      }
+    }
+    // Prep Time filter
+    if (filters.prepTime) {
+      params['preperationTime'] = {
+        condition: {
+          path: 'preperationTime',
+          value: filters.prepTime,
+          operator: '<'
+        }
+      }
+    }
+    // Difficulty filter
+    if (filters.difficulty != '')  {
+      params['difficulty'] = {
+        value: filters.difficulty
+      };
+    }
+    return params;
   }
 
   private normalizeData(res) {
