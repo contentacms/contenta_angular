@@ -1,3 +1,4 @@
+import { Recipe } from './../../models/recipe.model';
 import { RouterTestingModule } from '@angular/router/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -6,6 +7,14 @@ import { DebugElement } from '@angular/core';
 import { MdCardModule, MdButtonModule, MdChipsModule, MdIconModule } from '@angular/material';
 import { RecipeComponent } from './recipe.component';
 import { CardComponent } from './../card/card.component';
+
+const RECIPE_DATA = {
+    id: '1',
+    attributes: {
+        title: 'Recipe title',
+    }
+};
+const recipe: Recipe = new Recipe(null, RECIPE_DATA);
 
 describe('RecipeComponent', () => {
     let component: RecipeComponent;
@@ -31,15 +40,7 @@ describe('RecipeComponent', () => {
         element = fixture.debugElement;
         component = fixture.componentInstance;
         component.image = 'http://via.placeholder.com/350x150';
-        component.recipe = {
-            id: '1',
-            type: 'Salad',
-            title: 'Angular salad',
-            difficulty: 'easy',
-            instructions: '',
-            preparationTime: 10,
-            totalTime: 30,
-        }
+        component.recipe = recipe;
         fixture.detectChanges();
     });
 
