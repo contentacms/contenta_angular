@@ -27,15 +27,11 @@ class MockedStore {
 const appState = {
     'recipes': {
         '1': {
-            data: {
-                id: '1',
-                type: 'Salad',
-                attributes: {
-                    title: 'Angular salad',
-                    difficulty: 'easy',
-                    instructions: '',
-                }
-            }
+            id: '1',
+            type: 'Salad',
+            title: 'Angular salad',
+            difficulty: 'easy',
+            instructions: '',
         }
     }
 };
@@ -82,7 +78,7 @@ describe('RecipeDetailsComponent', () => {
     }));
 
     it('should render title inside component', () => {
-        const imageElement: HTMLElement = element.query(By.css('#title')).nativeElement;
-        expect(imageElement.innerHTML).toBe('Angular salad');
+        const titleElement: HTMLElement = element.query(By.css('#title')).nativeElement;
+        expect(titleElement.innerHTML).toBe('Angular salad');
     });
 });

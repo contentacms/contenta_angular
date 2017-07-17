@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { Router, Params } from '@angular/router';
 import { Filters } from '../../models/filters.model';
 import { State } from '../../models/state.model';
-import { Recipe } from '../../models/recipe.model';
+import { Recipe } from 'contenta-angular-service';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -29,7 +29,7 @@ export class RecipesAndFiltersComponent {
     const r: any = {};
     if (filters.title) { r.title = filters.title };
     if (filters.difficulty) { r.difficulty = filters.difficulty };
-    if (filters.prepTime) { r.prepTime = filters.prepTime };
+    if (filters.preparationTime) { r.preparationTime = filters.preparationTime };
     if (filters.limit) { r.limit = filters.limit };
     return r;
   }

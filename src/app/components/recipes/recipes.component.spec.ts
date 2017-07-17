@@ -1,3 +1,4 @@
+import { Image, File, Recipe } from 'contenta-angular-service';
 import { MdCardModule, MdButtonModule, MdChipsModule, MdIconModule } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
 import { RecipeComponent } from './../recipe/recipe.component';
@@ -8,32 +9,38 @@ import { DebugElement } from '@angular/core';
 import { RecipesComponent } from './recipes.component';
 import { CardComponent } from './../card/card.component';
 
-const recipes = [
+const RECIPES_DATA = [
     {
-        data: {
-            id: '1',
-            type: 'Salad',
-            attributes: {
-                title: 'Angular salad',
-                difficulty: 'easy',
-                instructions: '',
-                preparationTime: 10,
+        id: '1',
+        attributes: {
+            title: 'Recipe title',
+            image: {
+                id: '1',
+                name: 'image name',
+                imageFile: {
+                    url: 'image/url'
+                }
             }
         }
     },
     {
-        data: {
-            id: '2',
-            type: 'Chilli',
-            attributes: {
-                title: 'Angular chilli',
-                difficulty: 'difficult',
-                instructions: '',
-                preparationTime: 10,
+        id: '1',
+        attributes: {
+            title: 'Recipe title',
+            image: {
+                id: '1',
+                name: 'image name',
+                imageFile: {
+                    url: 'image/url'
+                }
             }
         }
     }
 ];
+const recipes = [];
+RECIPES_DATA.forEach((recipe) => {
+    recipes.push(new Recipe(null, recipe));
+});
 
 describe('RecipesComponent', () => {
     let component: RecipesComponent;

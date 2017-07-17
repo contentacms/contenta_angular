@@ -33,7 +33,7 @@ describe('FiltersComponent', () => {
         component.filtersForm = new FormGroup({
             title: new FormControl(),
             difficulty: new FormControl(),
-            prepTime: new FormControl(),
+            preparationTime: new FormControl(),
             limit: new FormControl(),
         });
     });

@@ -1,3 +1,4 @@
+import { Recipe } from 'contenta-angular-service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -6,6 +7,14 @@ import { DebugElement } from '@angular/core';
 import { MdCardModule, MdButtonModule, MdChipsModule, MdIconModule } from '@angular/material';
 import { RecipeComponent } from './recipe.component';
 import { CardComponent } from './../card/card.component';
+
+const RECIPE_DATA = {
+    id: '1',
+    attributes: {
+        title: 'Recipe title',
+    }
+};
+const recipe: Recipe = new Recipe(null, RECIPE_DATA);
 
 describe('RecipeComponent', () => {
     let component: RecipeComponent;
@@ -30,19 +39,12 @@ describe('RecipeComponent', () => {
         fixture = TestBed.createComponent(RecipeComponent);
         element = fixture.debugElement;
         component = fixture.componentInstance;
-        component.image = 'http://via.placeholder.com/350x150';
-        component.recipe = {
-            data: {
-                id: '1',
-                type: 'Salad',
-                attributes: {
-                    title: 'Angular salad',
-                    difficulty: 'easy',
-                    instructions: '',
-                    preparationTime: 10,
-                }
+        component.image = {
+            imageFile: {
+                url: 'http://via.placeholder.com/350x150'
             }
-        }
+        };
+        component.recipe = recipe;
         fixture.detectChanges();
     });
 
@@ -60,3 +62,4 @@ describe('RecipeComponent', () => {
         expect(title).toBeTruthy();
     });
 });
+

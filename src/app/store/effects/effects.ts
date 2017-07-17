@@ -12,7 +12,7 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/catch';
 
-import { Backend } from '../../services/backend';
+import { Backend } from '../../services/backend.service';
 import { Filters } from '../../models/filters.model';
 import { State } from '../../models/state.model';
 
@@ -25,14 +25,14 @@ export class RecipesEffects {
 
   @Effect() navigateToRecipe = this.handleNavigation('recipe/:id', (r: ActivatedRouteSnapshot, state: State) => {
     const id = r.paramMap.get('id');
-    if (! state.app.recipes[id]) {
+    if (!state.app.recipes[id]) {
       return this.backend.findRecipe(r.paramMap.get('id')).map(resp => ({ type: 'RECIPE_UPDATED', payload: resp }));
     } else {
       return of();
     }
   });
 
-  constructor(private actions: Actions, private store: Store<State>, private backend: Backend) {}
+  constructor(private actions: Actions, private store: Store<State>, private backend: Backend) { }
 
   private handleNavigation(segment: string, callback: (a: ActivatedRouteSnapshot, state: State) => Observable<any>) {
     const nav = this.actions.ofType(ROUTER_NAVIGATION).
@@ -47,7 +47,13 @@ export class RecipesEffects {
 }
 
 function createFilters(p: Params): Filters {
-  return { title: p['title'] || null, difficulty: p['difficulty'] || '', prepTime: p['prepTime'] || 0, limit: p['limit'] || 12 };
+  return {
+    title: p['title']
+    || null, difficulty: p['difficulty']
+    || '', preparationTime: p['preparationTime']
+    || 0, limit: p['limit']
+    || 12
+  };
 }
 
 function firstSegment(r: RouterNavigationAction) {

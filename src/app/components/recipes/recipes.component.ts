@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Recipe } from '../../models/recipe.model';
+import { Recipe } from 'contenta-angular-service';
 
 @Component({
   selector: 'app-recipes-cmp',
@@ -8,11 +8,4 @@ import { Recipe } from '../../models/recipe.model';
 })
 export class RecipesComponent {
   @Input() recipes: Recipe[];
-
-  /**
-   * Return a random image of food.
-   */
-  getRandomImage(index: number): string {
-    return `http://lorempixel.com/400/200/food/${index}`;
-  }
 }

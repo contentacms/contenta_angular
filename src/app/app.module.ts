@@ -33,13 +33,15 @@ import { RecipeComponent } from './components/recipe/recipe.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import { CardComponent } from './components/card/card.component';
 import { FeaturesComponent } from './components/features/features.component';
+import { environment } from './../environments/environment';
 
-import { Backend } from './services/backend';
+import { Backend } from './services/backend.service';
 import { MaterialIconsService } from './services/material-icons/material-icons.service';
-import { Recipe } from './models/recipe.model';
 import { appReducer } from './store/reducers/reducers';
 import { RecipesEffects } from './store/effects/effects';
 import { initialState } from './models/state.model';
+
+import { ContentaServiceModule, ContentaDatastore, BASE_URL } from 'contenta-angular-service';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,7 @@ import { initialState } from './models/state.model';
     BrowserModule,
     ReactiveFormsModule,
     HttpModule,
+    ContentaServiceModule,
     NoopAnimationsModule,
     MdInputModule,
     MdCheckboxModule,
@@ -90,7 +93,12 @@ import { initialState } from './models/state.model';
     Backend,
     RecipesEffects,
     MdIconRegistry,
-    MaterialIconsService
+    MaterialIconsService,
+    ContentaDatastore,
+    {
+      provide: BASE_URL,
+      useValue: environment.jsonapi
+    }
   ],
   bootstrap: [AppComponent]
 })

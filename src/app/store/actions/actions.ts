@@ -1,6 +1,6 @@
 import { RouterAction } from '@ngrx/router-store';
 
-import { Recipe } from '../../models/recipe.model';
+import { Recipe } from 'contenta-angular-service';
 import { Filters } from '../../models/filters.model';
 import { State } from '../../models/state.model';
 
