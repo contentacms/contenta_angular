@@ -1,4 +1,4 @@
-<app-card [image]="image" [link]="['/recipe', recipe.data.id]" [linkText]="'Read full recipe'">
+<app-card [image]="image" [link]="['/recipe', recipe.id]" [linkText]="'Read full recipe'">
   <div class="title">
     <a [routerLink]="['/recipe', recipe.id]">{{recipe.title}}</a>
   </div>
