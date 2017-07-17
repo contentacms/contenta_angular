@@ -4,7 +4,7 @@
             {
                 "name": "contenta",
                 "urls": {
-                    "http://dev-contentacms.pantheonsite.io/api": {
+                    "https://dev-contentacms.pantheonsite.io/api": {
                         "match": "prefix"
                     }
                 },
