@@ -8,7 +8,7 @@ import { MdCardModule, MdButtonModule, MdChipsModule, MdIconModule } from '@angu
 import { RecipeComponent } from './recipe.component';
 import { CardComponent } from './../card/card.component';
 
-/*const RECIPE_DATA = {
+const RECIPE_DATA = {
     id: '1',
     attributes: {
         title: 'Recipe title',
@@ -58,4 +58,4 @@ describe('RecipeComponent', () => {
         expect(title).toBeTruthy();
     });
 });
-*/
+
