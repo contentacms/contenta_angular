@@ -10,7 +10,7 @@ import { DebugElement } from '@angular/core';
 import { RecipesComponent } from './recipes.component';
 import { CardComponent } from './../card/card.component';
 
-const RECIPES_DATA = [
+/*const RECIPES_DATA = [
     {
         id: '1',
         attributes: {
@@ -73,3 +73,4 @@ describe('RecipesComponent', () => {
         expect(elm.length).toBe(2);
     });
 });
+*/
