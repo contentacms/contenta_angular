@@ -17,10 +17,12 @@ addons:
     packages:
       - google-chrome-stable
 
+before_install:
+  - npm install -g npm@latest
+
 before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-  - npm install -g npm@latest
   - npm install -g firebase-tools
   - npm install -g @angular/cli
 
