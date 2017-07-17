@@ -1,5 +1,4 @@
-import { Image } from './../../models/image.model';
-import { Recipe } from './../../models/recipe.model';
+import { Image, File, Recipe } from 'contenta-angular-service';
 import { MdCardModule, MdButtonModule, MdChipsModule, MdIconModule } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
 import { RecipeComponent } from './../recipe/recipe.component';
@@ -17,7 +16,10 @@ const RECIPES_DATA = [
             title: 'Recipe title',
             image: {
                 id: '1',
-                name: 'image name'
+                name: 'image name',
+                imageFile: {
+                    url: 'image/url'
+                }
             }
         }
     },
@@ -27,7 +29,10 @@ const RECIPES_DATA = [
             title: 'Recipe title',
             image: {
                 id: '1',
-                name: 'image name'
+                name: 'image name',
+                imageFile: {
+                    url: 'image/url'
+                }
             }
         }
     }

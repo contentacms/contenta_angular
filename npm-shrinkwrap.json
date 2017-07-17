@@ -1733,6 +1733,14 @@
       "integrity": "sha1-t9ETrueo3Se9IRM8TcJSnfFyHu0=",
       "dev": true
     },
+    "contenta-angular-service": {
+      "version": "0.0.1",
+      "resolved": "https://registry.npmjs.org/contenta-angular-service/-/contenta-angular-service-0.0.1.tgz",
+      "integrity": "sha1-kZP/0ScG3rXPIeM79H4f7gN/lH8=",
+      "requires": {
+        "angular2-jsonapi": "3.5.1"
+      }
+    },
     "convert-source-map": {
       "version": "1.5.0",
       "resolved": "https://registry.npmjs.org/convert-source-map/-/convert-source-map-1.5.0.tgz",

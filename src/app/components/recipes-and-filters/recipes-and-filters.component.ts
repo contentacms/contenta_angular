@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { Router, Params } from '@angular/router';
 import { Filters } from '../../models/filters.model';
 import { State } from '../../models/state.model';
-import { Recipe } from '../../models/recipe.model';
+import { Recipe } from 'contenta-angular-service';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';

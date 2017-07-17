@@ -1,4 +1,4 @@
-import { Recipe } from './../../models/recipe.model';
+import { Recipe } from 'contenta-angular-service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -39,7 +39,11 @@ describe('RecipeComponent', () => {
         fixture = TestBed.createComponent(RecipeComponent);
         element = fixture.debugElement;
         component = fixture.componentInstance;
-        component.image = 'http://via.placeholder.com/350x150';
+        component.image = {
+            imageFile: {
+                url: 'http://via.placeholder.com/350x150'
+            }
+        };
         component.recipe = recipe;
         fixture.detectChanges();
     });

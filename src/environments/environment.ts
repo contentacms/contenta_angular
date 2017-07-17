@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  jsonapi: 'http://dev-contentacms.pantheonsite.io'
+  jsonapi: 'http://dev-contentacms.pantheonsite.io/api/'
 };

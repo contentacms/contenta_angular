@@ -1,11 +1,10 @@
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Inject, Injectable } from '@angular/core';
-import { Recipe } from '../models/recipe.model';
 import { Filters } from '../models/filters.model';
 import 'rxjs/add/operator/map';
 import { environment } from './../../environments/environment';
-import { Datastore } from './datastore.service';
+import { ContentaDatastore, Recipe } from 'contenta-angular-service';
 
 @Injectable()
 export class Backend {
@@ -14,14 +13,14 @@ export class Backend {
   private baseUrl = environment.jsonapi;
   private url = this.baseUrl + '/api';
 
-  constructor(private http: Http, @Inject(Datastore) datastore: Datastore) {
+  constructor(private http: Http, @Inject(ContentaDatastore) datastore: ContentaDatastore) {
     this.datastore = datastore;
   }
 
   findRecipes(filters: Filters) {
     const queryParams = {
       page: { limit: filters.limit },
-      include: 'image',
+      include: 'image,category,tags,image.field_image,image.imageFile',
       filter: this.filterParams(filters),
     };
     const query = this.datastore.query(Recipe, queryParams);

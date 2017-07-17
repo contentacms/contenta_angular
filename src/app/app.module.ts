@@ -22,7 +22,6 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { JsonApiModule } from 'angular2-jsonapi';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -34,14 +33,15 @@ import { RecipeComponent } from './components/recipe/recipe.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import { CardComponent } from './components/card/card.component';
 import { FeaturesComponent } from './components/features/features.component';
+import { environment } from './../environments/environment';
 
 import { Backend } from './services/backend.service';
 import { MaterialIconsService } from './services/material-icons/material-icons.service';
-import { Recipe } from './models/recipe.model';
 import { appReducer } from './store/reducers/reducers';
 import { RecipesEffects } from './store/effects/effects';
 import { initialState } from './models/state.model';
-import { Datastore } from './services/datastore.service';
+
+import { ContentaServiceModule, ContentaDatastore, BASE_URL } from 'contenta-angular-service';
 
 @NgModule({
   declarations: [
@@ -60,7 +60,7 @@ import { Datastore } from './services/datastore.service';
     BrowserModule,
     ReactiveFormsModule,
     HttpModule,
-    JsonApiModule,
+    ContentaServiceModule,
     NoopAnimationsModule,
     MdInputModule,
     MdCheckboxModule,
@@ -91,10 +91,14 @@ import { Datastore } from './services/datastore.service';
   ],
   providers: [
     Backend,
-    Datastore,
     RecipesEffects,
     MdIconRegistry,
-    MaterialIconsService
+    MaterialIconsService,
+    ContentaDatastore,
+    {
+      provide: BASE_URL,
+      useValue: environment.jsonapi
+    }
   ],
   bootstrap: [AppComponent]
 })

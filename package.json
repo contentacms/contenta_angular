@@ -29,6 +29,7 @@
     "@ngrx/router-store": "github:ngrx/router-store-builds",
     "@ngrx/store": "github:ngrx/store-builds#745395b9775965e1bfcddaabece172f9f556d794",
     "angular2-jsonapi": "^3.5.1",
+    "contenta-angular-service": "^0.0.1",
     "core-js": "^2.4.1",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"

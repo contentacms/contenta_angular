@@ -1,4 +1,4 @@
-import { Recipe } from './recipe.model';
+import { Recipe } from 'contenta-angular-service';
 import { Filters } from './filters.model';
 
 export interface AppState { recipes: { [id: string]: Recipe }, list: string[], filters: Filters };
