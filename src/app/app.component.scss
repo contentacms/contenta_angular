@@ -26,7 +26,8 @@
 }
 
 .main-content {
-    & /deep/ div {
+    & /deep/ .outlet,
+    & /deep/ .maxed-width {
         @include breakpoint($narrow-devices) {
                 max-width: $page-max-width;
                 margin: {

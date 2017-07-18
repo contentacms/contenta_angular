@@ -4,4 +4,21 @@
     @include breakpoint($narrow-devices) {
         margin-top: 40px;
     }
+    .mat-sidenav-container[fullscreen] {
+        top: 0;
+    }
+}
+
+.toggle-filters {
+    position: fixed;
+    bottom: 3rem;
+    right: 0.5rem;
+    @include breakpoint($narrow-devices) {
+        right: 2rem;
+    }
+}
+
+.sidenav {
+    min-width: 300px;
+    max-width: 400px;
 }

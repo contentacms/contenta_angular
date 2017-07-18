@@ -4,6 +4,19 @@
     padding-bottom: 15px;
 }
 
+.mat-card .card-image {
+    @include breakpoint($narrow-devices) {
+        max-height: 200px;
+        overflow: hidden;
+        margin: {
+            top: -24px;
+            right: -24px;
+            left: -24px;
+            bottom: 1rem;
+        }
+    }
+}
+
 .card-title {
     font-size: 1.1rem;
     @include breakpoint($narrow-devices) {
