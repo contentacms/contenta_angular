@@ -1,0 +1,49 @@
+{
+    "dynamic": {
+        "group": [
+            {
+                "name": "contenta",
+                "urls": {
+                    "https://dev-contentacms.pantheonsite.io/api": {
+                        "match": "prefix"
+                    }
+                },
+                "cache": {
+                    "optimizeFor":"performance",
+                    "maxAgeMs": 360000000,
+                    "maxEntries": 60,
+                    "strategy": "lru"
+                }
+            },
+            {
+                "name": "images",
+                "urls": {
+                    "https://www.cookipedia.co.uk": {
+                      "match": "prefix"
+                    }
+                },
+                "cache": {
+                    "optimizeFor": "freshness",
+                    "maxAgeMs": 360000000,
+                    "maxEntries": 60,
+                    "strategy": "lru"
+                }
+            }
+        ]
+
+    },
+    "routing": {
+        "index": "/index.html",
+        "routes": {
+            "/": {
+                "prefix": false
+            },
+            "/recipe": {
+                "prefix": true
+            },
+            "/recipes": {
+                "prefix": false
+            }
+        }
+    }
+}
