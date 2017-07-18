@@ -41,9 +41,9 @@ export class Backend {
     }
     // Prep Time filter
     if (filters.preparationTime) {
-      params['preperationTime'] = {
+      params['preparationTime'] = {
         condition: {
-          path: 'preperationTime',
+          path: 'preparationTime',
           value: filters.preparationTime,
           operator: '<'
         }
