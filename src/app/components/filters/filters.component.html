@@ -6,12 +6,12 @@
       <input mdInput formControlName="title" placeholder="Title">
     </md-input-container>
   </div>
-  <div class="filter-element dropdown">
+  <div class="filter-element">
     <md-select placeholder="Difficulty" formControlName="difficulty">
       <md-option *ngFor="let difficulty of difficultyList" [value]="difficulty.value">{{ difficulty.name }}</md-option>
     </md-select>
   </div>
-  <div class="filter-element dropdown">
+  <div class="filter-element">
     <md-select placeholder="Prep Time" formControlName="preparationTime">
       <md-option *ngFor="let time of preparationTimeList" [value]="time.value">{{ time.name }}</md-option>
     </md-select>
