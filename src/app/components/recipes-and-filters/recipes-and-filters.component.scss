@@ -9,6 +9,16 @@
     }
 }
 
+.main-content-recipes {
+    margin: {
+        left: 15px;
+        right: 15px;
+    }
+    @include breakpoint($narrow-devices) {
+        margin: 0;
+    }
+}
+
 .toggle-filters {
     position: fixed;
     bottom: 3rem;
