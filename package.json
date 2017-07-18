@@ -31,6 +31,7 @@
     "angular2-jsonapi": "^3.5.1",
     "contenta-angular-service": "^0.0.1",
     "core-js": "^2.4.1",
+    "firebase-http2-push-config": "^0.0.5",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },
