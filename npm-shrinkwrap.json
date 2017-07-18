@@ -21,13 +21,13 @@
       }
     },
     "@angular/cli": {
-      "version": "1.2.0",
-      "resolved": "https://registry.npmjs.org/@angular/cli/-/cli-1.2.0.tgz",
-      "integrity": "sha1-39i4mD7DfCttf5AurWA5bXtXFZc=",
+      "version": "1.2.1",
+      "resolved": "https://registry.npmjs.org/@angular/cli/-/cli-1.2.1.tgz",
+      "integrity": "sha512-Y3AqcyvWcy9c4KuQAKHzXp2oO51bNY3o/90wfpcwct3Bt4znDMXuoQdgf+VhffcbIgc/b2yyPlOatXLRJ7531A==",
       "dev": true,
       "requires": {
         "@ngtools/json-schema": "1.1.0",
-        "@ngtools/webpack": "1.5.0",
+        "@ngtools/webpack": "1.5.1",
         "autoprefixer": "6.7.7",
         "chalk": "1.1.3",
         "common-tags": "1.4.0",
@@ -86,40 +86,6 @@
         "webpack-dev-server": "2.4.5",
         "webpack-merge": "2.6.1",
         "zone.js": "0.8.12"
-      },
-      "dependencies": {
-        "@ngtools/webpack": {
-          "version": "1.5.0",
-          "resolved": "https://registry.npmjs.org/@ngtools/webpack/-/webpack-1.5.0.tgz",
-          "integrity": "sha1-tr5Y2FfUH4mZdR1rvD0h6EvJd8o=",
-          "dev": true,
-          "requires": {
-            "enhanced-resolve": "3.3.0",
-            "loader-utils": "1.1.0",
-            "magic-string": "0.19.1",
-            "source-map": "0.5.6"
-          }
-        },
-        "fs-extra": {
-          "version": "3.0.1",
-          "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-3.0.1.tgz",
-          "integrity": "sha1-N5TzeMWLNC6n27sjCVEJxLO2IpE=",
-          "dev": true,
-          "requires": {
-            "graceful-fs": "4.1.11",
-            "jsonfile": "3.0.1",
-            "universalify": "0.1.0"
-          }
-        },
-        "jsonfile": {
-          "version": "3.0.1",
-          "resolved": "https://registry.npmjs.org/jsonfile/-/jsonfile-3.0.1.tgz",
-          "integrity": "sha1-pezG9l9T9mLEQVx2daAzHQmS7GY=",
-          "dev": true,
-          "requires": {
-            "graceful-fs": "4.1.11"
-          }
-        }
       }
     },
     "@angular/common": {
@@ -256,6 +222,18 @@
       "resolved": "https://registry.npmjs.org/@ngtools/json-schema/-/json-schema-1.1.0.tgz",
       "integrity": "sha1-w6DFRNYjkqzCgTpCyKDcb1j4aSI=",
       "dev": true
+    },
+    "@ngtools/webpack": {
+      "version": "1.5.1",
+      "resolved": "https://registry.npmjs.org/@ngtools/webpack/-/webpack-1.5.1.tgz",
+      "integrity": "sha512-zGe9JQ3nTpKd2EnYKvC4+zrf/aOLUr2ZhLmSv8bAWMPu59v7fqo3oFs4n3JAbu8albQJmiktGVeY7Y2fFEsS7A==",
+      "dev": true,
+      "requires": {
+        "enhanced-resolve": "3.3.0",
+        "loader-utils": "1.1.0",
+        "magic-string": "0.19.1",
+        "source-map": "0.5.6"
+      }
     },
     "@types/jasmine": {
       "version": "2.5.45",
@@ -2776,6 +2754,11 @@
         "pinkie-promise": "2.0.1"
       }
     },
+    "firebase-http2-push-config": {
+      "version": "0.0.5",
+      "resolved": "https://registry.npmjs.org/firebase-http2-push-config/-/firebase-http2-push-config-0.0.5.tgz",
+      "integrity": "sha512-sYukdSN5lszQ6qDQIcAER28BDGnX5oReTRg+5uLRTdTJdoukzfv5TY/RFWDooxRCT4MG9MQvHDXNd7gNSdGjUw=="
+    },
     "flatten": {
       "version": "1.0.2",
       "resolved": "https://registry.npmjs.org/flatten/-/flatten-1.0.2.tgz",
@@ -2833,6 +2816,28 @@
       "dev": true,
       "requires": {
         "null-check": "1.0.0"
+      }
+    },
+    "fs-extra": {
+      "version": "3.0.1",
+      "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-3.0.1.tgz",
+      "integrity": "sha1-N5TzeMWLNC6n27sjCVEJxLO2IpE=",
+      "dev": true,
+      "requires": {
+        "graceful-fs": "4.1.11",
+        "jsonfile": "3.0.1",
+        "universalify": "0.1.0"
+      },
+      "dependencies": {
+        "jsonfile": {
+          "version": "3.0.1",
+          "resolved": "https://registry.npmjs.org/jsonfile/-/jsonfile-3.0.1.tgz",
+          "integrity": "sha1-pezG9l9T9mLEQVx2daAzHQmS7GY=",
+          "dev": true,
+          "requires": {
+            "graceful-fs": "4.1.11"
+          }
+        }
       }
     },
     "fs.realpath": {

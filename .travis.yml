@@ -28,6 +28,7 @@ script:
   - codecov -f coverage/*.json
   - ng e2e
   - ng build --prod --sm
+  - gfp
 
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN
