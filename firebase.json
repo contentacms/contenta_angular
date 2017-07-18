@@ -6,6 +6,26 @@
         "source": "**",
         "destination": "/index.html"
       }
+    ],
+    "headers": [
+      {
+        "source": "/",
+        "headers": [
+          {
+            "key": "Link",
+            "value": "</3rdpartylicenses.txt>;rel=preload;as=script,</inline.48fb9ad210598c31e206.bundle.js>;rel=preload;as=script,</main.9fab8ce4ed4fadc485da.bundle.js>;rel=preload;as=script,</manifest.json>;rel=preload;as=script,</polyfills.55d3fffb77c0ad86460a.bundle.js>;rel=preload;as=script,</styles.17fe345f9f765e60e3ae.bundle.css>;rel=preload;as=style,</vendor.590df05ba3584a978da5.bundle.js>;rel=preload;as=script,"
+          }
+        ]
+      },
+      {
+        "source": "**/*.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=14400"
+          }
+        ]
+      }
     ]
   }
 }
