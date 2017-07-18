@@ -9,4 +9,5 @@ import { Recipe } from 'contenta-angular-service';
 export class RecipeComponent {
   @Input() recipe: Recipe;
   @Input() image;
+  @Input() imageAlt;
 }
