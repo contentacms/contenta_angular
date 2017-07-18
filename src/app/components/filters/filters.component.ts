@@ -36,8 +36,8 @@ export class FiltersComponent {
     this.filtersForm.setValue({
       title: v.title,
       difficulty: v.difficulty,
-      preparationTime: v.preparationTime,
-      limit: v.limit,
+      preparationTime: parseInt(v.preparationTime, 10),
+      limit: parseInt(v.limit, 10),
     }, { emitEvent: false });
   }
 
