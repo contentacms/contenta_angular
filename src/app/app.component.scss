@@ -29,6 +29,11 @@
     }
 }
 
+// See https://github.com/angular/material2/issues/998
+:host /deep/ .mat-sidenav-content {
+    transform: none !important;
+}
+
 .main-content {
     & /deep/ .outlet,
     & /deep/ .maxed-width {
