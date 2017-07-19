@@ -3,9 +3,10 @@
 
 .main-content {
     padding: {
-        top: 30px;
+        top: 0;
         left:15px;
         right: 15px;
+        bottom: 0;
     }
     @include breakpoint($narrow-devices) {
         padding: {
@@ -23,6 +24,9 @@
 
 :host /deep/.mat-sidenav-container[fullscreen] {
     top: 55px;
+    @include breakpoint($narrow-devices) {
+        top: 64px;
+    }
 }
 
 .main-content {

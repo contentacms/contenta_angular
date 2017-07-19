@@ -1,9 +1,6 @@
 @import "./../../../styles/settings/breakpoints.scss";
 
 .recipes {
-    @include breakpoint($narrow-devices) {
-        margin-top: 40px;
-    }
     .mat-sidenav-container[fullscreen] {
         top: 0;
     }
@@ -13,9 +10,13 @@
     margin: {
         left: 15px;
         right: 15px;
+        bottom: 30px;
     }
     @include breakpoint($narrow-devices) {
-        margin: 0;
+        margin: {
+        left: 0;
+        right: 0;
+    }
     }
 }
 

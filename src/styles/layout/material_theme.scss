@@ -8,7 +8,7 @@
 
 //Here the existing theme is being redfined
 $primary: mat-palette($mat-deep-orange, 700, 600, 500);
-$accent:  mat-palette($mat-blue-grey, 800, 600, 500);
+$accent:  mat-palette($mat-teal, 800, 600, 500);
 
 $theme: mat-light-theme($primary, $accent);
 
