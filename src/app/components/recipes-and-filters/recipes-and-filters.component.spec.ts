@@ -37,7 +37,7 @@ class MockedStore {
     }
 }
 
-const filters = { title: '', difficulty: '', preparationTime: 0, limit: 12 };
+const filters = { title: '', difficulty: '', preparationTime: 0, limit: 6 };
 
 const appState = {
     list: [],
@@ -115,6 +115,6 @@ describe('RecipesAndFiltersComponent', () => {
         input.dispatchEvent(new Event('input'));
         fixture.detectChanges();
         tick(200);
-        expect(navigateSpy).toHaveBeenCalledWith(['/recipes', { title: 'lamb', limit: 12 }]);
+        expect(navigateSpy).toHaveBeenCalledWith(['/recipes', { title: 'lamb', limit: 6 }]);
     }));
 });
