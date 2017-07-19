@@ -20,7 +20,7 @@ import {
 } from '@angular/material';
 import 'hammerjs';
 
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
@@ -63,7 +63,7 @@ import { ContentaServiceModule, ContentaDatastore, BASE_URL } from 'contenta-ang
     ReactiveFormsModule,
     HttpModule,
     ContentaServiceModule,
-    NoopAnimationsModule,
+    BrowserAnimationsModule,
     MdInputModule,
     MdCheckboxModule,
     MdToolbarModule,

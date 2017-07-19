@@ -1,4 +1,5 @@
 @import "./../../../styles/settings/breakpoints.scss";
+@import "./../../../styles/settings/colors.scss";
 
 .recipes {
     .mat-sidenav-container[fullscreen] {
@@ -33,3 +34,17 @@
     min-width: 300px;
     max-width: 400px;
 }
+
+.loading_spinner {
+    text-align: center;
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    left: 35%;
+    top: 35%;
+    md-spinner {
+        margin: auto;
+        max-width: 50px;
+        max-height: 50px;
+    }
+ }
