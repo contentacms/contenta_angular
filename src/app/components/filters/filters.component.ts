@@ -16,9 +16,9 @@ export class FiltersComponent {
   ];
 
   limitList = [
+    { value: 6, name: '6' },
     { value: 12, name: '12' },
     { value: 24, name: '24' },
-    { value: 36, name: '36' },
     { value: 48, name: '48' }
   ];
 

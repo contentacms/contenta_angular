@@ -6,7 +6,7 @@ export interface State { app: AppState }; // this will also contain router state
 
 export const initialState: State = {
   app: {
-    filters: { title: '', difficulty: '', preparationTime: 0, limit: 12 },
+    filters: { title: '', difficulty: '', preparationTime: 0, limit: 6 },
     recipes: {},
     list: []
   }

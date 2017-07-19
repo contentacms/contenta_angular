@@ -48,11 +48,10 @@ export class RecipesEffects {
 
 function createFilters(p: Params): Filters {
   return {
-    title: p['title']
-    || null, difficulty: p['difficulty']
-    || '', preparationTime: p['preparationTime']
-    || 0, limit: p['limit']
-    || 12
+    title: p['title'] || null,
+    difficulty: p['difficulty'] || '',
+    preparationTime: p['preparationTime'] || 0,
+    limit: p['limit'] || 6
   };
 }
 
