@@ -9,11 +9,11 @@
     ],
     "headers": [
       {
-        "source": "**",
+        "source": "/",
         "headers": [
           {
             "key": "Link",
-            "value": "</3rdpartylicenses.txt>;rel=preload;as=script,</inline.b0eb78dde65e670d35d6.bundle.js>;rel=preload;as=script,</inline.b0eb78dde65e670d35d6.bundle.js.map>;rel=preload;as=script,</main.899630a0ece3d6c13096.bundle.js>;rel=preload;as=script,</main.899630a0ece3d6c13096.bundle.js.map>;rel=preload;as=script,</manifest.json>;rel=preload;as=script,</ngsw-manifest.json>;rel=preload;as=script,</polyfills.33e6118983900269730d.bundle.js>;rel=preload;as=script,</polyfills.33e6118983900269730d.bundle.js.map>;rel=preload;as=script,</styles.17fe345f9f765e60e3ae.bundle.css>;rel=preload;as=style,</styles.17fe345f9f765e60e3ae.bundle.css.map>;rel=preload;as=script,</sw-register.c3a9f56ebf829a0880d3.bundle.js>;rel=preload;as=script,</sw-register.c3a9f56ebf829a0880d3.bundle.js.map>;rel=preload;as=script,</vendor.a4522a97bc7175a1821d.bundle.js>;rel=preload;as=script,</vendor.a4522a97bc7175a1821d.bundle.js.map>;rel=preload;as=script,</worker-basic.min.js>;rel=preload;as=script,"
+            "value": "</inline.a8aeb972f2b8cbe581da.bundle.js>;rel=preload;as=script,</main.0e9e77875071b44895b1.bundle.js>;rel=preload;as=script,</manifest.json>;rel=preload;as=script,</polyfills.cdb4a6579ec11a737431.bundle.js>;rel=preload;as=script,</styles.17fe345f9f765e60e3ae.bundle.css>;rel=preload;as=style,</sw-register.c3a9f56ebf829a0880d3.bundle.js>;rel=preload;as=script,</vendor.f9bd21fdb6eb291cec42.bundle.js>;rel=preload;as=script,"
           }
         ]
       },
