@@ -63,11 +63,9 @@ export class RecipesAndFiltersComponent implements OnInit {
   onResize(event) {
     if (event.target.innerWidth < 768) {
       this.navMode = 'over';
-      this.sidenav.close();
     }
     if (event.target.innerWidth > 768) {
       this.navMode = 'side';
-      this.sidenav.open();
     }
   }
 }

@@ -125,17 +125,6 @@ describe('RecipesAndFiltersComponent', () => {
         expect(component.sidenav.opened).toBe(true);
     }));
 
-    it('should call close sidenav on resize to small display', inject([Store], (store: Store<AppState>) => {
-        const sidenavSpy = spyOn(component.sidenav, 'close');
-        component.onResize({
-            target: {
-                innerWidth: 300,
-            }
-        });
-        fixture.detectChanges();
-        expect(sidenavSpy).toHaveBeenCalled();
-    }));
-
     it('should set sidenav mode to over on resize to small display', inject([Store], (store: Store<AppState>) => {
         component.onResize({
             target: {
