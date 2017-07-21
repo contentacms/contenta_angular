@@ -125,6 +125,11 @@ describe('RecipesAndFiltersComponent', () => {
         expect(component.sidenav.opened).toBe(true);
     }));
 
+    it('should start with nav side over', inject([Store], (store: Store<AppState>) => {
+        fixture.detectChanges();
+        expect(component.sidenav.mode).toBe('side');
+    }));
+
     it('should set sidenav mode to over on resize to small display', inject([Store], (store: Store<AppState>) => {
         component.onResize({
             target: {
@@ -133,5 +138,15 @@ describe('RecipesAndFiltersComponent', () => {
         });
         fixture.detectChanges();
         expect(component.sidenav.mode).toBe('over');
+    }));
+
+    it('should set sidenav mode to over on resize to large display', inject([Store], (store: Store<AppState>) => {
+        component.onResize({
+            target: {
+                innerWidth: 1000,
+            }
+        });
+        fixture.detectChanges();
+        expect(component.sidenav.mode).toBe('side');
     }));
 });
