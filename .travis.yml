@@ -28,14 +28,13 @@ script:
   - codecov -f coverage/*.json
   - ng e2e
   - ng build --prod --sm
-  - gfp
 
 before_deploy:
-  - echo "Deploying now"
-  - ls -l
+  - gfp
 
 deploy:
   provider: firebase
+  skip_cleanup: true
   token: $FIREBASE_TOKEN
   on:
     branch: master
