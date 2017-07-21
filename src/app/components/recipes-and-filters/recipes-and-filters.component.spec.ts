@@ -120,14 +120,22 @@ describe('RecipesAndFiltersComponent', () => {
         expect(navigateSpy).toHaveBeenCalledWith(['/recipes', { title: 'lamb', limit: 6 }]);
     }));
 
-    it('should start with opened sidenav', inject([Store], (store: Store<AppState>) => {
+    it('should start with opened / closed sidenav', inject([Store], (store: Store<AppState>) => {
         fixture.detectChanges();
-        expect(component.sidenav.opened).toBe(true);
+        if (window.innerWidth < 768) {
+            expect(component.sidenav.opened).toBe(false);
+        } else {
+            expect(component.sidenav.opened).toBe(true);
+        }
     }));
 
-    it('should start with nav side over', inject([Store], (store: Store<AppState>) => {
+    it('should start with correct sidenav mode', inject([Store], (store: Store<AppState>) => {
         fixture.detectChanges();
-        expect(component.sidenav.mode).toBe('side');
+        if (window.innerWidth < 768) {
+            expect(component.sidenav.mode).toBe('over');
+        } else {
+            expect(component.sidenav.mode).toBe('side');
+        }
     }));
 
     it('should set sidenav mode to over on resize to small display', inject([Store], (store: Store<AppState>) => {
