@@ -30,6 +30,10 @@ script:
   - ng build --prod --sm
   - gfp
 
+before_deploy:
+  - echo "Deploying now"
+  - ls -l
+
 deploy:
   provider: firebase
   token: $FIREBASE_TOKEN
