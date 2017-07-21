@@ -18,7 +18,9 @@ import {
   MdProgressSpinnerModule,
   MdCardModule
 } from '@angular/material';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import 'hammerjs';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
@@ -61,7 +63,7 @@ import { ContentaServiceModule, ContentaDatastore, BASE_URL } from 'contenta-ang
     ReactiveFormsModule,
     HttpModule,
     ContentaServiceModule,
-    NoopAnimationsModule,
+    BrowserAnimationsModule,
     MdInputModule,
     MdCheckboxModule,
     MdToolbarModule,

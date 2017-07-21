@@ -3,9 +3,10 @@
 
 .main-content {
     padding: {
-        top: 30px;
+        top: 0;
         left:15px;
         right: 15px;
+        bottom: 0;
     }
     @include breakpoint($narrow-devices) {
         padding: {
@@ -23,10 +24,19 @@
 
 :host /deep/.mat-sidenav-container[fullscreen] {
     top: 55px;
+    @include breakpoint($narrow-devices) {
+        top: 64px;
+    }
+}
+
+// See https://github.com/angular/material2/issues/998
+:host /deep/ .mat-sidenav-content {
+    transform: none !important;
 }
 
 .main-content {
-    & /deep/ div {
+    & /deep/ .outlet,
+    & /deep/ .maxed-width {
         @include breakpoint($narrow-devices) {
                 max-width: $page-max-width;
                 margin: {

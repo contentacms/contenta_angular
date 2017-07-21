@@ -7,6 +7,7 @@ import {
     MdProgressSpinnerModule,
     MdInputModule,
     MdIconModule,
+    MdSidenavModule,
     MdSelectModule,
     MdButtonModule,
     MdCardModule,
@@ -71,6 +72,7 @@ describe('RecipesAndFiltersComponent', () => {
                 MdInputModule,
                 MdChipsModule,
                 MdIconModule,
+                MdSidenavModule,
                 MdSelectModule,
                 MdButtonModule,
                 MdCardModule,
@@ -116,5 +118,43 @@ describe('RecipesAndFiltersComponent', () => {
         fixture.detectChanges();
         tick(200);
         expect(navigateSpy).toHaveBeenCalledWith(['/recipes', { title: 'lamb', limit: 6 }]);
+    }));
+
+    it('should start with opened / closed sidenav', inject([Store], (store: Store<AppState>) => {
+        fixture.detectChanges();
+        if (window.innerWidth < 768) {
+            expect(component.sidenav.opened).toBe(false);
+        } else {
+            expect(component.sidenav.opened).toBe(true);
+        }
+    }));
+
+    it('should start with correct sidenav mode', inject([Store], (store: Store<AppState>) => {
+        fixture.detectChanges();
+        if (window.innerWidth < 768) {
+            expect(component.sidenav.mode).toBe('over');
+        } else {
+            expect(component.sidenav.mode).toBe('side');
+        }
+    }));
+
+    it('should set sidenav mode to over on resize to small display', inject([Store], (store: Store<AppState>) => {
+        component.onResize({
+            target: {
+                innerWidth: 300,
+            }
+        });
+        fixture.detectChanges();
+        expect(component.sidenav.mode).toBe('over');
+    }));
+
+    it('should set sidenav mode to over on resize to large display', inject([Store], (store: Store<AppState>) => {
+        component.onResize({
+            target: {
+                innerWidth: 1000,
+            }
+        });
+        fixture.detectChanges();
+        expect(component.sidenav.mode).toBe('side');
     }));
 });

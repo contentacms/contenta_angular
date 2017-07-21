@@ -3,7 +3,7 @@ import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import { MdInputModule, MdSelectModule } from '@angular/material';
+import { MdInputModule, MdSelectModule, MdIconModule } from '@angular/material';
 
 import { FiltersComponent } from './filters.component';
 
@@ -18,6 +18,7 @@ describe('FiltersComponent', () => {
             imports: [
                 NoopAnimationsModule,
                 MdInputModule,
+                MdIconModule,
                 MdSelectModule,
                 ReactiveFormsModule,
             ],

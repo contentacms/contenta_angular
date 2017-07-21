@@ -1,17 +1,24 @@
-<div [formGroup]="filtersForm">
-  <md-input-container>
-    <input mdInput formControlName="title" placeholder="Title">
-  </md-input-container>
-
-  <md-select placeholder="Difficulty" formControlName="difficulty">
-    <md-option *ngFor="let difficulty of difficultyList" [value]="difficulty.value">{{ difficulty.name }}</md-option>
-  </md-select>
-
-  <md-select placeholder="Prep Time" formControlName="preparationTime">
-    <md-option *ngFor="let time of preparationTimeList" [value]="time.value">{{ time.name }}</md-option>
-  </md-select>
-
-  <md-select placeholder="Limit" formControlName="limit">
-    <md-option *ngFor="let limit of limitList" [value]="limit.value">{{ limit.name }}</md-option>
-  </md-select>
+<h2 class="filters-title">
+  <md-icon [color]="'primary'" [svgIcon]="'sort'"></md-icon>Filters</h2>
+<div class="filters-form" [formGroup]="filtersForm">
+  <div class="filter-element">
+    <md-input-container>
+      <input mdInput formControlName="title" placeholder="Title">
+    </md-input-container>
+  </div>
+  <div class="filter-element">
+    <md-select placeholder="Difficulty" formControlName="difficulty">
+      <md-option *ngFor="let difficulty of difficultyList" [value]="difficulty.value">{{ difficulty.name }}</md-option>
+    </md-select>
+  </div>
+  <div class="filter-element">
+    <md-select placeholder="Prep Time" formControlName="preparationTime">
+      <md-option *ngFor="let time of preparationTimeList" [value]="time.value">{{ time.name }}</md-option>
+    </md-select>
+  </div>
+  <div class="filter-element">
+    <md-select placeholder="Limit" formControlName="limit">
+      <md-option *ngFor="let limit of limitList" [value]="limit.value">{{ limit.name }}</md-option>
+    </md-select>
+  </div>
 </div>

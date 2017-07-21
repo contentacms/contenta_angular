@@ -5,6 +5,7 @@ import { Filters } from '../../models/filters.model';
 
 @Component({
   selector: 'app-filters-cmp',
+  styleUrls: ['./filters.component.scss'],
   templateUrl: './filters.component.html'
 })
 export class FiltersComponent {
