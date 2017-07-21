@@ -18,7 +18,7 @@ export class RecipesAndFiltersComponent implements OnInit {
   filters: Observable<Filters>;
   recipes: Observable<Recipe[]>;
   @ViewChild('filtersSidenav') sidenav: MdSidenav;
-  navMode = 'side';
+  navMode: string = 'side';
 
   constructor(private router: Router, store: Store<State>) {
     this.filters = store.select('app', 'filters');
