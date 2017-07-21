@@ -1,6 +1,6 @@
 <div class="recipes">
   <md-sidenav-container fullscreen>
-    <md-sidenav #filtersSidenav [align]="'right'" [mode]="'over'" class="sidenav">
+    <md-sidenav #filtersSidenav  [align]="'right'" [mode]="navMode" class="sidenav">
       <app-filters-cmp [filters]="filters|async" (filtersChange)="handleFiltersChange($event)"></app-filters-cmp>
     </md-sidenav>
     <div class="main-content-recipes maxed-width">

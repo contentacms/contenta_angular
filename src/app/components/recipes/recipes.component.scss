@@ -23,6 +23,10 @@
         width: 32%;
         margin-top: 1%;
         margin-bottom: 1%;
-        margin-right: 1%;
+        margin-right: 2%;
+
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
     }
 }
