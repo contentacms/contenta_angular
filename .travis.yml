@@ -30,8 +30,11 @@ script:
   - ng build --prod --sm
   - gfp
 
-after_success:
-  - firebase deploy --token $FIREBASE_TOKEN
+deploy:
+  provider: firebase
+  token: $FIREBASE_TOKEN
+  on:
+    branch: master
 
 notifications:
   email:
