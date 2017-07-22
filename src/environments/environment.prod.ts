@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  jsonapi: 'https://dev-contentacms.pantheonsite.io/api/'
+  jsonapi: 'https://live-contentacms.pantheonsite.io/api/'
 };
