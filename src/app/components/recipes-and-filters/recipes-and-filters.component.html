@@ -6,7 +6,7 @@
     <div class="main-content-recipes maxed-width">
       <h1>List of Recipes</h1>
       <app-recipes-cmp *ngIf="recipes|async; else spinloading" [recipes]="recipes|async"></app-recipes-cmp>
-      <button class="toggle-filters" md-fab (click)="filtersSidenav.toggle()"><md-icon [svgIcon]="'settings_filter'"></md-icon></button>
+      <button aria-label="Toggle Filters" class="toggle-filters" md-fab (click)="filtersSidenav.toggle()"><md-icon [svgIcon]="'settings_filter'"></md-icon></button>
     </div>
   </md-sidenav-container>
 </div>
