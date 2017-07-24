@@ -43,7 +43,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#E64A19",
+  "theme_color": "#00695c",
   "background_color": "#f9f9f9",
   "display": "standalone",
   "start_url": "./?utm_source=web_app_manifest"
