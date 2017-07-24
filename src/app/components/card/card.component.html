@@ -1,5 +1,9 @@
 <md-card class="card">
-  <div class="card-image"><img *ngIf="image" md-card-image [src]="image" [alt]="imageAlt"></div>
+  <div class="card-image">
+    <a [routerLink]="link">
+      <img *ngIf="image" md-card-image [src]="image" [alt]="imageAlt">
+    </a>
+  </div>
   <md-card-content>
     <md-card-title class="card-title">
       <ng-content select=".title"></ng-content>
