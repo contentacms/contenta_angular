@@ -9,6 +9,7 @@ node_js:
 branches:
   only:
     - master
+    - develop
 
 addons:
   apt:
@@ -32,11 +33,18 @@ before_deploy:
   - gfp
 
 deploy:
-  provider: firebase
-  skip_cleanup: true
-  token: $FIREBASE_TOKEN
-  on:
-    branch: master
+  - provider: firebase
+    skip_cleanup: true
+    token: $FIREBASE_TOKEN
+    project: contenta-angular-dev
+    on:
+      branch: develop
+  - provider: firebase
+    skip_cleanup: true
+    token: $FIREBASE_TOKEN_PROD
+    project: contenta-angular
+    on:
+      branch: master
 
 notifications:
   email:
