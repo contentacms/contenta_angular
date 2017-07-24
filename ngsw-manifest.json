@@ -2,9 +2,23 @@
     "dynamic": {
         "group": [
             {
-                "name": "contenta",
+                "name": "contenta-dev",
                 "urls": {
                     "https://dev-contentacms.pantheonsite.io/api": {
+                        "match": "prefix"
+                    }
+                },
+                "cache": {
+                    "optimizeFor":"performance",
+                    "maxAgeMs": 360000000,
+                    "maxEntries": 60,
+                    "strategy": "lru"
+                }
+            },
+            {
+                "name": "contenta-prod",
+                "urls": {
+                    "https://live-contentacms.pantheonsite.io/api": {
                         "match": "prefix"
                     }
                 },
@@ -40,6 +54,9 @@
             },
             "/recipe": {
                 "prefix": true
+            },
+            "/features": {
+                "prefix": false
             },
             "/recipes": {
                 "prefix": false

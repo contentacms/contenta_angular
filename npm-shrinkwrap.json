@@ -1,6 +1,6 @@
 {
   "name": "contenta-angular",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "lockfileVersion": 1,
   "requires": true,
   "dependencies": {
@@ -17,9 +17,9 @@
       }
     },
     "@angular/animations": {
-      "version": "4.3.0",
-      "resolved": "https://registry.npmjs.org/@angular/animations/-/animations-4.3.0.tgz",
-      "integrity": "sha1-VvNLhGSTeSAqw1mSm4LrC5FenHI=",
+      "version": "5.0.0-beta.0",
+      "resolved": "https://registry.npmjs.org/@angular/animations/-/animations-5.0.0-beta.0.tgz",
+      "integrity": "sha1-udr6qg1o3zwxo6nYFOkl2yELvVI=",
       "requires": {
         "tslib": "1.7.1"
       }
@@ -314,41 +314,32 @@
       }
     },
     "@angular/common": {
-      "version": "4.3.0",
-      "resolved": "https://registry.npmjs.org/@angular/common/-/common-4.3.0.tgz",
-      "integrity": "sha1-E6VKaSndUvlymxauRG+tWP4WMFM=",
+      "version": "5.0.0-beta.0",
+      "resolved": "https://registry.npmjs.org/@angular/common/-/common-5.0.0-beta.0.tgz",
+      "integrity": "sha1-/F2WB6lEo9bcTzTwKYnV6Lesmo8=",
       "requires": {
         "tslib": "1.7.1"
       }
     },
     "@angular/compiler": {
-      "version": "4.3.0",
-      "resolved": "https://registry.npmjs.org/@angular/compiler/-/compiler-4.3.0.tgz",
-      "integrity": "sha1-VVA78nofBi9xuUlTk/MxGQOo/EM=",
+      "version": "5.0.0-beta.0",
+      "resolved": "https://registry.npmjs.org/@angular/compiler/-/compiler-5.0.0-beta.0.tgz",
+      "integrity": "sha1-110XpqpC/9yzV1qfQ0dCcEGm8yQ=",
       "requires": {
         "tslib": "1.7.1"
       }
     },
     "@angular/compiler-cli": {
-      "version": "4.3.0",
-      "resolved": "https://registry.npmjs.org/@angular/compiler-cli/-/compiler-cli-4.3.0.tgz",
-      "integrity": "sha1-83WAlzD16IPP4hGumRIQ8csanx4=",
+      "version": "5.0.0-beta.0",
+      "resolved": "https://registry.npmjs.org/@angular/compiler-cli/-/compiler-cli-5.0.0-beta.0.tgz",
+      "integrity": "sha1-lZYH0aqXXIVqFzBXy3bZJ8V/gLI=",
       "dev": true,
       "requires": {
-        "@angular/tsc-wrapped": "4.3.0",
+        "@angular/tsc-wrapped": "5.0.0-beta.0",
         "minimist": "1.2.0",
         "reflect-metadata": "0.1.10"
       },
       "dependencies": {
-        "@angular/tsc-wrapped": {
-          "version": "4.3.0",
-          "resolved": "https://registry.npmjs.org/@angular/tsc-wrapped/-/tsc-wrapped-4.3.0.tgz",
-          "integrity": "sha1-/i5TdrbirRsTnt3iOp27QpnfYmQ=",
-          "dev": true,
-          "requires": {
-            "tsickle": "0.21.6"
-          }
-        },
         "minimist": {
           "version": "1.2.0",
           "resolved": "https://registry.npmjs.org/minimist/-/minimist-1.2.0.tgz",
@@ -358,33 +349,33 @@
       }
     },
     "@angular/core": {
-      "version": "4.3.0",
-      "resolved": "https://registry.npmjs.org/@angular/core/-/core-4.3.0.tgz",
-      "integrity": "sha1-vSJJw94SJKfGU2xKunKNZWUykzQ=",
+      "version": "5.0.0-beta.0",
+      "resolved": "https://registry.npmjs.org/@angular/core/-/core-5.0.0-beta.0.tgz",
+      "integrity": "sha1-qLsEWETQzh6Ucxx/4IpAxv13IOg=",
       "requires": {
         "tslib": "1.7.1"
       }
     },
     "@angular/forms": {
-      "version": "4.3.0",
-      "resolved": "https://registry.npmjs.org/@angular/forms/-/forms-4.3.0.tgz",
-      "integrity": "sha1-fQx6hUc36aMKX9lmX41PVqG5G9g=",
+      "version": "5.0.0-beta.0",
+      "resolved": "https://registry.npmjs.org/@angular/forms/-/forms-5.0.0-beta.0.tgz",
+      "integrity": "sha1-vZD/g3WNby38tUqIyRuuzBQ63/g=",
       "requires": {
         "tslib": "1.7.1"
       }
     },
     "@angular/http": {
-      "version": "4.3.0",
-      "resolved": "https://registry.npmjs.org/@angular/http/-/http-4.3.0.tgz",
-      "integrity": "sha1-37czEKhApq2AUKxR8OVcSYTbCSY=",
+      "version": "5.0.0-beta.0",
+      "resolved": "https://registry.npmjs.org/@angular/http/-/http-5.0.0-beta.0.tgz",
+      "integrity": "sha1-NacSEM1mch24C2LsAKWGRpAGmFI=",
       "requires": {
         "tslib": "1.7.1"
       }
     },
     "@angular/language-service": {
-      "version": "4.3.0",
-      "resolved": "https://registry.npmjs.org/@angular/language-service/-/language-service-4.3.0.tgz",
-      "integrity": "sha1-7OpfKBI3PEyE4hmfyl7Y9ngeoNY=",
+      "version": "5.0.0-beta.0",
+      "resolved": "https://registry.npmjs.org/@angular/language-service/-/language-service-5.0.0-beta.0.tgz",
+      "integrity": "sha1-AzCelUJMDw9eyDk6UYd5Ty5qcA4=",
       "dev": true
     },
     "@angular/material": {
@@ -396,25 +387,25 @@
       }
     },
     "@angular/platform-browser": {
-      "version": "4.3.0",
-      "resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-4.3.0.tgz",
-      "integrity": "sha1-AjiUiRhRhcO+zwY1k0YQDlR5x+E=",
+      "version": "5.0.0-beta.0",
+      "resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-5.0.0-beta.0.tgz",
+      "integrity": "sha1-0SnZZX12iYEexEndM0PswVVCiaE=",
       "requires": {
         "tslib": "1.7.1"
       }
     },
     "@angular/platform-browser-dynamic": {
-      "version": "4.3.0",
-      "resolved": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.3.0.tgz",
-      "integrity": "sha1-VR+xiFGyfujz5LDuJarRC9ezEuM=",
+      "version": "5.0.0-beta.0",
+      "resolved": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-5.0.0-beta.0.tgz",
+      "integrity": "sha1-o7C2N6OKcOuQiNQqSCJF/CdPIDY=",
       "requires": {
         "tslib": "1.7.1"
       }
     },
     "@angular/router": {
-      "version": "4.3.0",
-      "resolved": "https://registry.npmjs.org/@angular/router/-/router-4.3.0.tgz",
-      "integrity": "sha1-cbQo8YXrkWGh3hTcGUkhndzf/a4=",
+      "version": "5.0.0-beta.0",
+      "resolved": "https://registry.npmjs.org/@angular/router/-/router-5.0.0-beta.0.tgz",
+      "integrity": "sha1-8H5klfKnlfalmqEIxvYYYgotpDw=",
       "requires": {
         "tslib": "1.7.1"
       }
@@ -426,6 +417,15 @@
       "requires": {
         "base64-js": "1.2.1",
         "jshashes": "1.0.7"
+      }
+    },
+    "@angular/tsc-wrapped": {
+      "version": "5.0.0-beta.0",
+      "resolved": "https://registry.npmjs.org/@angular/tsc-wrapped/-/tsc-wrapped-5.0.0-beta.0.tgz",
+      "integrity": "sha1-1WP8omk+BRrxXlSsFvMIfxgUKhQ=",
+      "dev": true,
+      "requires": {
+        "tsickle": "0.21.6"
       }
     },
     "@ngrx/core": {
