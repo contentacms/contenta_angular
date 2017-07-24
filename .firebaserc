@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "contenta-angular"
+    "default": "contenta-angular-dev",
+    "prod": "contenta-angular"
   }
 }
