@@ -4,14 +4,6 @@
 :host {
   display: flex;
   flex-direction: column;
-  padding: {
-    left: 15px;
-    right: 15px;
-  }
-  margin: {
-    left: -15px;
-    right: -15px;
-  }
   background: white;
   @include breakpoint($narrow-devices) {
     margin: 10px;
@@ -37,6 +29,12 @@
     left: -15px;
     right: -15px;
   }
+
+  img {
+    max-width: 100%;
+    vertical-align: middle;
+  }
+
   @include breakpoint($narrow-devices) {
     border: none;
     width: 50%;
@@ -44,11 +42,7 @@
     flex-direction: column;
     flex: 1;
   }
-  img {
-    max-width: 100%;
-    vertical-align: middle;
-  }
-  
+
   &:before {
     background: rgba(0,0,0, 0.3);
     content: "";
@@ -81,7 +75,7 @@
     display: block;
   }
   margin: {
-    top: 0rem;
+    top: 0;
     bottom: 1.5rem;
   }
 }
@@ -96,20 +90,19 @@
 .recipe-attributes {
   display: flex;
   flex-wrap: wrap;
-  
   padding: 1rem;
+
   .attribute {
     text-align: center;
     flex: 1 0 50%; 
     margin-bottom: 1.5rem;
-    font-size: 12px;
+    font-size: 0.8rem;
     text-transform: uppercase;
     color: $gray--dark;
-    line-height: 22px;
     md-icon {
       vertical-align: bottom;
       height: 40px;
-      width: auto;
+      width: 40px;
       margin-bottom: 1rem;
       color: $gray;
     }
@@ -137,6 +130,7 @@
     text-align: left;
     margin: 0;
   }
+
   .tag {
     display: inline-block;
     margin: 0.25rem;
@@ -147,11 +141,12 @@
   @include breakpoint($narrow-devices) {
     display: flex;
     flex-wrap: wrap;
+
+    .ingredients,
+    .method {
+      flex: 1 0 50%;
+    }
   }
-  .ingredients,
-  .method {
-    flex: 1 0 50%;
-  } 
 }
 
 .ingredients {
