@@ -17,9 +17,7 @@
       }
     },
     "@angular/animations": {
-      "version": "5.0.0-beta.0",
-      "resolved": "https://registry.npmjs.org/@angular/animations/-/animations-5.0.0-beta.0.tgz",
-      "integrity": "sha1-udr6qg1o3zwxo6nYFOkl2yELvVI=",
+      "version": "github:angular/animations-builds#d2e7c4f73fa96662efd316764458e4eb1bbf35da",
       "requires": {
         "tslib": "1.7.1"
       }
@@ -314,25 +312,19 @@
       }
     },
     "@angular/common": {
-      "version": "5.0.0-beta.0",
-      "resolved": "https://registry.npmjs.org/@angular/common/-/common-5.0.0-beta.0.tgz",
-      "integrity": "sha1-/F2WB6lEo9bcTzTwKYnV6Lesmo8=",
+      "version": "github:angular/common-builds#0061ceda9566a9d47310d6e95743f2bbd13ff354",
       "requires": {
         "tslib": "1.7.1"
       }
     },
     "@angular/compiler": {
-      "version": "5.0.0-beta.0",
-      "resolved": "https://registry.npmjs.org/@angular/compiler/-/compiler-5.0.0-beta.0.tgz",
-      "integrity": "sha1-110XpqpC/9yzV1qfQ0dCcEGm8yQ=",
+      "version": "github:angular/compiler-builds#7b7a82d687c144303c393f0ce26cc14f0b097191",
       "requires": {
         "tslib": "1.7.1"
       }
     },
     "@angular/compiler-cli": {
-      "version": "5.0.0-beta.0",
-      "resolved": "https://registry.npmjs.org/@angular/compiler-cli/-/compiler-cli-5.0.0-beta.0.tgz",
-      "integrity": "sha1-lZYH0aqXXIVqFzBXy3bZJ8V/gLI=",
+      "version": "github:angular/compiler-cli-builds#8921d6261d9673dc95ce2b24636566d1854ae8d4",
       "dev": true,
       "requires": {
         "@angular/tsc-wrapped": "5.0.0-beta.0",
@@ -349,33 +341,25 @@
       }
     },
     "@angular/core": {
-      "version": "5.0.0-beta.0",
-      "resolved": "https://registry.npmjs.org/@angular/core/-/core-5.0.0-beta.0.tgz",
-      "integrity": "sha1-qLsEWETQzh6Ucxx/4IpAxv13IOg=",
+      "version": "github:angular/core-builds#558c4809e256b4fdd871daa1310ee2bce9029370",
       "requires": {
         "tslib": "1.7.1"
       }
     },
     "@angular/forms": {
-      "version": "5.0.0-beta.0",
-      "resolved": "https://registry.npmjs.org/@angular/forms/-/forms-5.0.0-beta.0.tgz",
-      "integrity": "sha1-vZD/g3WNby38tUqIyRuuzBQ63/g=",
+      "version": "github:angular/forms-builds#8d23d5205c98abbc5f6f92397725ea62ee03e5a6",
       "requires": {
         "tslib": "1.7.1"
       }
     },
     "@angular/http": {
-      "version": "5.0.0-beta.0",
-      "resolved": "https://registry.npmjs.org/@angular/http/-/http-5.0.0-beta.0.tgz",
-      "integrity": "sha1-NacSEM1mch24C2LsAKWGRpAGmFI=",
+      "version": "github:angular/http-builds#64e9af0a12c9610a7c65022e4bb2ebd57e6e0709",
       "requires": {
         "tslib": "1.7.1"
       }
     },
     "@angular/language-service": {
-      "version": "5.0.0-beta.0",
-      "resolved": "https://registry.npmjs.org/@angular/language-service/-/language-service-5.0.0-beta.0.tgz",
-      "integrity": "sha1-AzCelUJMDw9eyDk6UYd5Ty5qcA4=",
+      "version": "github:angular/language-service-builds#b059ce5362ef349b602e72c2ff8c15fa01acf1eb",
       "dev": true
     },
     "@angular/material": {
@@ -387,25 +371,19 @@
       }
     },
     "@angular/platform-browser": {
-      "version": "5.0.0-beta.0",
-      "resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-5.0.0-beta.0.tgz",
-      "integrity": "sha1-0SnZZX12iYEexEndM0PswVVCiaE=",
+      "version": "github:angular/platform-browser-builds#51871f8a5aa4e0f250dd01ef7990e10033fa68d2",
       "requires": {
         "tslib": "1.7.1"
       }
     },
     "@angular/platform-browser-dynamic": {
-      "version": "5.0.0-beta.0",
-      "resolved": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-5.0.0-beta.0.tgz",
-      "integrity": "sha1-o7C2N6OKcOuQiNQqSCJF/CdPIDY=",
+      "version": "github:angular/platform-browser-dynamic-builds#f6fbfed619063e6a55745306c3368e82c942ffa3",
       "requires": {
         "tslib": "1.7.1"
       }
     },
     "@angular/router": {
-      "version": "5.0.0-beta.0",
-      "resolved": "https://registry.npmjs.org/@angular/router/-/router-5.0.0-beta.0.tgz",
-      "integrity": "sha1-8H5klfKnlfalmqEIxvYYYgotpDw=",
+      "version": "github:angular/router-builds#3caa373d5454cea37b77d484bffae99c6114c4c6",
       "requires": {
         "tslib": "1.7.1"
       }
