@@ -1,21 +1,31 @@
 <h1 class="title">{{recipe.title}}</h1>
 <div class="recipe-detail" *ngIf="recipe">
   <div *ngIf="recipe.image.imageFile.url" class="recipe-banner-image">
+    <div class="mobile-title-wrapper">
+      <h1 class="mobile-title">{{recipe.title}}</h1>
+      <div class="recipe-separator">
+        <md-icon [svgIcon]="'room_service'" [color]="'accent'"></md-icon>
+      </div>
+    </div>
     <img [src]="recipe.image.imageFile.url" alt="recipe.title" />
   </div>
   <div class="recipe-banner-info">
     <div class="recipe-attributes">
       <div class="attribute">
-        <md-icon [svgIcon]="'timer'" [color]="'accent'"></md-icon><div> Preparation time : {{ recipe.preparationTime }}</div>
+        <md-icon [svgIcon]="'timer'"></md-icon>
+        <div> Preparation time : {{ recipe.preparationTime }}</div>
       </div>
       <div class="attribute">
-        <md-icon [svgIcon]="'room_service'" [color]="'accent'"></md-icon><div> Cooking time : {{ recipe.totalTime }}</div>
+        <md-icon [svgIcon]="'room_service'"></md-icon>
+        <div> Cooking time : {{ recipe.totalTime }}</div>
       </div>
       <div class="attribute">
-        <md-icon [svgIcon]="'people'" [color]="'accent'"></md-icon><div> Serves : {{ recipe.totalTime }}</div>
+        <md-icon [svgIcon]="'people'"></md-icon>
+        <div> Serves : {{ recipe.totalTime }}</div>
       </div>
       <div class="attribute">
-        <md-icon [svgIcon]="'opacity'" [color]="'accent'"></md-icon><div> Difficulty : {{ recipe.difficulty }}</div>
+        <md-icon [svgIcon]="'opacity'"></md-icon>
+        <div> Difficulty : {{ recipe.difficulty }}</div>
       </div>
     </div>
     <div *ngIf="recipe.tags" class="tags">
@@ -30,7 +40,10 @@
   <div class="instructions">
     <div class="ingredients">
       <h3>Ingredients</h3>
-      <md-list><md-list-item *ngFor="let ingredient of recipe.ingredients; let i = index"><md-icon [color]="'accent'" [svgIcon]="'check'"></md-icon>{{ ingredient }}</md-list-item></md-list>
+      <md-list>
+        <md-list-item *ngFor="let ingredient of recipe.ingredients; let i = index">
+          <md-icon [color]="'accent'" [svgIcon]="'check'"></md-icon>{{ ingredient }}</md-list-item>
+      </md-list>
     </div>
     <div></div>
     <div class="method">
