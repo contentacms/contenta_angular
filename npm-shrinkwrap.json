@@ -411,6 +411,17 @@
         "tslib": "1.7.1"
       }
     },
+    "@angular/platform-server": {
+      "version": "5.0.0-beta.0",
+      "resolved": "https://registry.npmjs.org/@angular/platform-server/-/platform-server-5.0.0-beta.0.tgz",
+      "integrity": "sha1-xdHK0V6X2k7uVUz+aPUtqT5i0HA=",
+      "dev": true,
+      "requires": {
+        "parse5": "3.0.2",
+        "tslib": "1.7.1",
+        "xhr2": "0.1.4"
+      }
+    },
     "@angular/router": {
       "version": "5.0.0-beta.2",
       "resolved": "https://registry.npmjs.org/@angular/router/-/router-5.0.0-beta.2.tgz",
@@ -434,10 +445,14 @@
       "integrity": "sha1-iCtGq6+i4ObYh8txobLC+j5tDcY="
     },
     "@ngrx/effects": {
-      "version": "github:ngrx/effects-builds#efc90776c7f7ff68c805f75e7660375fec766c79"
+      "version": "4.0.1",
+      "resolved": "https://registry.npmjs.org/@ngrx/effects/-/effects-4.0.1.tgz",
+      "integrity": "sha1-lAPVZoxwIX61yEunpf/ru89QezQ="
     },
     "@ngrx/router-store": {
-      "version": "github:ngrx/router-store-builds#2cacd95d0a3a54887a7fcd966588a5b59dd80258"
+      "version": "4.0.0",
+      "resolved": "https://registry.npmjs.org/@ngrx/router-store/-/router-store-4.0.0.tgz",
+      "integrity": "sha1-IrUClzlWaYNN8JxGtaFajrVrhx0="
     },
     "@ngrx/store": {
       "version": "4.0.0",
@@ -8393,6 +8408,15 @@
         "error-ex": "1.3.1"
       }
     },
+    "parse5": {
+      "version": "3.0.2",
+      "resolved": "https://registry.npmjs.org/parse5/-/parse5-3.0.2.tgz",
+      "integrity": "sha1-Be/1fw70V3+xRKefi5qWemzERRA=",
+      "dev": true,
+      "requires": {
+        "@types/node": "6.0.84"
+      }
+    },
     "parsejson": {
       "version": "0.0.3",
       "resolved": "https://registry.npmjs.org/parsejson/-/parsejson-0.0.3.tgz",
@@ -11533,6 +11557,12 @@
       "version": "1.0.0",
       "resolved": "https://registry.npmjs.org/wtf-8/-/wtf-8-1.0.0.tgz",
       "integrity": "sha1-OS2LotDxw00e4tYw8V0O+2jhBIo=",
+      "dev": true
+    },
+    "xhr2": {
+      "version": "0.1.4",
+      "resolved": "https://registry.npmjs.org/xhr2/-/xhr2-0.1.4.tgz",
+      "integrity": "sha1-f4dliEdxbbUCYyOBL4GMras4el8=",
       "dev": true
     },
     "xml-char-classes": {

@@ -61,7 +61,9 @@ import { TagCloudComponent } from './components/tag-cloud/tag-cloud.component';
     TagCloudComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({
+      appId: 'contenta-angular'
+    }),
     ReactiveFormsModule,
     HttpModule,
     ContentaServiceModule,
