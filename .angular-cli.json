@@ -33,6 +33,7 @@
     },
     {
       "platform": "server",
+      "name": "universal",
       "root": "src",
       "outDir": "dist-server",
       "assets": [
