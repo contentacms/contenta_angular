@@ -10,6 +10,7 @@ branches:
   only:
     - master
     - develop
+    - feature/contenta-stable-angular-head
 
 addons:
   apt:
@@ -45,6 +46,12 @@ deploy:
     project: contenta-angular
     on:
       branch: master
+  - provider: firebase
+    skip_cleanup: true
+    token: $FIREBASE_TOKEN_HEAD
+    project: contenta-angular-head
+    on:
+      branch: feature/contenta-stable-angular-head
 
 notifications:
   email:
