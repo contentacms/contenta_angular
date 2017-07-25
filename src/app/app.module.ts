@@ -59,7 +59,9 @@ import { ContentaServiceModule, ContentaDatastore, BASE_URL } from 'contenta-ang
     FiltersComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({
+      appId: 'contenta-angular'
+    }),
     ReactiveFormsModule,
     HttpModule,
     ContentaServiceModule,

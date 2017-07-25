@@ -6,7 +6,7 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "dist",
+      "outDir": "dist-client",
       "assets": [
         "assets",
         "favicon.ico",
@@ -24,6 +24,28 @@
         "styles/layout/styles.scss",
         "styles/layout/material_theme.scss"
       ],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    },
+    {
+      "platform": "server",
+      "root": "src",
+      "outDir": "dist-server",
+      "assets": [
+        "assets",
+        "favicon.ico",
+        "manifest.json"
+      ],
+      "index": "index.html",
+      "main": "main.server.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig-server.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
