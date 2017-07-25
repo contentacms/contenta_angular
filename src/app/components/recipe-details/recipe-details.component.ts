@@ -18,6 +18,7 @@ export class RecipeDetailsComponent {
     store.select('app').subscribe(t => {
       const id = route.snapshot.paramMap.get('id');
       this.recipe = t.recipes[id];
+      console.log(this.recipe);
     });
   }
 }
