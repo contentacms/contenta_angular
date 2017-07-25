@@ -2,13 +2,15 @@
 @import "./../../../styles/settings/colors.scss";
 
 :host {
-  margin: 10px;
+  @include breakpoint($narrow-devices) {
+    margin: 10px;
+  }
 }
 
 .recipe-detail {
-  display: flex;
-  flex-direction: row;
   @include breakpoint($narrow-devices) {
+    display: flex;
+    flex-direction: row;
     border: 1px solid $gray--very-light;
     border-radius: 2px;
     overflow: hidden;
@@ -16,14 +18,28 @@
 }
 
 .recipe-banner-image {
+  position: relative;
+  margin: {
+    left: -15px;
+    right: -15px;
+  }
+  border-bottom: 2px solid $gray--very-light;
+  &:before {
+    background: rgba(0,0,0, 0.1);
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
   @include breakpoint($narrow-devices) {
+    border: none;
     width: 50%;
     display: flex;
     flex-direction: column;
     flex: 1;
-    img {
-      max-width: 100%;
-    }
+  }
+  img {
+    max-width: 100%;
   }
 }
 
@@ -40,6 +56,10 @@
 }
 
 .title {
+  display: none;
+  @include breakpoint($narrow-devices) {
+    display: block;
+  }
   margin: {
     top: 0rem;
     bottom: 1.5rem;
@@ -51,17 +71,13 @@
 }
 
 .recipe-attributes {
-  @include breakpoint($narrow-devices) {
-    display: flex;
-    flex-wrap: wrap;
-  }
+  display: flex;
+  flex-wrap: wrap;
   
   padding: 1rem;
   .attribute {
-    @include breakpoint($narrow-devices) {
-      text-align: center;
-      flex: 1 0 50%; 
-    }
+    text-align: center;
+    flex: 1 0 50%; 
     margin-bottom: 1.5rem;
     font-size: 12px;
     text-transform: uppercase;
