@@ -434,13 +434,15 @@
       "integrity": "sha1-iCtGq6+i4ObYh8txobLC+j5tDcY="
     },
     "@ngrx/effects": {
-      "version": "github:ngrx/effects-builds#9fe12a1b78c14991f11e9a002a626a91ddaa134d"
+      "version": "github:ngrx/effects-builds#efc90776c7f7ff68c805f75e7660375fec766c79"
     },
     "@ngrx/router-store": {
-      "version": "github:ngrx/router-store-builds#c041db2277abccc91fd708fb5f09fb7f292550b1"
+      "version": "github:ngrx/router-store-builds#2cacd95d0a3a54887a7fcd966588a5b59dd80258"
     },
     "@ngrx/store": {
-      "version": "github:ngrx/store-builds#745395b9775965e1bfcddaabece172f9f556d794"
+      "version": "4.0.0",
+      "resolved": "https://registry.npmjs.org/@ngrx/store/-/store-4.0.0.tgz",
+      "integrity": "sha1-cU2CBW8OsxUYyoWmilz+z8EsxQs="
     },
     "@ngtools/json-schema": {
       "version": "1.1.0",
