@@ -1,11 +1,51 @@
-<md-card *ngIf="recipe">
-  <div>
-    <span id="title">{{recipe.title}}</span>
-    <span id="difficulty">{{recipe.difficulty}}</span>
-
-    <div id="description">
-      {{recipe.instructions}}
+<h1 class="title">{{recipe.title}}</h1>
+<div class="recipe-detail" *ngIf="recipe">
+  <div *ngIf="recipe.image" class="recipe-banner-image">
+    <div class="mobile-title-wrapper">
+      <h1 class="mobile-title">{{recipe.title}}</h1>
+      <div class="recipe-separator">
+        <md-icon [svgIcon]="'room_service'" [color]="'accent'"></md-icon>
+      </div>
     </div>
-
+    <img [src]="recipe.image.imageFile.url" alt="recipe.title" />
   </div>
-</md-card>
+  <div class="recipe-banner-info">
+    <div class="recipe-attributes">
+      <div class="attribute prep-time">
+        <md-icon [svgIcon]="'timer'"></md-icon>
+        <div> Preparation time : <span>{{ recipe.preparationTime }}</span></div>
+      </div>
+      <div class="attribute total-time">
+        <md-icon [svgIcon]="'room_service'"></md-icon>
+        <div> Cooking time : <span>{{ recipe.totalTime }}</span></div>
+      </div>
+      <div class="attribute serves">
+        <md-icon [svgIcon]="'people'"></md-icon>
+        <div> Serves : <span>todo<</span></div>
+      </div>
+      <div class="attribute difficulty">
+        <md-icon [svgIcon]="'opacity'"></md-icon>
+        <div> Difficulty : <span>{{ recipe.difficulty }}</span></div>
+      </div>
+    </div>
+    <app-tag-cloud [tags]="recipe.tags"></app-tag-cloud>
+  </div>
+</div>
+<div class="recipe-info">
+  <h2>What you'll need and how to make this dish</h2>
+  <div class="instructions">
+    <div class="ingredients">
+      <h3>Ingredients</h3>
+      <md-list>
+        <md-list-item *ngFor="let ingredient of recipe.ingredients; let i = index">
+          <md-icon [color]="'accent'" [svgIcon]="'check'"></md-icon>{{ ingredient }}</md-list-item>
+      </md-list>
+    </div>
+    <div></div>
+    <div class="method">
+      <h3>Method</h3>
+      <div>{{ recipe.instructions }}</div>
+    </div>
+    <div></div>
+  </div>
+</div>

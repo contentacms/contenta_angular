@@ -9,8 +9,9 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
-import { MdCardModule, MdButtonModule } from '@angular/material';
+import { MdCardModule, MdButtonModule, MdIconModule } from '@angular/material';
 import { RecipeDetailsComponent } from './recipe-details.component';
+import { TagCloudComponent } from './../tag-cloud/tag-cloud.component';
 
 function createResponse(item): Observable<any> {
     return Observable.of(
@@ -32,6 +33,8 @@ const appState = {
             title: 'Angular salad',
             difficulty: 'easy',
             instructions: '',
+            preparationTime: '10',
+            totalTime: '20',
         }
     }
 };
@@ -43,10 +46,11 @@ describe('RecipeDetailsComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [RecipeDetailsComponent],
+            declarations: [RecipeDetailsComponent, TagCloudComponent],
             imports: [
                 MdCardModule,
                 MdButtonModule,
+                MdIconModule,
                 RouterTestingModule.withRoutes([]),
             ],
             providers: [
@@ -77,8 +81,23 @@ describe('RecipeDetailsComponent', () => {
         expect(component).toBeTruthy();
     }));
 
-    it('should render title inside component', () => {
-        const titleElement: HTMLElement = element.query(By.css('#title')).nativeElement;
+    it('should render title inside template', () => {
+        const titleElement: HTMLElement = element.query(By.css('.title')).nativeElement;
         expect(titleElement.innerHTML).toBe('Angular salad');
+    });
+
+    it('should render difficulty inside template', () => {
+        const titleElement: HTMLElement = element.query(By.css('.difficulty span')).nativeElement;
+        expect(titleElement.innerHTML).toBe(component.recipe.difficulty);
+    });
+
+    it('should render preparation time inside template', () => {
+        const titleElement: HTMLElement = element.query(By.css('.prep-time span')).nativeElement;
+        expect(titleElement.innerHTML).toBe(component.recipe.preparationTime);
+    });
+
+    it('should render cooking time inside template', () => {
+        const titleElement: HTMLElement = element.query(By.css('.total-time span')).nativeElement;
+        expect(titleElement.innerHTML).toBe(component.recipe.totalTime);
     });
 });

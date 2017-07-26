@@ -44,6 +44,7 @@ import { RecipesEffects } from './store/effects/effects';
 import { initialState } from './models/state.model';
 
 import { ContentaServiceModule, ContentaDatastore, BASE_URL } from 'contenta-angular-service';
+import { TagCloudComponent } from './components/tag-cloud/tag-cloud.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { ContentaServiceModule, ContentaDatastore, BASE_URL } from 'contenta-ang
     RecipesComponent,
     RecipeDetailsComponent,
     RecipeComponent,
-    FiltersComponent
+    FiltersComponent,
+    TagCloudComponent
   ],
   imports: [
     BrowserModule,
