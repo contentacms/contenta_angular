@@ -11,21 +11,21 @@
   </div>
   <div class="recipe-banner-info">
     <div class="recipe-attributes">
-      <div class="attribute">
+      <div class="attribute prep-time">
         <md-icon [svgIcon]="'timer'"></md-icon>
-        <div> Preparation time : {{ recipe.preparationTime }}</div>
+        <div> Preparation time : <span>{{ recipe.preparationTime }}</span></div>
       </div>
-      <div class="attribute">
+      <div class="attribute total-time">
         <md-icon [svgIcon]="'room_service'"></md-icon>
-        <div> Cooking time : {{ recipe.totalTime }}</div>
+        <div> Cooking time : <span>{{ recipe.totalTime }}</span></div>
       </div>
-      <div class="attribute">
+      <div class="attribute serves">
         <md-icon [svgIcon]="'people'"></md-icon>
-        <div> Serves : {{ recipe.totalTime }}</div>
+        <div> Serves : <span>todo<</span>/div>
       </div>
-      <div class="attribute">
+      <div class="attribute difficulty">
         <md-icon [svgIcon]="'opacity'"></md-icon>
-        <div> Difficulty : {{ recipe.difficulty }}</div>
+        <div> Difficulty : <span>{{ recipe.difficulty }}</span></div>
       </div>
     </div>
     <app-tag-cloud [tags]="recipe.tags"></app-tag-cloud>

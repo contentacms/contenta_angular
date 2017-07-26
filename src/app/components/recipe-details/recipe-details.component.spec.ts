@@ -33,6 +33,8 @@ const appState = {
             title: 'Angular salad',
             difficulty: 'easy',
             instructions: '',
+            preparationTime: '10',
+            totalTime: '20',
         }
     }
 };
@@ -79,8 +81,23 @@ describe('RecipeDetailsComponent', () => {
         expect(component).toBeTruthy();
     }));
 
-    it('should render title inside component', () => {
+    it('should render title inside template', () => {
         const titleElement: HTMLElement = element.query(By.css('.title')).nativeElement;
         expect(titleElement.innerHTML).toBe('Angular salad');
+    });
+
+    it('should render difficulty inside template', () => {
+        const titleElement: HTMLElement = element.query(By.css('.difficulty span')).nativeElement;
+        expect(titleElement.innerHTML).toBe(component.recipe.difficulty);
+    });
+
+    it('should render preparation time inside template', () => {
+        const titleElement: HTMLElement = element.query(By.css('.prep-time span')).nativeElement;
+        expect(titleElement.innerHTML).toBe(component.recipe.preparationTime);
+    });
+
+    it('should render cooking time inside template', () => {
+        const titleElement: HTMLElement = element.query(By.css('.total-time span')).nativeElement;
+        expect(titleElement.innerHTML).toBe(component.recipe.totalTime);
     });
 });
