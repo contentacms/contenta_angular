@@ -28,11 +28,7 @@
         <div> Difficulty : {{ recipe.difficulty }}</div>
       </div>
     </div>
-    <div *ngIf="recipe.tags" class="tags">
-      <div *ngFor="let tag of recipe.tags; let i = index" class="tag">
-        <md-chip>{{ tag.name }}</md-chip>
-      </div>
-    </div>
+    <app-tag-cloud [tags]="recipe.tags"></app-tag-cloud>
   </div>
 </div>
 <div class="recipe-info">

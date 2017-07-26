@@ -11,6 +11,7 @@ import 'rxjs/add/observable/of';
 
 import { MdCardModule, MdButtonModule, MdIconModule } from '@angular/material';
 import { RecipeDetailsComponent } from './recipe-details.component';
+import { TagCloudComponent } from './../tag-cloud/tag-cloud.component';
 
 function createResponse(item): Observable<any> {
     return Observable.of(
@@ -43,7 +44,7 @@ describe('RecipeDetailsComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [RecipeDetailsComponent],
+            declarations: [RecipeDetailsComponent, TagCloudComponent],
             imports: [
                 MdCardModule,
                 MdButtonModule,

@@ -113,30 +113,6 @@
   margin-top: 1rem;
 }
 
-.tags {
-  padding: 1rem;
-  text-align: center;
-  margin: {
-    top: 1rem;
-    left: -15px;
-    right: -15px;
-  }
-  border: {
-    top: 1px solid $gray--very-light;
-    bottom: 1px solid $gray--very-light;
-  }
-  @include breakpoint($narrow-devices) {
-    border: none;
-    text-align: left;
-    margin: 0;
-  }
-
-  .tag {
-    display: inline-block;
-    margin: 0.25rem;
-  }
-}
-
 .instructions {
   @include breakpoint($narrow-devices) {
     display: flex;
