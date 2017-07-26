@@ -1,6 +1,11 @@
 @import "./../../../styles/settings/breakpoints.scss";
 @import "./../../../styles/settings/colors.scss";
 
+:host {
+  clear: both;
+  width: 100%;
+}
+
 .tags {
   padding: 1rem;
   text-align: center;
