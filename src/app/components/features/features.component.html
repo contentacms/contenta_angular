@@ -3,19 +3,29 @@
 <h1>Here are some features: </h1>
 <ul>
   <li>
-    <h2>Ahead of Time Template Compiling</h2>
-    <p>Templates are compiled into raw JavaScript for faster execution at runtime.</p>
+    <h2>Angular CLI</h2>
+    <p>We built this application using Angular's CLI, which gives developers a lot of tools to scaffold out new components, run tests, spin up a development environment, and much more.
+      Playing around with the CLI is a great way to introduce yourself to Angular’s power without getting overwhelmed (as with Drupal, there’s a lot to learn!), so integrating it was essential to our goal of lowering barriers.</p>
   </li>
   <li>
-    <h2>Service Worker / Offline Support</h2>
-    <p>This site is offline-ready! Once you browse around a bit, feel free to try this feature by turning off your internet connection and continuing to browse.</p>
+    <h2>Offline Capable</h2>
+    <p>Service workers can do some really neat things, and we are using the Angular service worker to handle much of our configuration automatically. One special detail - our service worker is caching our external API calls and images loaded from a remote server, so the entire site works offline for repeat visits, even the parts we request from elsewhere on the web!</p>
+  </li>
+  <li>
+    <h2>Progressive Web App (PWA)</h2>
+    <p>Aside from the offline capabilities, we have added other PWA behaviors as well. Using a manifest file, we set up basic information about our app like theme colors and icons. This enables a repeat visitor from a mobile device to be prompted to add the site as an installable web app, which will behave like any other app on their phone. Once added, when a visitor opens the app a custom loading dashboard will be presented.</p>
+  </li>
+  <li>
+    <h2>Server Push</h2>
+    <p>Firebase, our demo host, runs on HTTP/2 by default, so we can take advantage of new capabilities like server push. Our app, with the help of a small config library, is ready to begin pushing all essential js and css assets to you as soon as your initial request is made!</p>
   </li>
   <li>
     <h2>Continuous Integration</h2>
-    <p>Test suite, precache, and deployments are automatic as master branch changes.</p>
+    <p>Our code repository is integrated with Travis CI. Each time a pull request is created, we run lint, unit tests, end to end tests, and code coverage reports. Once the PR is merged, it will trigger an automatic deployment to our development Firebase instance. Once changes are merged into master branch, it triggers a final deployment to production.</p>
   </li>
   <li>
-    <h2>Installable Web App</h2>
-    <p>If you visit the site multiple times from a mobile phone (at least 5 minutes apart), you will be prompted to add the web app to your home screen. Icons and a splash page are included.</p>
+    <h2>ngrx 4</h2>
+    <p>Our state management solution follows best practices with the latest ngrx 4 library, based largely on the recent writing on the topic by Victor Savkin. This approach elevates the router as the source of truth for some state, and follows the Redux pattern of using functional reducers to determine a new state from an action. Things like remote API calls are treated as side effects, which are triggered by an optimistic state change. If, however, that API call fails, our state change can be alerted and reversed, keeping everything in perfect sync.</p>
+    <p>That may sound complex, but the end result is a careful and scalable approach to the various types of state information our app needs to accommodate, while also allowing us to do neat things like time travel debugging. It can be seen in action most readily by playing with the filters on our site - change a filter and it changes the URL in the address bar, which then triggers an action, a reducer, and any effects. For the site as it exists today it might be argued that this introduces more complexity than value, but the intent is to showcase something that gives us a solid foundation, and we’ve got big plans for our use of ngrx4 down the road.</p>
   </li>
 </ul>
