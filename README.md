@@ -53,6 +53,10 @@ Our state management solution follows best practices with the latest ngrx 4 libr
 
 That may sound complex, but the end result is a careful and scalable approach to the various kinds of states our app needs to accommodate. It can be seen in action most readily by playing with the filters on our site - change a filter and it changes the URL in the address bar, which then triggers an action, a reducer, and any effects.
 
+**Material design**
+
+The project uses the [Material Design toolkit](https://material.angular.io/) built by the Angular core team. It provides some set of usefull sass mixins and settings as well so that you can quickly change color schemes and create your own Material theme with your own flavour. All the sass compilation is handled directly by the CLI, no setup needed!
+
 ## What's coming next?
 
 We've got a lot more great features coming, keep an eye on our [public roadmap](https://github.com/contentacms/contenta_angular/issues/24).
