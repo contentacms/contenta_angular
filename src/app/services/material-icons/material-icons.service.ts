@@ -22,6 +22,8 @@ export class MaterialIconsService {
     { name: 'opacity', icon: 'opacity' },
     { name: 'timer', icon: 'timer' },
     { name: 'settings_filter', icon: 'settings_filter' },
+    { name: 'people', icon: 'people' },
+    { name: 'check', icon: 'check' },
   ];
 
   constructor(private iconRegistry: MdIconRegistry, private sanitizer: DomSanitizer) {
