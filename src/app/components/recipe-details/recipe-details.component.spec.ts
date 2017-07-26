@@ -9,7 +9,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
-import { MdCardModule, MdButtonModule } from '@angular/material';
+import { MdCardModule, MdButtonModule, MdIconModule } from '@angular/material';
 import { RecipeDetailsComponent } from './recipe-details.component';
 
 function createResponse(item): Observable<any> {
@@ -47,6 +47,7 @@ describe('RecipeDetailsComponent', () => {
             imports: [
                 MdCardModule,
                 MdButtonModule,
+                MdIconModule,
                 RouterTestingModule.withRoutes([]),
             ],
             providers: [
@@ -78,7 +79,7 @@ describe('RecipeDetailsComponent', () => {
     }));
 
     it('should render title inside component', () => {
-        const titleElement: HTMLElement = element.query(By.css('#title')).nativeElement;
+        const titleElement: HTMLElement = element.query(By.css('.title')).nativeElement;
         expect(titleElement.innerHTML).toBe('Angular salad');
     });
 });
