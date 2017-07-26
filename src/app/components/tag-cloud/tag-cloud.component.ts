@@ -8,7 +8,7 @@ import { Tag } from 'contenta-angular-service';
 })
 export class TagCloudComponent implements OnInit {
   @Input() tags: Tag[];
-  
+
   constructor() { }
 
   ngOnInit() {
