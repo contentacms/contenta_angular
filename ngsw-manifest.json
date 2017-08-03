@@ -18,7 +18,7 @@
             {
                 "name": "contenta-prod",
                 "urls": {
-                    "http://cms.contentacms.io/api": {
+                    "https://cms.contentacms.io/api": {
                         "match": "prefix"
                     }
                 },
