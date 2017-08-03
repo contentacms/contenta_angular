@@ -9,7 +9,9 @@ Thanks for checking out Contenta Angular! The site may look like a random recipe
 
 This site is built by consuming data from Drupal's JSON API module into an Angular application. It is currently running the latest and greatest Angular 5.x release!
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1. Install it before you begin, so that you can use it as a development web server:
+
+`npm install -g @angular/cli`
 
 ## Quick start
 
@@ -22,6 +24,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 `ng serve`
 
 Your Contenta Angular build will be at: `http://localhost:4200/`.
+
+## Use a different Drupal data backend
+
+By default, this demo uses an installation of [ContentaCMS](https://github.com/contentacms/contenta_jsonapi) hosted [publicly](http://live-contentacms.pantheonsite.io/). If you would like to change to your own instance, edit the following files:
+
+* `ngsw-manifest.json`
+* `src/environments/environment.prod.js`
+* `src/environments/environment.js`
+
+...replacing the existing endpoint with your own.
 
 ## What's great about Contenta Angular?
 
