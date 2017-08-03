@@ -4,7 +4,7 @@
             {
                 "name": "contenta-dev",
                 "urls": {
-                    "https://dev-contentacms.pantheonsite.io/api": {
+                    "http://cms-dev.contentacms.io/api": {
                         "match": "prefix"
                     }
                 },
@@ -18,7 +18,7 @@
             {
                 "name": "contenta-prod",
                 "urls": {
-                    "https://live-contentacms.pantheonsite.io/api": {
+                    "http://cms.contentacms.io/api": {
                         "match": "prefix"
                     }
                 },
