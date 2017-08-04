@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  jsonapi: 'http://cms-dev.contentacms.io/api/'
+  jsonapi: 'https://cms-dev.contentacms.io/api/'
 };
