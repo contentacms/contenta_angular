@@ -29,7 +29,7 @@ script:
   - ng e2e
 
 before_deploy:
-  - ng build --prod --build-optimizer
+  - ng build --prod
   - gfp
 
 deploy:
