@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MdSidenav } from '@angular/material';
 import { MaterialIconsService } from './services/material-icons/material-icons.service';
 
@@ -10,7 +10,7 @@ import { MaterialIconsService } from './services/material-icons/material-icons.s
 export class AppComponent implements OnInit  {
   title = 'Umami Magazine';
   @ViewChild('sidenav') sidenav: MdSidenav;
-  menu: Object[] = [
+  menu: Array<Object> = [
     { name: 'Home', url: '', icon: 'home' },
     { name: 'Features', url: './features', icon: 'settings' }
   ];

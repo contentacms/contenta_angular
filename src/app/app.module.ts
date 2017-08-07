@@ -4,19 +4,19 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import {
-  MdToolbarModule,
   MdButtonModule,
+  MdCardModule,
   MdCheckboxModule,
-  MdSidenavModule,
-  MdSelectModule,
+  MdChipsModule,
   MdIconModule,
   MdIconRegistry,
-  MdChipsModule,
   MdInputModule,
   MdListModule,
   MdOptionModule,
   MdProgressSpinnerModule,
-  MdCardModule
+  MdSelectModule,
+  MdSidenavModule,
+  MdToolbarModule
 } from '@angular/material';
 import 'hammerjs';
 
@@ -43,7 +43,7 @@ import { appReducer } from './store/reducers/reducers';
 import { RecipesEffects } from './store/effects/effects';
 import { initialState } from './models/state.model';
 
-import { ContentaServiceModule, ContentaDatastore, BASE_URL } from 'contenta-angular-service';
+import { BASE_URL, ContentaDatastore, ContentaServiceModule } from 'contenta-angular-service';
 import { TagCloudComponent } from './components/tag-cloud/tag-cloud.component';
 
 @NgModule({

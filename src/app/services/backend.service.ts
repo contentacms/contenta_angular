@@ -8,10 +8,10 @@ import { ContentaDatastore, Recipe } from 'contenta-angular-service';
 
 @Injectable()
 export class Backend {
-  public recipes: Recipe[] = [];
+  public recipes: Array<Recipe> = [];
   private datastore;
   private baseUrl = environment.jsonapi;
-  private url = this.baseUrl + '/api';
+  private url = ` ${ this.baseUrl }/api`;
 
   constructor(private http: Http, @Inject(ContentaDatastore) datastore: ContentaDatastore) {
     this.datastore = datastore;
@@ -21,13 +21,14 @@ export class Backend {
     const queryParams = {
       page: { limit: filters.limit },
       include: 'image,category,tags,image.field_image,image.imageFile',
-      filter: this.filterParams(filters),
+      filter: this.filterParams(filters)
     };
     const query = this.datastore.query(Recipe, queryParams);
+
     return query.map(this.normalizeData);
   }
 
-  private filterParams(filters) {
+  filterParams(filters) {
     const params = {};
     // Title filter
     if (filters.title) {
@@ -55,10 +56,11 @@ export class Backend {
         value: filters.difficulty
       };
     }
+
     return params;
   }
 
-  private normalizeData(res) {
+  normalizeData(res) {
     const normalized = {
       recipes: {},
       list: []
@@ -67,12 +69,14 @@ export class Backend {
       normalized.recipes[recipe.id] = recipe;
       normalized.list.push(recipe.id);
     }
+
     return normalized;
   }
 
   findRecipe(id: string): Observable<Recipe> {
     const query = this.datastore.query(Recipe, id, {});
     query.subscribe(this.normalizeData);
+
     return query;
   }
 }
