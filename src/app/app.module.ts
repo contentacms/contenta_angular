@@ -85,7 +85,7 @@ import { TagCloudComponent } from './components/tag-cloud/tag-cloud.component';
       { path: 'recipe/:id', component: RecipeDetailsComponent }
     ]),
 
-    StoreModule.forRoot({ app: appReducer } as any, { initialState }),
+    StoreModule.forRoot(<any>{ app: appReducer }, { initialState }),
 
     EffectsModule.forRoot([
       RecipesEffects
