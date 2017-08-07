@@ -33,12 +33,13 @@ export class RecipesAndFiltersComponent implements OnInit {
     this.router.navigate(['/recipes', this.createParams(filters)]);
   }
 
-  private createParams(filters: Filters): Params {
+  createParams(filters: Filters): Params {
     const r: any = {};
     if (filters.title) { r.title = filters.title };
     if (filters.difficulty) { r.difficulty = filters.difficulty };
     if (filters.preparationTime) { r.preparationTime = filters.preparationTime };
     if (filters.limit) { r.limit = filters.limit };
+
     return r;
   }
 

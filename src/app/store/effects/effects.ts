@@ -20,6 +20,7 @@ import { State } from '../../models/state.model';
 export class RecipesEffects {
   @Effect() navigateToRecipes = this.handleNavigation('recipes', (r: ActivatedRouteSnapshot) => {
     const filters = createFilters(r.params);
+
     return this.backend.findRecipes(filters).map(resp => ({ type: 'RECIPES_UPDATED', payload: { ...resp, filters } }));
   });
 
@@ -41,6 +42,7 @@ export class RecipesEffects {
 
     return nav.withLatestFrom(this.store).switchMap(a => callback(a[0], a[1])).catch(e => {
       console.log('Network error', e);
+
       return of();
     });
   }

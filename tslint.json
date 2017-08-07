@@ -7,6 +7,11 @@
     "angular-tslint-rules"
   ],
   "rules": {
+    "no-angle-bracket-type-assertion": false,
+    "no-null-keyword": false,
+    "typedef": [
+      false
+    ],
     "object-curly-spacing": true,
     "arrow-return-shorthand": true,
     "callable-types": true,

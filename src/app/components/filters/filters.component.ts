@@ -55,7 +55,7 @@ export class FiltersComponent {
     });
   }
 
-  private createFiltersObject(
+  createFiltersObject(
     { title, difficulty, preparationTime, limit }:
     { title: string, difficulty: string, preparationTime: number, limit: number }
   ): Filters {
