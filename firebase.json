@@ -3,6 +3,14 @@
     "public": "dist-client",
     "rewrites": [
       {
+        "source": "/helloWorld",
+        "function": "helloWorld"
+      },
+      {
+        "source": "/app",
+        "function": "app"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
