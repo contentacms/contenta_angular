@@ -12,6 +12,9 @@
     "typedef": [
       false
     ],
+    "angular-whitespace": [
+      false
+    ],
     "object-curly-spacing": true,
     "arrow-return-shorthand": true,
     "callable-types": true,
