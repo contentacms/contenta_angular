@@ -4,7 +4,7 @@
             {
                 "name": "contenta-dev",
                 "urls": {
-                    "https://dev-contentacms.pantheonsite.io/api": {
+                    "https://cms-dev.contentacms.io/api": {
                         "match": "prefix"
                     }
                 },
@@ -18,7 +18,7 @@
             {
                 "name": "contenta-prod",
                 "urls": {
-                    "https://live-contentacms.pantheonsite.io/api": {
+                    "https://cms.contentacms.io/api": {
                         "match": "prefix"
                     }
                 },
@@ -37,9 +37,9 @@
                     }
                 },
                 "cache": {
-                    "optimizeFor": "freshness",
+                    "optimizeFor": "performance",
                     "maxAgeMs": 360000000,
-                    "maxEntries": 60,
+                    "maxEntries": 100,
                     "strategy": "lru"
                 }
             }
