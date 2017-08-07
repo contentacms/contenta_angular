@@ -3,9 +3,18 @@
     "node_modules/codelyzer"
   ],
   "extends": [
-    "tslint-eslint-rules"
+    "tslint-eslint-rules",
+    "angular-tslint-rules"
   ],
   "rules": {
+    "no-angle-bracket-type-assertion": false,
+    "no-null-keyword": false,
+    "typedef": [
+      false
+    ],
+    "angular-whitespace": [
+      false
+    ],
     "object-curly-spacing": true,
     "arrow-return-shorthand": true,
     "callable-types": true,

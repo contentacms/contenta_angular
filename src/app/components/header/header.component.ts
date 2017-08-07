@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, Input, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +7,7 @@ import { Component, OnInit, Output, Input, EventEmitter, ChangeDetectionStrategy
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Input() menu: Object[];
+  @Input() menu: Array<Object>;
   @Input() title: string;
   @Output() toggleSidebar = new EventEmitter();
   sidebarOpened = false;

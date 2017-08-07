@@ -1,6 +1,6 @@
 import { ROUTER_NAVIGATION, RouterNavigationAction } from '@ngrx/router-store';
 import { Actions, Effect } from '@ngrx/effects';
-import { Params, ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, Params } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs/observable/of';
@@ -20,6 +20,7 @@ import { State } from '../../models/state.model';
 export class RecipesEffects {
   @Effect() navigateToRecipes = this.handleNavigation('recipes', (r: ActivatedRouteSnapshot) => {
     const filters = createFilters(r.params);
+
     return this.backend.findRecipes(filters).map(resp => ({ type: 'RECIPES_UPDATED', payload: { ...resp, filters } }));
   });
 
@@ -41,6 +42,7 @@ export class RecipesEffects {
 
     return nav.withLatestFrom(this.store).switchMap(a => callback(a[0], a[1])).catch(e => {
       console.log('Network error', e);
+
       return of();
     });
   }

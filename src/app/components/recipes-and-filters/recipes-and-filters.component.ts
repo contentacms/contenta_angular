@@ -1,7 +1,7 @@
 import { MdSidenav } from '@angular/material';
-import { Component, Inject, ViewChild, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, OnInit, ViewChild } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { Router, Params } from '@angular/router';
+import { Params, Router } from '@angular/router';
 import { Filters } from '../../models/filters.model';
 import { State } from '../../models/state.model';
 import { Recipe } from 'contenta-angular-service';
@@ -16,7 +16,7 @@ import 'rxjs/add/operator/map';
 })
 export class RecipesAndFiltersComponent implements OnInit {
   filters: Observable<Filters>;
-  recipes: Observable<Recipe[]>;
+  recipes: Observable<Array<Recipe>>;
   @ViewChild('filtersSidenav') sidenav: MdSidenav;
   navMode = 'side';
 
@@ -33,12 +33,13 @@ export class RecipesAndFiltersComponent implements OnInit {
     this.router.navigate(['/recipes', this.createParams(filters)]);
   }
 
-  private createParams(filters: Filters): Params {
+  createParams(filters: Filters): Params {
     const r: any = {};
     if (filters.title) { r.title = filters.title };
     if (filters.difficulty) { r.difficulty = filters.difficulty };
     if (filters.preparationTime) { r.preparationTime = filters.preparationTime };
     if (filters.limit) { r.limit = filters.limit };
+
     return r;
   }
 

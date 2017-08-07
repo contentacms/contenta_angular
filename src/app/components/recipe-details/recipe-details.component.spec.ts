@@ -1,7 +1,7 @@
 import { AppState } from './../../models/state.model';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
-import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
+import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
@@ -9,7 +9,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
-import { MdCardModule, MdButtonModule, MdIconModule } from '@angular/material';
+import { MdButtonModule, MdCardModule, MdIconModule } from '@angular/material';
 import { RecipeDetailsComponent } from './recipe-details.component';
 import { TagCloudComponent } from './../tag-cloud/tag-cloud.component';
 
@@ -26,15 +26,15 @@ class MockedStore {
 }
 
 const appState = {
-    'recipes': {
-        '1': {
+    recipes: {
+        1: {
             id: '1',
             type: 'Salad',
             title: 'Angular salad',
             difficulty: 'easy',
             instructions: '',
             preparationTime: '10',
-            totalTime: '20',
+            totalTime: '20'
         }
     }
 };
@@ -51,19 +51,19 @@ describe('RecipeDetailsComponent', () => {
                 MdCardModule,
                 MdButtonModule,
                 MdIconModule,
-                RouterTestingModule.withRoutes([]),
+                RouterTestingModule.withRoutes([])
             ],
             providers: [
                 {
                     provide: ActivatedRoute, useValue: {
                         snapshot: {
                             paramMap: {
-                                get: (name: string) => '1',
+                                get: (name: string) => '1'
                             }
-                        },
+                        }
                     }
                 },
-                { provide: Store, useClass: MockedStore },
+                { provide: Store, useClass: MockedStore }
             ]
         })
             .compileComponents();

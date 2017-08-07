@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { MdSidenav, MdIconRegistry } from '@angular/material';
+import { MdIconRegistry, MdSidenav } from '@angular/material';
 
 interface IconMapItem {
   name: string,
@@ -9,7 +9,7 @@ interface IconMapItem {
 
 @Injectable()
 export class MaterialIconsService {
-  icons: IconMapItem[] = [
+  icons: Array<IconMapItem> = [
     { name: 'sort', icon: 'sort' },
     { name: 'logo', icon: 'contenta-logo' },
     { name: 'home', icon: 'home' },
@@ -23,7 +23,7 @@ export class MaterialIconsService {
     { name: 'timer', icon: 'timer' },
     { name: 'settings_filter', icon: 'settings_filter' },
     { name: 'people', icon: 'people' },
-    { name: 'check', icon: 'check' },
+    { name: 'check', icon: 'check' }
   ];
 
   constructor(private iconRegistry: MdIconRegistry, private sanitizer: DomSanitizer) {
@@ -34,7 +34,7 @@ export class MaterialIconsService {
    * Register SVG icons from material design.
    */
   registerIcons() {
-    this.icons.forEach((icon) => {
+    this.icons.forEach(icon => {
       this.iconRegistry.addSvgIcon(
         icon.name,
         this.sanitizer.bypassSecurityTrustResourceUrl(`assets/${icon.icon}.svg`));

@@ -7,7 +7,7 @@ import { State } from '../../models/state.model';
 // actions
 export interface RecipesUpdated {
   type: 'RECIPES_UPDATED',
-  payload: { recipes: { [id: string]: Recipe }, list: string[] },
+  payload: { recipes: { [id: string]: Recipe }, list: Array<string> },
   filters: Filters
 };
 export interface RecipeUpdated { type: 'RECIPE_UPDATED', payload: Recipe };

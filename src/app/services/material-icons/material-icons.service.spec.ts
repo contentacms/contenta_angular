@@ -1,6 +1,6 @@
 import { HttpModule } from '@angular/http';
 import { MdIconRegistry } from '@angular/material';
-import { TestBed, inject } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 
 import { MaterialIconsService } from './material-icons.service';
 
@@ -19,7 +19,7 @@ describe('MaterialIconsService', () => {
   it('should have all icons in registry',
     inject([MaterialIconsService, MdIconRegistry],
       (service: MaterialIconsService, registry: MdIconRegistry) => {
-        service.icons.forEach((icon) => {
+        service.icons.forEach(icon => {
           expect(registry.getNamedSvgIcon(icon.name)).toBeTruthy();
         });
       }));
