@@ -83,7 +83,8 @@ import { TagCloudComponent } from './components/tag-cloud/tag-cloud.component';
       { path: '',  pathMatch: 'full', redirectTo: 'recipes' },
       { path: 'features', component: FeaturesComponent },
       { path: 'recipes',  pathMatch: 'full', component: RecipesAndFiltersComponent },
-      { path: 'recipe/:id', component: RecipeDetailsComponent }
+      { path: 'recipe/:id', component: RecipeDetailsComponent },
+      { path: '**', redirectTo: 'recipes' }
     ]),
 
     StoreModule.forRoot(<any>{ app: appReducer }, { initialState }),
