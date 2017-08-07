@@ -1,6 +1,6 @@
 import { ROUTER_NAVIGATION, RouterNavigationAction } from '@ngrx/router-store';
 import { Actions, Effect } from '@ngrx/effects';
-import { Params, ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, Params } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs/observable/of';

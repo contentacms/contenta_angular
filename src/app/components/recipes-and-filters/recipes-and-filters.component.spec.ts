@@ -1,17 +1,17 @@
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
-import { async, ComponentFixture, TestBed, tick, fakeAsync, inject } from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, inject, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import {
-    MdProgressSpinnerModule,
-    MdInputModule,
-    MdIconModule,
-    MdSidenavModule,
-    MdSelectModule,
     MdButtonModule,
     MdCardModule,
     MdChipsModule,
+    MdIconModule,
+    MdInputModule,
+    MdProgressSpinnerModule,
+    MdSelectModule,
+    MdSidenavModule
 } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -43,14 +43,14 @@ const filters = { title: '', difficulty: '', preparationTime: 0, limit: 6 };
 const appState = {
     list: [],
     recipes: {
-        '1': {
+        1: {
             data: {
                 id: '1',
                 type: 'Salad',
                 attributes: {
                     title: 'Angular salad',
                     difficulty: 'easy',
-                    instructions: '',
+                    instructions: ''
                 }
             }
         }
@@ -76,11 +76,11 @@ describe('RecipesAndFiltersComponent', () => {
                 MdSelectModule,
                 MdButtonModule,
                 MdCardModule,
-                RouterTestingModule.withRoutes([]),
+                RouterTestingModule.withRoutes([])
             ],
             providers: [
-                { provide: Store, useClass: MockedStore },
-            ],
+                { provide: Store, useClass: MockedStore }
+            ]
         })
             .compileComponents();
     }));
@@ -111,7 +111,7 @@ describe('RecipesAndFiltersComponent', () => {
     }));
 
     it('should navigate to recipes with correct params on filter change', fakeAsync(() => {
-        const navigateSpy = spyOn((<any>component).router, 'navigate');
+        const navigateSpy = spyOn((component as any).router, 'navigate');
         const input = element.query(By.css('md-input-container input')).nativeElement;
         input.value = 'lamb';
         input.dispatchEvent(new Event('input'));
@@ -141,7 +141,7 @@ describe('RecipesAndFiltersComponent', () => {
     it('should set sidenav mode to over on resize to small display', inject([Store], (store: Store<AppState>) => {
         component.onResize({
             target: {
-                innerWidth: 300,
+                innerWidth: 300
             }
         });
         fixture.detectChanges();
@@ -151,7 +151,7 @@ describe('RecipesAndFiltersComponent', () => {
     it('should set sidenav mode to over on resize to large display', inject([Store], (store: Store<AppState>) => {
         component.onResize({
             target: {
-                innerWidth: 1000,
+                innerWidth: 1000
             }
         });
         fixture.detectChanges();

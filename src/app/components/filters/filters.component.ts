@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Output, Inject, Input } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Component, EventEmitter, Inject, Input, Output } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import 'rxjs/add/operator/debounceTime';
 import { Filters } from '../../models/filters.model';
 
@@ -38,7 +38,7 @@ export class FiltersComponent {
       title: v.title,
       difficulty: v.difficulty,
       preparationTime: parseInt(v.preparationTime, 10),
-      limit: parseInt(v.limit, 10),
+      limit: parseInt(v.limit, 10)
     }, { emitEvent: false });
   }
 
@@ -46,11 +46,11 @@ export class FiltersComponent {
     title: new FormControl(),
     difficulty: new FormControl(),
     preparationTime: new FormControl(),
-    limit: new FormControl(),
+    limit: new FormControl()
   });
 
   constructor() {
-    this.filtersForm.valueChanges.debounceTime(200).subscribe((value) => {
+    this.filtersForm.valueChanges.debounceTime(200).subscribe(value => {
       this.filtersChange.next(this.createFiltersObject(value));
     });
   }

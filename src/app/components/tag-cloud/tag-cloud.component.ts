@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Tag } from 'contenta-angular-service';
 
 @Component({
@@ -7,7 +7,7 @@ import { Tag } from 'contenta-angular-service';
   styleUrls: ['./tag-cloud.component.scss']
 })
 export class TagCloudComponent implements OnInit {
-  @Input() tags: Tag[];
+  @Input() tags: Array<Tag>;
 
   constructor() { }
 

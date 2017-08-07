@@ -7,7 +7,7 @@ import { RouterTestingModule } from '@angular/router/testing';
  * Test dependencies.
  */
 import { HttpModule } from '@angular/http';
-import { MdToolbarModule, MdButtonModule, MdSidenavModule, MdIconModule, MdIconRegistry, MdListModule } from '@angular/material';
+import { MdButtonModule, MdIconModule, MdIconRegistry, MdListModule, MdSidenavModule, MdToolbarModule } from '@angular/material';
 import { MaterialIconsService } from './../../services/material-icons/material-icons.service';
 import { SidenavComponent } from './sidenav.component';
 
@@ -26,12 +26,12 @@ describe('SidenavComponent', () => {
         MdIconModule,
         HttpModule,
         MdListModule,
-        RouterTestingModule.withRoutes([]),
+        RouterTestingModule.withRoutes([])
       ],
       providers: [
         MdIconRegistry,
         MaterialIconsService
-      ],
+      ]
     })
       .compileComponents();
   }));
@@ -42,7 +42,7 @@ describe('SidenavComponent', () => {
     component = fixture.componentInstance;
     component.menu = [
       { name: 'Menu 1', url: '', icon: '' },
-      { name: 'Menu 2', url: '', icon: '' },
+      { name: 'Menu 2', url: '', icon: '' }
     ];
     fixture.detectChanges();
   });

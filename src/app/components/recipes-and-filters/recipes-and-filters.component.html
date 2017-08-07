@@ -1,11 +1,11 @@
 <div class="recipes">
   <md-sidenav-container fullscreen>
     <md-sidenav #filtersSidenav  [align]="'right'" [mode]="navMode" class="sidenav">
-      <app-filters-cmp [filters]="filters|async" (filtersChange)="handleFiltersChange($event)"></app-filters-cmp>
+      <app-filters-cmp [filters]="filters | async" (filtersChange)="handleFiltersChange($event)"></app-filters-cmp>
     </md-sidenav>
     <div class="main-content-recipes maxed-width">
       <h1>List of Recipes</h1>
-      <app-recipes-cmp *ngIf="recipes|async; else spinloading" [recipes]="recipes|async"></app-recipes-cmp>
+      <app-recipes-cmp *ngIf="recipes|async; else spinloading" [recipes]="recipes | async"></app-recipes-cmp>
       <button md-fab [color]="'primary'" aria-label="Toggle Filters" class="toggle-filters" (click)="filtersSidenav.toggle()"><md-icon [svgIcon]="'settings_filter'"></md-icon></button>
     </div>
   </md-sidenav-container>

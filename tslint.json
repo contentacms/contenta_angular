@@ -3,7 +3,8 @@
     "node_modules/codelyzer"
   ],
   "extends": [
-    "tslint-eslint-rules"
+    "tslint-eslint-rules",
+    "angular-tslint-rules"
   ],
   "rules": {
     "object-curly-spacing": true,

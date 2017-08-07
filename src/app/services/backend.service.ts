@@ -8,7 +8,7 @@ import { ContentaDatastore, Recipe } from 'contenta-angular-service';
 
 @Injectable()
 export class Backend {
-  public recipes: Recipe[] = [];
+  public recipes: Array<Recipe> = [];
   private datastore;
   private baseUrl = environment.jsonapi;
   private url = this.baseUrl + '/api';
@@ -21,7 +21,7 @@ export class Backend {
     const queryParams = {
       page: { limit: filters.limit },
       include: 'image,category,tags,image.field_image,image.imageFile',
-      filter: this.filterParams(filters),
+      filter: this.filterParams(filters)
     };
     const query = this.datastore.query(Recipe, queryParams);
     return query.map(this.normalizeData);

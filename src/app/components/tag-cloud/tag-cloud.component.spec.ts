@@ -15,7 +15,7 @@ const RECIPE_TAGS = [
     description: 'British meals',
     path: '',
     updatedAt: new Date(Date.now()),
-    weight: 1,
+    weight: 1
   },
   {
     internalId: 2,
@@ -24,11 +24,11 @@ const RECIPE_TAGS = [
     description: 'Stater meals',
     path: '',
     updatedAt: new Date(Date.now()),
-    weight: 1,
-  },
+    weight: 1
+  }
 ];
-const tags: Tag[] = [];
-RECIPE_TAGS.forEach((tag) => {
+const tags: Array<Tag> = [];
+RECIPE_TAGS.forEach(tag => {
   tags.push(new Tag(null, tag));
 });
 
@@ -41,8 +41,8 @@ describe('TagCloudComponent', () => {
     TestBed.configureTestingModule({
       declarations: [TagCloudComponent],
       imports: [
-        MdChipsModule,
-      ],
+        MdChipsModule
+      ]
     })
       .compileComponents();
   }));
