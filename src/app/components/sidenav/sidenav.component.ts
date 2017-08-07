@@ -1,4 +1,4 @@
-import { Component, Output, Input, ChangeDetectionStrategy, EventEmitter } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,7 +7,7 @@ import { Component, Output, Input, ChangeDetectionStrategy, EventEmitter } from 
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent {
-  @Input() menu: Object[];
+  @Input() menu: Array<Object>;
   @Output() onRouteChange = new EventEmitter();
 
   /**

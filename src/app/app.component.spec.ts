@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
-import { MdToolbarModule, MdButtonModule, MdSidenavModule, MdIconModule, MdIconRegistry, MdListModule } from '@angular/material';
+import { MdButtonModule, MdIconModule, MdIconRegistry, MdListModule, MdSidenavModule, MdToolbarModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
@@ -22,7 +22,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         HeaderComponent,
-        SidenavComponent,
+        SidenavComponent
       ],
       imports: [
         MdToolbarModule,
@@ -31,12 +31,12 @@ describe('AppComponent', () => {
         MdIconModule,
         HttpModule,
         MdListModule,
-        RouterTestingModule.withRoutes([]),
+        RouterTestingModule.withRoutes([])
       ],
       providers: [
         MdIconRegistry,
         MaterialIconsService
-      ],
+      ]
     }).compileComponents();
   }));
 

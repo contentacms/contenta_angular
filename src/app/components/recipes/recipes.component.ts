@@ -7,5 +7,5 @@ import { Recipe } from 'contenta-angular-service';
   styleUrls: ['./recipes.component.scss']
 })
 export class RecipesComponent {
-  @Input() recipes: Recipe[];
+  @Input() recipes: Array<Recipe>;
 }

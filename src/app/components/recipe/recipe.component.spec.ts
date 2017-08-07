@@ -4,14 +4,14 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { MdCardModule, MdButtonModule, MdChipsModule, MdIconModule } from '@angular/material';
+import { MdButtonModule, MdCardModule, MdChipsModule, MdIconModule } from '@angular/material';
 import { RecipeComponent } from './recipe.component';
 import { CardComponent } from './../card/card.component';
 
 const RECIPE_DATA = {
     id: '1',
     attributes: {
-        title: 'Recipe title',
+        title: 'Recipe title'
     }
 };
 const recipe: Recipe = new Recipe(null, RECIPE_DATA);
@@ -29,8 +29,8 @@ describe('RecipeComponent', () => {
                 MdChipsModule,
                 MdIconModule,
                 MdButtonModule,
-                RouterTestingModule.withRoutes([]),
-            ],
+                RouterTestingModule.withRoutes([])
+            ]
         })
             .compileComponents();
     }));
@@ -62,4 +62,3 @@ describe('RecipeComponent', () => {
         expect(title).toBeTruthy();
     });
 });
-
