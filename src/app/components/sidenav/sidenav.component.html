@@ -2,7 +2,7 @@
   <md-list-item *ngFor="let menu_item of menu; let i = index">
     <a class="sidenav-menu-item" md-button [routerLink]="[menu_item.url]" (click)="changeRoute()">
       <md-icon [color]="'accent'" class="menu-item-icon" [svgIcon]="menu_item.icon"></md-icon>
-      <span>{{menu_item.name}}</span>
+      <span>{{ menu_item.name }}</span>
     </a>
   </md-list-item>
   <div class="separator"></div>

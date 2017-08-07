@@ -1,9 +1,9 @@
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
-import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import { MdInputModule, MdSelectModule, MdIconModule } from '@angular/material';
+import { MdIconModule, MdInputModule, MdSelectModule } from '@angular/material';
 
 import { FiltersComponent } from './filters.component';
 
@@ -20,8 +20,8 @@ describe('FiltersComponent', () => {
                 MdInputModule,
                 MdIconModule,
                 MdSelectModule,
-                ReactiveFormsModule,
-            ],
+                ReactiveFormsModule
+            ]
         })
             .compileComponents();
     }));
@@ -35,7 +35,7 @@ describe('FiltersComponent', () => {
             title: new FormControl(),
             difficulty: new FormControl(),
             preparationTime: new FormControl(),
-            limit: new FormControl(),
+            limit: new FormControl()
         });
     });
 

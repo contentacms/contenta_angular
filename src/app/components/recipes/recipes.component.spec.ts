@@ -1,5 +1,5 @@
-import { Image, File, Recipe } from 'contenta-angular-service';
-import { MdCardModule, MdButtonModule, MdChipsModule, MdIconModule } from '@angular/material';
+import { File, Image, Recipe } from 'contenta-angular-service';
+import { MdButtonModule, MdCardModule, MdChipsModule, MdIconModule } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
 import { RecipeComponent } from './../recipe/recipe.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -38,7 +38,7 @@ const RECIPES_DATA = [
     }
 ];
 const recipes = [];
-RECIPES_DATA.forEach((recipe) => {
+RECIPES_DATA.forEach(recipe => {
     recipes.push(new Recipe(null, recipe));
 });
 
@@ -55,8 +55,8 @@ describe('RecipesComponent', () => {
                 MdChipsModule,
                 MdIconModule,
                 MdButtonModule,
-                RouterTestingModule.withRoutes([]),
-            ],
+                RouterTestingModule.withRoutes([])
+            ]
         })
             .compileComponents();
     }));
