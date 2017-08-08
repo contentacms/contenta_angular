@@ -6,7 +6,7 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "dist-client",
+      "outDir": "functions/dist-client",
       "assets": [
         "assets",
         "favicon.ico",
@@ -35,7 +35,7 @@
       "platform": "server",
       "name": "universal",
       "root": "src",
-      "outDir": "dist-server",
+      "outDir": "functions/dist-server",
       "assets": [
         "assets",
         "favicon.ico",

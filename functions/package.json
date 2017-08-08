@@ -3,7 +3,23 @@
   "description": "Cloud Functions for Firebase",
   "dependencies": {
     "firebase-admin": "~4.2.1",
-    "firebase-functions": "^0.5.7"
+    "firebase-functions": "^0.5.7",
+    "@angular/animations": "^5.0.0-beta.2",
+    "@angular/common": "^5.0.0-beta.2",
+    "@angular/compiler": "^5.0.0-beta.2",
+    "@angular/core": "^5.0.0-beta.2",
+    "@angular/forms": "^5.0.0-beta.2",
+    "@angular/http": "^5.0.0-beta.2",
+    "@angular/platform-browser": "^5.0.0-beta.2",
+    "@angular/platform-browser-dynamic": "^5.0.0-beta.2",
+    "@angular/platform-server": "^4.3.2",
+    "@angular/router": "^5.0.0-beta.2",
+    "core-js": "^2.4.1",
+    "express": "^4.15.3",
+    "path": "^0.12.7",
+    "rxjs": "^5.4.2",
+    "zone.js": "^0.8.16",
+    "fs": "0.0.1-security"
   },
   "private": true
 }
