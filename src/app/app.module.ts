@@ -102,7 +102,7 @@ import { TagCloudComponent } from './components/tag-cloud/tag-cloud.component';
     {
       provide: BASE_URL,
       useValue: environment.jsonapi
-    },
+    }
   ],
   bootstrap: [AppComponent]
 })
