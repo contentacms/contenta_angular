@@ -30,7 +30,7 @@ describe('AppComponent', () => {
         HttpModule,
         MdListModule,
         RouterTestingModule.withRoutes([])
-      ],
+      ]
     }).compileComponents();
   }));
 

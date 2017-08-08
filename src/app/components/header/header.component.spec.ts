@@ -25,7 +25,7 @@ describe('HeaderComponent', () => {
         MdIconModule,
         HttpModule,
         RouterTestingModule.withRoutes([])
-      ],
+      ]
     })
       .compileComponents();
   }));

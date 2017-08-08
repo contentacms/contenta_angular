@@ -27,7 +27,7 @@ describe('SidenavComponent', () => {
         HttpModule,
         MdListModule,
         RouterTestingModule.withRoutes([])
-      ],
+      ]
     })
       .compileComponents();
   }));
