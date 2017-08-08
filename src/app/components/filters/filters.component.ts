@@ -57,8 +57,12 @@ export class FiltersComponent {
 
   createFiltersObject(
     { title, difficulty, preparationTime, limit }:
-    { title: string, difficulty: string, preparationTime: number, limit: number }
+      { title: string, difficulty: string, preparationTime: number, limit: number }
   ): Filters {
     return { title: title || null, difficulty: difficulty || null, preparationTime: preparationTime || null, limit: limit || null };
+  }
+
+  public isBrowser() {
+    return typeof window !== 'undefined';
   }
 }

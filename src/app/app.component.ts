@@ -1,13 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MdSidenav } from '@angular/material';
-import { MaterialIconsService } from './services/material-icons/material-icons.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit  {
+export class AppComponent implements OnInit {
   title = 'Umami Magazine';
   @ViewChild('sidenav') sidenav: MdSidenav;
   menu: Array<Object> = [
@@ -15,10 +14,10 @@ export class AppComponent implements OnInit  {
     { name: 'Features', url: './features', icon: 'settings' }
   ];
 
-  constructor(private materialIconsService: MaterialIconsService) {}
+  constructor() { }
 
   ngOnInit() {
-    this.materialIconsService.registerIcons();
+
   }
 
   toggleSidenav() {

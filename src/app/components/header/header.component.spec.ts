@@ -7,8 +7,8 @@ import { RouterTestingModule } from '@angular/router/testing';
  * Test dependencies.
  */
 import { HttpModule } from '@angular/http';
-import { MdButtonModule, MdIconModule, MdIconRegistry, MdListModule, MdSidenavModule, MdToolbarModule } from '@angular/material';
-import { MaterialIconsService } from './../../services/material-icons/material-icons.service';
+import { MdButtonModule, MdIconModule, MdListModule, MdSidenavModule, MdToolbarModule } from '@angular/material';
+
 import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
@@ -26,10 +26,6 @@ describe('HeaderComponent', () => {
         HttpModule,
         RouterTestingModule.withRoutes([])
       ],
-      providers: [
-        MdIconRegistry,
-        MaterialIconsService
-      ]
     })
       .compileComponents();
   }));

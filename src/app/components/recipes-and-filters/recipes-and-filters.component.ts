@@ -47,7 +47,7 @@ export class RecipesAndFiltersComponent implements OnInit {
    * Update the sidenav property for the current window.
    */
   updateSidenavForWindow() {
-    if (isPlatformBrowser) {
+    if (this.isBrowser()) {
       if (window.innerWidth < 768) {
         this.navMode = 'over';
         this.sidenav.close();
@@ -68,5 +68,9 @@ export class RecipesAndFiltersComponent implements OnInit {
     if (event.target.innerWidth > 768) {
       this.navMode = 'side';
     }
+  }
+
+  public isBrowser() {
+    return typeof window !== 'undefined';
   }
 }
