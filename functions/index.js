@@ -27,7 +27,3 @@ app.get('/', function(req, res) {
 });
 
 exports.app = functions.https.onRequest(app);
-
- exports.helloWorld = functions.https.onRequest((request, response) => {
-  response.send("Hello from Firebase!");
- });

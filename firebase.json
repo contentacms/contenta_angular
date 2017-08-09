@@ -3,12 +3,12 @@
     "public": "functions/dist-client",
     "rewrites": [
       {
-        "source": "/helloWorld",
-        "function": "helloWorld"
+        "source": "/",
+        "function": "app"
       },
       {
         "source": "**",
-        "function": "app"
+        "destination": "index.html"
       }
     ],
     "headers": [
