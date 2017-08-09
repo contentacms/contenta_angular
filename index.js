@@ -9,5 +9,4 @@ renderModuleFactory(AppServerModuleNgFactory, {
     document: fs.readFileSync('dist-client/index.html',  'utf8')
 }).then(html => {
     fs.writeFileSync('dist-client/index.html', html);
-    console.log(html);
 });

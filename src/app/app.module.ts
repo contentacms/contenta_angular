@@ -37,7 +37,6 @@ import { FeaturesComponent } from './components/features/features.component';
 import { environment } from './../environments/environment';
 
 import { Backend } from './services/backend.service';
-import { MaterialIconsService } from './services/material-icons/material-icons.service';
 import { appReducer } from './store/reducers/reducers';
 import { RecipesEffects } from './store/effects/effects';
 import { initialState } from './models/state.model';
@@ -80,9 +79,9 @@ import { TagCloudComponent } from './components/tag-cloud/tag-cloud.component';
     MdProgressSpinnerModule,
     MdCardModule,
     RouterModule.forRoot([
-      { path: '',  pathMatch: 'full', redirectTo: 'recipes' },
+      { path: '', pathMatch: 'full', redirectTo: 'recipes' },
       { path: 'features', component: FeaturesComponent },
-      { path: 'recipes',  pathMatch: 'full', component: RecipesAndFiltersComponent },
+      { path: 'recipes', pathMatch: 'full', component: RecipesAndFiltersComponent },
       { path: 'recipe/:id', component: RecipeDetailsComponent },
       { path: '**', redirectTo: 'recipes' }
     ]),
@@ -99,7 +98,6 @@ import { TagCloudComponent } from './components/tag-cloud/tag-cloud.component';
     Backend,
     RecipesEffects,
     MdIconRegistry,
-    MaterialIconsService,
     ContentaDatastore,
     {
       provide: BASE_URL,

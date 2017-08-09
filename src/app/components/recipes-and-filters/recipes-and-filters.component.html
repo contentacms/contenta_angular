@@ -6,7 +6,9 @@
     <div class="main-content-recipes maxed-width">
       <h1>List of Recipes</h1>
       <app-recipes-cmp [recipes]="recipes | async" *ngIf="recipes | async; else spinner"></app-recipes-cmp>
-      <button md-fab [color]="'primary'" aria-label="Toggle Filters" class="toggle-filters" (click)="filtersSidenav.toggle()"><md-icon [svgIcon]="'settings_filter'"></md-icon></button>
+      <button md-fab [color]="'primary'" aria-label="Toggle Filters" class="toggle-filters" (click)="filtersSidenav.toggle()">
+        <md-icon>sort</md-icon>
+      </button>
     </div>
   </md-sidenav-container>
 </div>
