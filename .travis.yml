@@ -30,6 +30,10 @@ script:
 
 before_deploy:
   - ng build --prod --build-optimizer
+  - ng build --prod --app universal --output-hashing none
+  - mv ./dist/index.html ./dist-client
+  - cp package.json ./functions
+  - cd functions && npm install && cd ..
   - gfp
 
 deploy:

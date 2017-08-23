@@ -1,10 +1,10 @@
 {
   "hosting": {
-    "public": "dist-client",
+    "public": "dist",
     "rewrites": [
       {
         "source": "**",
-        "destination": "/index.html"
+        "function": "trigger"
       }
     ],
     "headers": [

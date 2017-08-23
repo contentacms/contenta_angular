@@ -41,7 +41,7 @@
     "@angular/cli": "^1.4.0-beta.1",
     "@angular/compiler-cli": "^5.0.0-beta.4",
     "@angular/language-service": "^5.0.0-beta.4",
-    "@angular/platform-server": "^5.0.0-beta.2",
+    "@angular/platform-server": "^5.0.0-beta.4",
     "@types/jasmine": "2.5.45",
     "@types/node": "^6.0.84",
     "codecov": "^2.2.0",
