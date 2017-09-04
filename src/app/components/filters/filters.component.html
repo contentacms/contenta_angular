@@ -16,9 +16,4 @@
       <md-option *ngFor="let time of preparationTimeList" [value]="time.value">{{ time.name }}</md-option>
     </md-select>
   </div>
-  <div class="filter-element">
-    <md-select placeholder="Limit" formControlName="limit">
-      <md-option *ngFor="let limit of limitList" [value]="limit.value">{{ limit.name }}</md-option>
-    </md-select>
-  </div>
 </div>

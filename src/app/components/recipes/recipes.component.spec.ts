@@ -5,6 +5,7 @@ import { RecipeComponent } from './../recipe/recipe.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { RecipesComponent } from './recipes.component';
 import { CardComponent } from './../card/card.component';
@@ -51,6 +52,7 @@ describe('RecipesComponent', () => {
         TestBed.configureTestingModule({
             declarations: [RecipesComponent, RecipeComponent, CardComponent],
             imports: [
+                InfiniteScrollModule,
                 MdCardModule,
                 MdChipsModule,
                 MdIconModule,
@@ -66,6 +68,7 @@ describe('RecipesComponent', () => {
         element = fixture.debugElement;
         component = fixture.componentInstance;
         component.recipes = recipes;
+        component.scrollContainerClass = '.recipe-list';
         fixture.detectChanges();
     });
 

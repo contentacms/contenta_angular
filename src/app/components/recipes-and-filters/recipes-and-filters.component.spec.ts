@@ -14,6 +14,7 @@ import {
     MdSidenavModule
 } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { AppState } from './../../models/state.model';
 import { RecipesAndFiltersComponent } from './recipes-and-filters.component';
@@ -71,6 +72,7 @@ describe('RecipesAndFiltersComponent', () => {
                 MdProgressSpinnerModule,
                 MdInputModule,
                 MdChipsModule,
+                InfiniteScrollModule,
                 MdIconModule,
                 MdSidenavModule,
                 MdSelectModule,

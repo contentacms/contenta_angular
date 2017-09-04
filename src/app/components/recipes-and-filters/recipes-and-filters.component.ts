@@ -8,6 +8,7 @@ import { Recipe } from 'contenta-angular-service';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/take';
 
 @Component({
   selector: 'app-cmp',
@@ -68,5 +69,16 @@ export class RecipesAndFiltersComponent implements OnInit {
     if (event.target.innerWidth > 768) {
       this.navMode = 'side';
     }
+  }
+
+  incrementList() {
+    this.filters.take(1).subscribe((filters: Filters) => {
+      this.handleFiltersChange({
+        title: filters.title || null,
+        difficulty: filters.difficulty || null,
+        preparationTime: filters.preparationTime || null,
+        limit: filters.limit * 2 < 48 ? filters.limit * 2 : 48
+      });
+    });
   }
 }
