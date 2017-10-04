@@ -46,6 +46,8 @@ import { initialState } from './models/state.model';
 import { BASE_URL, ContentaDatastore, ContentaServiceModule } from 'contenta-angular-service';
 import { TagCloudComponent } from './components/tag-cloud/tag-cloud.component';
 
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,6 +80,7 @@ import { TagCloudComponent } from './components/tag-cloud/tag-cloud.component';
     MdSelectModule,
     MdProgressSpinnerModule,
     MdCardModule,
+    InfiniteScrollModule,
     RouterModule.forRoot([
       { path: '',  pathMatch: 'full', redirectTo: 'recipes' },
       { path: 'features', component: FeaturesComponent },
