@@ -33,12 +33,6 @@ function createResponse(item): Observable<any> {
     );
 }
 
-class MockedStore {
-    select(item): Observable<any> {
-        return createResponse(appState);
-    }
-}
-
 const filters = { title: '', difficulty: '', preparationTime: 0, limit: 6 };
 
 const appState = {
@@ -57,6 +51,12 @@ const appState = {
         }
     }
 };
+
+class MockedStore {
+    select(item): Observable<any> {
+        return createResponse(appState);
+    }
+}
 
 describe('RecipesAndFiltersComponent', () => {
     let component: RecipesAndFiltersComponent;
