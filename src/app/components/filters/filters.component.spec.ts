@@ -3,7 +3,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import { MdIconModule, MdInputModule, MdSelectModule } from '@angular/material';
+import { MatIconModule, MatInputModule, MatSelectModule } from '@angular/material';
 
 import { FiltersComponent } from './filters.component';
 
@@ -17,9 +17,9 @@ describe('FiltersComponent', () => {
             declarations: [FiltersComponent],
             imports: [
                 NoopAnimationsModule,
-                MdInputModule,
-                MdIconModule,
-                MdSelectModule,
+                MatInputModule,
+                MatIconModule,
+                MatSelectModule,
                 ReactiveFormsModule
             ]
         })
@@ -45,7 +45,7 @@ describe('FiltersComponent', () => {
 
     it('should call emitter when title on form changes', fakeAsync(() => {
         spyOn(component.filtersChange, 'next').and.callThrough();
-        const input = element.query(By.css('md-input-container input')).nativeElement;
+        const input = element.query(By.css('mat-input-container input')).nativeElement;
         input.value = 'Contenta';
         input.dispatchEvent(new Event('input'));
         fixture.detectChanges();

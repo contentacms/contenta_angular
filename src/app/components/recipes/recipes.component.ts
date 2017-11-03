@@ -9,7 +9,7 @@ import { Recipe } from 'contenta-angular-service';
 export class RecipesComponent {
   @Input() recipes: Array<Recipe>;
   @Output() onIncrementList = new EventEmitter();
-  scrollContainerClass = '.recipes .mat-sidenav-content';
+  scrollContainerClass = '.recipes .mat-sidenav-container';
 
   incrementListSize() {
     this.onIncrementList.emit();

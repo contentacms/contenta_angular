@@ -4,19 +4,19 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import {
-  MdButtonModule,
-  MdCardModule,
-  MdCheckboxModule,
-  MdChipsModule,
-  MdIconModule,
-  MdIconRegistry,
-  MdInputModule,
-  MdListModule,
-  MdOptionModule,
-  MdProgressSpinnerModule,
-  MdSelectModule,
-  MdSidenavModule,
-  MdToolbarModule
+  MatButtonModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatIconModule,
+  MatIconRegistry,
+  MatInputModule,
+  MatListModule,
+  MatOptionModule,
+  MatProgressSpinnerModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatToolbarModule
 } from '@angular/material';
 import 'hammerjs';
 
@@ -68,18 +68,18 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     HttpModule,
     ContentaServiceModule,
     BrowserAnimationsModule,
-    MdInputModule,
-    MdCheckboxModule,
-    MdToolbarModule,
-    MdButtonModule,
-    MdSidenavModule,
-    MdChipsModule,
-    MdIconModule,
-    MdListModule,
-    MdOptionModule,
-    MdSelectModule,
-    MdProgressSpinnerModule,
-    MdCardModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatChipsModule,
+    MatIconModule,
+    MatListModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
+    MatCardModule,
     InfiniteScrollModule,
     RouterModule.forRoot([
       { path: '',  pathMatch: 'full', redirectTo: 'recipes' },
@@ -99,7 +99,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
   providers: [
     Backend,
     RecipesEffects,
-    MdIconRegistry,
+    MatIconRegistry,
     MaterialIconsService,
     ContentaDatastore,
     {

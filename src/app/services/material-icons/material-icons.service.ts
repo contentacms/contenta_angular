@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { MdIconRegistry, MdSidenav } from '@angular/material';
+import { MatIconRegistry, MatSidenav } from '@angular/material';
 
 interface IconMapItem {
   name: string,
@@ -26,7 +26,7 @@ export class MaterialIconsService {
     { name: 'check', icon: 'check' }
   ];
 
-  constructor(private iconRegistry: MdIconRegistry, private sanitizer: DomSanitizer) {
+  constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
     this.registerIcons();
   }
 

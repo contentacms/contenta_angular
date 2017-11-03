@@ -114,7 +114,7 @@ describe('RecipesAndFiltersComponent', () => {
 
     it('should navigate to recipes with correct params on filter change', fakeAsync(() => {
         const navigateSpy = spyOn((<any>component).router, 'navigate');
-        const input = element.query(By.css('md-input-container input')).nativeElement;
+        const input = element.query(By.css('mat-input-container input')).nativeElement;
         input.value = 'lamb';
         input.dispatchEvent(new Event('input'));
         fixture.detectChanges();

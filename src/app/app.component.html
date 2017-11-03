@@ -1,9 +1,9 @@
 <app-header [title]="title" [menu]="menu" (toggleSidebar)="toggleSidenav()"></app-header>
-<md-sidenav-container fullscreen>
-  <md-sidenav #sidenav [mode]="'over'" class="sidenav">
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav [mode]="'over'" class="sidenav">
     <app-sidenav [menu]="menu" (onRouteChange)="toggleSidenav()"></app-sidenav>
-  </md-sidenav>
+  </mat-sidenav>
   <div class="main-content">
     <router-outlet></router-outlet>
   </div>
-</md-sidenav-container>
+</mat-sidenav-container>

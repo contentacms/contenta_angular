@@ -1,19 +1,23 @@
 <h2 class="filters-title">
-  <md-icon [color]="'accent'" [svgIcon]="'sort'"></md-icon>Filters</h2>
+  <mat-icon [color]="'accent'" [svgIcon]="'sort'"></mat-icon>Filters</h2>
 <div class="filters-form" [formGroup]="filtersForm">
   <div class="filter-element">
-    <md-input-container>
-      <input mdInput formControlName="title" placeholder="Title">
-    </md-input-container>
+    <mat-form-field>
+      <input matInput formControlName="title" placeholder="Title">
+    </mat-form-field>
   </div>
   <div class="filter-element">
-    <md-select placeholder="Difficulty" formControlName="difficulty">
-      <md-option *ngFor="let difficulty of difficultyList" [value]="difficulty.value">{{ difficulty.name }}</md-option>
-    </md-select>
+    <mat-form-field>
+      <mat-select placeholder="Difficulty" formControlName="difficulty">
+        <mat-option *ngFor="let difficulty of difficultyList" [value]="difficulty.value">{{ difficulty.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
   <div class="filter-element">
-    <md-select placeholder="Prep Time" formControlName="preparationTime">
-      <md-option *ngFor="let time of preparationTimeList" [value]="time.value">{{ time.name }}</md-option>
-    </md-select>
+    <mat-form-field>
+      <mat-select placeholder="Prep Time" formControlName="preparationTime">
+        <mat-option *ngFor="let time of preparationTimeList" [value]="time.value">{{ time.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
 </div>
