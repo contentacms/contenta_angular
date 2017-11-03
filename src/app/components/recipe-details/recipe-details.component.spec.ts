@@ -19,12 +19,6 @@ function createResponse(item): Observable<any> {
     );
 }
 
-class MockedStore {
-    select(item): Observable<any> {
-        return createResponse(appState);
-    }
-}
-
 const appState = {
     recipes: {
         1: {
@@ -38,6 +32,12 @@ const appState = {
         }
     }
 };
+
+class MockedStore {
+    select(item): Observable<any> {
+        return createResponse(appState);
+    }
+}
 
 describe('RecipeDetailsComponent', () => {
     let component: RecipeDetailsComponent;
