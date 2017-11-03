@@ -1,5 +1,5 @@
 import { File, Image, Recipe } from 'contenta-angular-service';
-import { MdButtonModule, MdCardModule, MdChipsModule, MdIconModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatChipsModule, MatIconModule } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
 import { RecipeComponent } from './../recipe/recipe.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -53,10 +53,10 @@ describe('RecipesComponent', () => {
             declarations: [RecipesComponent, RecipeComponent, CardComponent],
             imports: [
                 InfiniteScrollModule,
-                MdCardModule,
-                MdChipsModule,
-                MdIconModule,
-                MdButtonModule,
+                MatCardModule,
+                MatChipsModule,
+                MatIconModule,
+                MatButtonModule,
                 RouterTestingModule.withRoutes([])
             ]
         })

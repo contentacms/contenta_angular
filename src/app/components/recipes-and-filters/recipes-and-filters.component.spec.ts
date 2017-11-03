@@ -4,14 +4,14 @@ import { async, ComponentFixture, fakeAsync, inject, TestBed, tick } from '@angu
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import {
-    MdButtonModule,
-    MdCardModule,
-    MdChipsModule,
-    MdIconModule,
-    MdInputModule,
-    MdProgressSpinnerModule,
-    MdSelectModule,
-    MdSidenavModule
+    MatButtonModule,
+    MatCardModule,
+    MatChipsModule,
+    MatIconModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
+    MatSelectModule,
+    MatSidenavModule
 } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
@@ -69,15 +69,15 @@ describe('RecipesAndFiltersComponent', () => {
             imports: [
                 NoopAnimationsModule,
                 ReactiveFormsModule,
-                MdProgressSpinnerModule,
-                MdInputModule,
-                MdChipsModule,
+                MatProgressSpinnerModule,
+                MatInputModule,
+                MatChipsModule,
                 InfiniteScrollModule,
-                MdIconModule,
-                MdSidenavModule,
-                MdSelectModule,
-                MdButtonModule,
-                MdCardModule,
+                MatIconModule,
+                MatSidenavModule,
+                MatSelectModule,
+                MatButtonModule,
+                MatCardModule,
                 RouterTestingModule.withRoutes([])
             ],
             providers: [

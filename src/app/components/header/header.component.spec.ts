@@ -7,7 +7,7 @@ import { RouterTestingModule } from '@angular/router/testing';
  * Test dependencies.
  */
 import { HttpModule } from '@angular/http';
-import { MdButtonModule, MdIconModule, MdIconRegistry, MdListModule, MdSidenavModule, MdToolbarModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatIconRegistry, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
 import { MaterialIconsService } from './../../services/material-icons/material-icons.service';
 import { HeaderComponent } from './header.component';
 
@@ -20,14 +20,14 @@ describe('HeaderComponent', () => {
     TestBed.configureTestingModule({
       declarations: [HeaderComponent],
       imports: [
-        MdToolbarModule,
-        MdButtonModule,
-        MdIconModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatIconModule,
         HttpModule,
         RouterTestingModule.withRoutes([])
       ],
       providers: [
-        MdIconRegistry,
+        MatIconRegistry,
         MaterialIconsService
       ]
     })

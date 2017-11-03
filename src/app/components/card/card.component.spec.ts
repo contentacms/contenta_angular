@@ -2,7 +2,7 @@ import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { DebugElement } from '@angular/core';
-import { MdButtonModule, MdCardModule } from '@angular/material';
+import { MatButtonModule, MatCardModule } from '@angular/material';
 
 import { CardComponent } from './card.component';
 
@@ -15,8 +15,8 @@ describe('CardComponent', () => {
     TestBed.configureTestingModule({
       declarations: [CardComponent],
       imports: [
-        MdCardModule,
-        MdButtonModule,
+        MatCardModule,
+        MatButtonModule,
         RouterTestingModule.withRoutes([])
       ]
     })

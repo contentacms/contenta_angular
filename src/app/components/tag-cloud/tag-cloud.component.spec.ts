@@ -2,7 +2,7 @@ import { By } from '@angular/platform-browser';
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
-import { MdChipsModule } from '@angular/material';
+import { MatChipsModule } from '@angular/material';
 
 import { TagCloudComponent } from './tag-cloud.component';
 import { Tag } from 'contenta-angular-service';
@@ -41,7 +41,7 @@ describe('TagCloudComponent', () => {
     TestBed.configureTestingModule({
       declarations: [TagCloudComponent],
       imports: [
-        MdChipsModule
+        MatChipsModule
       ]
     })
       .compileComponents();
