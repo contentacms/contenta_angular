@@ -6469,9 +6469,9 @@
       "dev": true
     },
     "ngx-infinite-scroll": {
-      "version": "0.6.1",
-      "resolved": "https://registry.npmjs.org/ngx-infinite-scroll/-/ngx-infinite-scroll-0.6.1.tgz",
-      "integrity": "sha512-7lASze8zHSDdAAFO3VNop1TY60rs8A7sm8DzQfU33VNcJI27F6mtxwjILIH339s7m6HVC08AS7I64HBjBMw/QQ=="
+      "version": "0.5.2",
+      "resolved": "https://registry.npmjs.org/ngx-infinite-scroll/-/ngx-infinite-scroll-0.5.2.tgz",
+      "integrity": "sha1-8xrvxeeOazUuaPKG8WxN6tGA1Dw="
     },
     "no-case": {
       "version": "2.3.2",
