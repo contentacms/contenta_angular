@@ -9,7 +9,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
-import { MatButtonModule, MatCardModule, MatIconModule, MatListModule, MatChipsModule, } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatChipsModule, MatIconModule, MatListModule } from '@angular/material';
 import { RecipeDetailsComponent } from './recipe-details.component';
 import { TagCloudComponent } from './../tag-cloud/tag-cloud.component';
 
