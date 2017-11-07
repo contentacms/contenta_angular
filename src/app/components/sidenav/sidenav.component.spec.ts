@@ -7,7 +7,7 @@ import { RouterTestingModule } from '@angular/router/testing';
  * Test dependencies.
  */
 import { HttpModule } from '@angular/http';
-import { MdButtonModule, MdIconModule, MdIconRegistry, MdListModule, MdSidenavModule, MdToolbarModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatIconRegistry, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
 import { MaterialIconsService } from './../../services/material-icons/material-icons.service';
 import { SidenavComponent } from './sidenav.component';
 
@@ -20,16 +20,16 @@ describe('SidenavComponent', () => {
     TestBed.configureTestingModule({
       declarations: [SidenavComponent],
       imports: [
-        MdToolbarModule,
-        MdButtonModule,
-        MdSidenavModule,
-        MdIconModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
         HttpModule,
-        MdListModule,
+        MatListModule,
         RouterTestingModule.withRoutes([])
       ],
       providers: [
-        MdIconRegistry,
+        MatIconRegistry,
         MaterialIconsService
       ]
     })

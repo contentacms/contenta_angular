@@ -1,4 +1,4 @@
-import { MdSidenav } from '@angular/material';
+import { MatSidenav } from '@angular/material';
 import { Component, HostListener, Inject, OnInit, ViewChild } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Params, Router } from '@angular/router';
@@ -18,7 +18,7 @@ import 'rxjs/add/operator/take';
 export class RecipesAndFiltersComponent implements OnInit {
   filters: Observable<Filters>;
   recipes: Observable<Array<Recipe>>;
-  @ViewChild('filtersSidenav') sidenav: MdSidenav;
+  @ViewChild('filtersSidenav') sidenav: MatSidenav;
   navMode = 'side';
 
   constructor(private router: Router, store: Store<State>) {

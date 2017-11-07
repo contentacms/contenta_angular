@@ -99,7 +99,7 @@
     font-size: 0.8rem;
     text-transform: uppercase;
     color: $gray--dark;
-    md-icon {
+    mat-icon {
       vertical-align: bottom;
       height: 40px;
       width: 40px;
@@ -126,7 +126,7 @@
 }
 
 .ingredients {
-  md-icon {
+  mat-icon {
     height: 20px;
     width: 20px;
     margin-right: 10px;
@@ -162,7 +162,7 @@
 
 .recipe-separator {
   text-align: center;
-  md-icon {
+  mat-icon {
     color: white;
   }
 }

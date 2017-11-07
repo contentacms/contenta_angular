@@ -1,17 +1,21 @@
 <div class="recipes">
-  <md-sidenav-container fullscreen>
-    <md-sidenav #filtersSidenav [align]="'right'" [mode]="navMode" class="sidenav">
+  <mat-sidenav-container fullscreen class="sidenav-con">
+    <mat-sidenav #filtersSidenav [align]="'right'" [mode]="navMode" class="sidenav">
       <app-filters-cmp [filters]="filters | async" (filtersChange)="handleFiltersChange($event)"></app-filters-cmp>
-    </md-sidenav>
-    <div class="main-content-recipes maxed-width">
-      <h1>List of Recipes</h1>
-      <app-recipes-cmp [recipes]="recipes | async" *ngIf="recipes | async; else spinner" (onIncrementList)="incrementList()"></app-recipes-cmp>
-      <button md-fab [color]="'primary'" aria-label="Toggle Filters" class="toggle-filters" (click)="filtersSidenav.toggle()"><md-icon [svgIcon]="'settings_filter'"></md-icon></button>
-    </div>
-  </md-sidenav-container>
+    </mat-sidenav>
+    <mat-sidenav-content class="mat-sidenav-content">
+      <div class="main-content-recipes maxed-width">
+        <h1>List of Recipes</h1>
+        <app-recipes-cmp [recipes]="recipes | async" *ngIf="recipes | async; else spinner" (onIncrementList)="incrementList()"></app-recipes-cmp>
+        <button mat-fab [color]="'primary'" aria-label="Toggle Filters" class="toggle-filters" (click)="filtersSidenav.toggle()">
+          <mat-icon [svgIcon]="'settings_filter'"></mat-icon>
+        </button>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
 <ng-template #spinner>
   <div class="loading_spinner">
-    <md-spinner></md-spinner>
+    <mat-spinner></mat-spinner>
   </div>
 </ng-template>

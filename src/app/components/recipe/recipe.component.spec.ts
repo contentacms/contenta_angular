@@ -4,7 +4,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { MdButtonModule, MdCardModule, MdChipsModule, MdIconModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatChipsModule, MatIconModule } from '@angular/material';
 import { RecipeComponent } from './recipe.component';
 import { CardComponent } from './../card/card.component';
 
@@ -25,10 +25,10 @@ describe('RecipeComponent', () => {
         TestBed.configureTestingModule({
             declarations: [RecipeComponent, CardComponent, CardComponent],
             imports: [
-                MdCardModule,
-                MdChipsModule,
-                MdIconModule,
-                MdButtonModule,
+                MatCardModule,
+                MatChipsModule,
+                MatIconModule,
+                MatButtonModule,
                 RouterTestingModule.withRoutes([])
             ]
         })

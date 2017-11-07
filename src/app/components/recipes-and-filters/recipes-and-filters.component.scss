@@ -35,8 +35,8 @@
 }
 
 .sidenav {
-    min-width: 300px;
-    max-width: 400px;   
+    min-width: 250px;
+    max-width: 250px;   
 
     @include breakpoint($narrow-devices) {
         min-width: 250px;
@@ -51,7 +51,7 @@
     height: 30%;
     left: 35%;
     top: 35%;
-    md-spinner {
+    mat-spinner {
         margin: auto;
         max-width: 50px;
         max-height: 50px;

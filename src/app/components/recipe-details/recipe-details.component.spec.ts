@@ -9,7 +9,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
-import { MdButtonModule, MdCardModule, MdIconModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatChipsModule, MatIconModule, MatListModule } from '@angular/material';
 import { RecipeDetailsComponent } from './recipe-details.component';
 import { TagCloudComponent } from './../tag-cloud/tag-cloud.component';
 
@@ -48,9 +48,11 @@ describe('RecipeDetailsComponent', () => {
         TestBed.configureTestingModule({
             declarations: [RecipeDetailsComponent, TagCloudComponent],
             imports: [
-                MdCardModule,
-                MdButtonModule,
-                MdIconModule,
+                MatCardModule,
+                MatButtonModule,
+                MatIconModule,
+                MatListModule,
+                MatChipsModule,
                 RouterTestingModule.withRoutes([])
             ],
             providers: [

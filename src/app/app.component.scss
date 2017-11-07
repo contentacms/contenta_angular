@@ -20,6 +20,7 @@
 
 .sidenav {
     min-width: 300px;
+    max-width: 300px;
 }
 
 :host /deep/.mat-sidenav-container[fullscreen] {
