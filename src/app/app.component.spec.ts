@@ -1,9 +1,9 @@
+import { SharedModule } from './shared/shared.module';
 import { HttpModule } from '@angular/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
-import { MatButtonModule, MatIconModule, MatIconRegistry, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
@@ -25,18 +25,9 @@ describe('AppComponent', () => {
         SidenavComponent
       ],
       imports: [
-        MatToolbarModule,
-        MatButtonModule,
-        MatSidenavModule,
-        MatIconModule,
-        HttpModule,
-        MatListModule,
+        SharedModule.forRoot(),
         RouterTestingModule.withRoutes([])
       ],
-      providers: [
-        MatIconRegistry,
-        MaterialIconsService
-      ]
     }).compileComponents();
   }));
 

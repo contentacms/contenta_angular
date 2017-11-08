@@ -1,9 +1,9 @@
+import { State } from './../../../models/state.model';
+import { Filters } from './../../../models/filters.model';
 import { MatSidenav } from '@angular/material';
 import { Component, HostListener, Inject, OnInit, ViewChild } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Params, Router } from '@angular/router';
-import { Filters } from '../../models/filters.model';
-import { State } from '../../models/state.model';
 import { Recipe } from 'contenta-angular-service';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';

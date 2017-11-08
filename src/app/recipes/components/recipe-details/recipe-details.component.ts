@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { Backend } from '../../services/backend.service';
+import { Backend } from '../../../services/backend.service';
 import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/mergeMap';
-import { State } from '../../models/state.model';
+import { State } from '../../../models/state.model';
 import { Recipe } from 'contenta-angular-service';
 import { Store } from '@ngrx/store';
 

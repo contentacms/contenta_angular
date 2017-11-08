@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Inject, Input, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import 'rxjs/add/operator/debounceTime';
-import { Filters } from '../../models/filters.model';
+import { Filters } from '../../../models/filters.model';
 
 @Component({
   selector: 'app-filters-cmp',
