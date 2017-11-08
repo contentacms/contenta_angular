@@ -33,6 +33,10 @@ export class RecipesEffects {
     }
   });
 
+  @Effect() navigateToHome = this.handleNavigation('home', (r: ActivatedRouteSnapshot) => {
+    return this.backend.findPromotedRecipes(3).map(resp => ({ type: 'PROMOTED_RECIPES_UPDATED', payload: [...resp] }));
+  });
+
   constructor(private actions: Actions, private store: Store<State>, private backend: Backend) { }
 
   private handleNavigation(segment: string, callback: (a: ActivatedRouteSnapshot, state: State) => Observable<any>) {

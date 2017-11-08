@@ -1,3 +1,4 @@
+import { RecipeComponent } from './components/recipe/recipe.component';
 import { TagCloudComponent } from './components/tag-cloud/tag-cloud.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -47,7 +48,8 @@ const SHARED_MODULES = [
 
 const SHARED_COMPONENTS = [
   CardComponent,
-  TagCloudComponent
+  TagCloudComponent,
+  RecipeComponent,
 ];
 
 const SHARED_PIPES = [

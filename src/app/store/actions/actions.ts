@@ -11,5 +11,6 @@ export interface RecipesUpdated {
   filters: Filters
 };
 export interface RecipeUpdated { type: 'RECIPE_UPDATED', payload: Recipe };
+export interface PromotedRecipeUpdated { type: 'PROMOTED_RECIPES_UPDATED', payload: any };
 
-export type Action = RouterAction<State> | RecipesUpdated | RecipeUpdated;
+export type Action = RouterAction<State> | RecipesUpdated | RecipeUpdated | PromotedRecipeUpdated;

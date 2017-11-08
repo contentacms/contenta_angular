@@ -11,7 +11,7 @@ export class Backend {
   public recipes: Array<Recipe> = [];
   private datastore;
   private baseUrl = environment.jsonapi;
-  private url = ` ${ this.baseUrl }/api`;
+  private url = ` ${this.baseUrl}/api`;
 
   constructor(private http: Http, @Inject(ContentaDatastore) datastore: ContentaDatastore) {
     this.datastore = datastore;
@@ -51,7 +51,7 @@ export class Backend {
       }
     }
     // Difficulty filter
-    if (filters.difficulty !== '')  {
+    if (filters.difficulty !== '') {
       params['difficulty'] = {
         value: filters.difficulty
       };
@@ -77,6 +77,19 @@ export class Backend {
     const query = this.datastore.query(Recipe, id, {});
     query.subscribe(this.normalizeData);
 
+    return query;
+  }
+
+  /**
+   * Find 3 promoted recipes for the frontpage.
+   */
+  findPromotedRecipes(limit = 3) {
+    const queryParams = {
+      page: { limit: limit },
+      include: 'image,category,tags,image.field_image,image.imageFile',
+      sort: '-created'
+    };
+    const query = this.datastore.query(Recipe, queryParams);
     return query;
   }
 }

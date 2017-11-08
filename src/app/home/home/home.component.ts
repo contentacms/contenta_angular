@@ -1,3 +1,7 @@
+import { State } from './../../models/state.model';
+import { Store } from '@ngrx/store';
+import { Recipe } from 'contenta-angular-service';
+import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +10,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  promotedRecipes: Observable<Recipe[]>;
 
-  constructor() { }
+  constructor(private store: Store<State>) {
+    this.promotedRecipes = store.select('app', 'promoted');
+  }
 
   ngOnInit() {
   }
