@@ -1,4 +1,4 @@
-import { State } from './../../models/state.model';
+import { State } from './../../../models/state.model';
 import { Store } from '@ngrx/store';
 import { Recipe } from 'contenta-angular-service';
 import { Observable } from 'rxjs/Observable';
