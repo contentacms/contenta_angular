@@ -4,15 +4,37 @@
     padding-bottom: 15px;
 }
 
-.mat-card .card-image {
-    @include breakpoint($narrow-devices) {
-        max-height: 200px;
-        overflow: hidden;
-        margin: {
-            top: -24px;
-            right: -24px;
-            left: -24px;
-            bottom: 1rem;
+.mat-card {
+    .card-image {
+        a {
+            display: block;
+        }
+        @include breakpoint($narrow-devices) {
+            max-height: 200px;
+            overflow: hidden;
+            margin: {
+                top: -24px;
+                right: -24px;
+                left: -24px;
+                bottom: 1rem;
+            }
+        }
+    }
+    &.inversed {
+        padding-bottom: 0;
+        a {
+            margin-bottom: -10px;
+        }
+        .mat-card-image {
+            margin-bottom: 0;
+        }
+        .card-image {
+            @include breakpoint($narrow-devices) {
+                margin: {
+                    bottom: 0px;
+                    top: 0;
+                }
+            }
         }
     }
 }

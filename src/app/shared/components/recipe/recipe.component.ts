@@ -10,4 +10,6 @@ export class RecipeComponent {
   @Input() recipe: Recipe;
   @Input() image;
   @Input() imageAlt;
+  @Input() shortMode: boolean = false;
+  @Input() inversed: boolean = false;
 }

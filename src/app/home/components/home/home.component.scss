@@ -31,10 +31,25 @@
         margin-right: 2%;
         &:first-child {
             width: 48%;
+            & /deep/ mat-card.mat-card .card-image {
+                @include breakpoint($narrow-devices) {
+                    margin: {
+                        bottom: 0;
+                    }
+                }
+            }
         }
         &:nth-child(3n) {
             margin-right: 0;
         }
+    }
+    & /deep/ mat-card.mat-card .card-image {
+        @include breakpoint($narrow-devices) {
+            max-height: none;
+        }
+    }
+    & /deep/ .card-title {
+        min-height: 0px;
     }
 }
 

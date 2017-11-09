@@ -7,7 +7,7 @@
     @include header-custom-theme($theme);
 }
 
-$custom-typography: mat-typography-config( $font-family: 'Roboto Slab');
+$custom-typography: mat-typography-config( $font-family: 'Scope One');
 // Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
 // Override typography for all Angular Material, including mat-base-typography and all components.
 // Override the typography in the core CSS.
