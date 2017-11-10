@@ -10,7 +10,7 @@ describe('HomeThumbsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        MatIconModule,
+        MatIconModule
       ],
       declarations: [HomeThumbsComponent]
     })

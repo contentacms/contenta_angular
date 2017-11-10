@@ -29,7 +29,7 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         SharedModule,
-        HttpModule,
+        HttpModule
       ],
       declarations: [HomeComponent, HomeBannerComponent, HomeThumbsComponent],
       providers: [
