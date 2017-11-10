@@ -24,10 +24,10 @@ export class RecipesEffects {
     return this.backend.findRecipes(filters).map(resp => ({ type: 'RECIPES_UPDATED', payload: { ...resp, filters } }));
   });
 
-  @Effect() navigateToRecipe = this.handleNavigation('recipe/:id', (r: ActivatedRouteSnapshot, state: State) => {
+  @Effect() navigateToRecipe = this.handleSecondaryNavigation('recipes/:id', (r: ActivatedRouteSnapshot, state: State) => {
     const id = r.paramMap.get('id');
     if (!state.app.recipes[id]) {
-      return this.backend.findRecipe(r.paramMap.get('id')).map(resp => ({ type: 'RECIPE_UPDATED', payload: resp }));
+      return this.backend.findRecipe(id).map(resp => ({ type: 'RECIPE_UPDATED', payload: resp }));
     } else {
       return of();
     }
@@ -41,13 +41,25 @@ export class RecipesEffects {
 
   private handleNavigation(segment: string, callback: (a: ActivatedRouteSnapshot, state: State) => Observable<any>) {
     const nav = this.actions.ofType(ROUTER_NAVIGATION).
-      map(firstSegment).
-      filter(s => s.routeConfig.path === segment);
+      filter((r: any) => filterAllSegments(r, segment)).
+      map(firstSegment);
 
     return nav.withLatestFrom(this.store).switchMap(a => callback(a[0], a[1])).catch(e => {
       console.log('Network error', e);
 
-      return of();
+      return Observable.of();
+    });
+  }
+
+  private handleSecondaryNavigation(segment: string, callback: (a: ActivatedRouteSnapshot, state: State) => Observable<any>) {
+    const nav = this.actions.ofType(ROUTER_NAVIGATION).
+      filter((r: any) => filterAllSegments(r, segment)).
+      map(secondSegment);
+
+    return nav.withLatestFrom(this.store).switchMap(a => callback(a[0], a[1])).catch(e => {
+      console.log('Network error', e);
+
+      return Observable.of();
     });
   }
 }
@@ -63,4 +75,28 @@ function createFilters(p: Params): Filters {
 
 function firstSegment(r: RouterNavigationAction) {
   return r.payload.routerState.root.firstChild;
+}
+
+function secondSegment(r: RouterNavigationAction) {
+  return r.payload.routerState.root.children[0].firstChild;
+}
+
+function allSegments(r: RouterNavigationAction) {
+  let routerPath = r.payload.routerState.root.firstChild.routeConfig.path;
+  r.payload.routerState.root.children.forEach(p => {
+    routerPath += p.firstChild.routeConfig.path;
+  });
+
+  return routerPath;
+}
+
+function filterAllSegments(r: RouterNavigationAction, segment) {
+  let routerPath = r.payload.routerState.root.firstChild.routeConfig.path;
+  r.payload.routerState.root.children.forEach(p => {
+    if (p.firstChild.routeConfig.path) {
+      routerPath += `/${p.firstChild.routeConfig.path}`;
+    }
+  });
+
+  return routerPath === segment;
 }

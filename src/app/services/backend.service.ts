@@ -74,7 +74,10 @@ export class Backend {
   }
 
   findRecipe(id: string): Observable<Recipe> {
-    const query = this.datastore.query(Recipe, id, {});
+    const queryParams = {
+      include: 'image,category,tags,image.field_image,image.imageFile'
+    };
+    const query = this.datastore.findRecord(Recipe, id, queryParams);
     query.subscribe(this.normalizeData);
 
     return query;
