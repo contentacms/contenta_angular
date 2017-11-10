@@ -85,11 +85,12 @@ export class Backend {
    */
   findPromotedRecipes(limit = 3) {
     const queryParams = {
-      page: { limit: limit },
+      page: { limit },
       include: 'image,category,tags,image.field_image,image.imageFile',
       sort: '-created'
     };
     const query = this.datastore.query(Recipe, queryParams);
+
     return query;
   }
 }

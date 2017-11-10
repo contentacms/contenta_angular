@@ -26,7 +26,7 @@ export class MaterialIconsService {
     { name: 'check', icon: 'check' },
     { name: 'kitchen', icon: 'kitchen' },
     { name: 'cake', icon: 'cake' },
-    { name: 'local_florist', icon: 'local_florist' },
+    { name: 'local_florist', icon: 'local_florist' }
   ];
 
   constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {

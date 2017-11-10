@@ -10,10 +10,12 @@ export function appReducer(state: AppState, action: Action): AppState {
     case 'RECIPE_UPDATED': {
       const recipes = { ...state.recipes };
       recipes[action.payload.id] = action.payload;
+
       return { ...state, recipes };
     }
     case 'PROMOTED_RECIPES_UPDATED': {
-      return Object.assign(state, { promoted: action.payload });
+
+      return { ...state, promoted: action.payload };
     }
     default: {
       return state;

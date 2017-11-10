@@ -38,7 +38,7 @@ import { BASE_URL, ContentaDatastore, ContentaServiceModule } from 'contenta-ang
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'features', component: FeaturesComponent },
       { path: 'home', loadChildren: './home/home.module#HomeModule' },
-      { path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule' },
+      { path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule' }
     ]),
     StoreModule.forRoot(<any>{ app: appReducer }, { initialState }),
     EffectsModule.forRoot([

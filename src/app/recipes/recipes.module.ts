@@ -9,19 +9,19 @@ import { CommonModule } from '@angular/common';
 
 export const routes = [
   { path: '', component: RecipesAndFiltersComponent, pathMatch: 'full' },
-  { path: ':id', component: RecipeDetailsComponent, pathMatch: 'full' },
+  { path: ':id', component: RecipeDetailsComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
   imports: [
     SharedModule,
-    RouterModule.forChild(routes),
+    RouterModule.forChild(routes)
   ],
   declarations: [
     RecipesAndFiltersComponent,
     RecipesComponent,
     RecipeDetailsComponent,
-    FiltersComponent,
+    FiltersComponent
   ]
 })
 export class RecipesModule { }

@@ -1,13 +1,13 @@
+import { CardComponent } from './components/card/card.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
-import { TagCloudComponent } from './components/tag-cloud/tag-cloud.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CardComponent } from './components/card/card.component';
+import { TagCloudComponent } from './components/tag-cloud/tag-cloud.component';
 import { MaterialIconsService } from './../services/material-icons/material-icons.service';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   MatButtonModule,
@@ -43,13 +43,13 @@ const SHARED_MODULES = [
   ReactiveFormsModule,
   HttpModule,
   HttpClientModule,
-  RouterModule,
+  RouterModule
 ];
 
 const SHARED_COMPONENTS = [
   CardComponent,
   TagCloudComponent,
-  RecipeComponent,
+  RecipeComponent
 ];
 
 const SHARED_PIPES = [
@@ -75,7 +75,7 @@ export class SharedModule {
       providers: [
         MatIconRegistry,
         MaterialIconsService
-      ],
+      ]
     }
   }
 }

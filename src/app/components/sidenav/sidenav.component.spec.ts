@@ -22,7 +22,7 @@ describe('SidenavComponent', () => {
         SharedModule.forRoot(),
         HttpModule,
         RouterTestingModule.withRoutes([])
-      ],
+      ]
     })
       .compileComponents();
   }));

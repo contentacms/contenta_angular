@@ -7,7 +7,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 /**
  * Test dependencies.
  */
-import { HttpModule } from '@angular/http';;
+import { HttpModule } from '@angular/http'; ;
 import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
@@ -22,7 +22,7 @@ describe('HeaderComponent', () => {
         SharedModule.forRoot(),
         HttpModule,
         RouterTestingModule.withRoutes([])
-      ],
+      ]
     })
       .compileComponents();
   }));

@@ -1,36 +1,36 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Thumb } from 'app/home/models/thumb.model';
 @Component({
   selector: 'app-home-thumbs',
   templateUrl: './home-thumbs.component.html',
-  styleUrls: ['./home-thumbs.component.scss'],
+  styleUrls: ['./home-thumbs.component.scss']
 })
 export class HomeThumbsComponent implements OnInit {
 
-  @Input() thumbs: Thumb[] = [
+  @Input() thumbs: Array<Thumb> = [
     {
       icon: 'kitchen',
       name: 'Inspired to cook',
       subtext: 'Whats the occasion?',
-      color: 'primary',
+      color: 'primary'
     },
     {
       icon: 'room_service',
       name: 'Learn to cook',
       subtext: 'Learn to cook',
-      color: 'accent',
+      color: 'accent'
     },
     {
       icon: 'cake',
       name: 'Baked up',
       subtext: 'Baked up',
-      color: 'warn',
+      color: 'warn'
     },
     {
       icon: 'local_florist',
       name: 'Health and lifestyle',
       subtext: 'Health and lifestyle',
-      color: 'primary',
+      color: 'primary'
     }
   ];
 

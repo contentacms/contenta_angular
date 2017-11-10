@@ -27,7 +27,7 @@ describe('AppComponent', () => {
       imports: [
         SharedModule.forRoot(),
         RouterTestingModule.withRoutes([])
-      ],
+      ]
     }).compileComponents();
   }));
 
