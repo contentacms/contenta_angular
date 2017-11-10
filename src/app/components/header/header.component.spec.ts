@@ -56,8 +56,8 @@ describe('HeaderComponent', () => {
     expect(component.toggleSidebar.emit).toHaveBeenCalled();
   });
 
-  it('should render as much menu items as passed through input', () => {
+  it('should render as much menu items as passed through input + github link', () => {
     const elm = element.queryAll(By.css('.menu-item'));
-    expect(elm.length).toBe(2);
+    expect(elm.length).toBe(3);
   });
 });

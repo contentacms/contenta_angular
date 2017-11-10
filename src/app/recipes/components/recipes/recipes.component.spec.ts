@@ -1,14 +1,14 @@
 import { File, Image, Recipe } from 'contenta-angular-service';
 import { MatButtonModule, MatCardModule, MatChipsModule, MatIconModule } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
-import { RecipeComponent } from './../recipe/recipe.component';
+import { RecipeComponent } from './../../../shared/components/recipe/recipe.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { RecipesComponent } from './recipes.component';
-import { CardComponent } from './../card/card.component';
+import { CardComponent } from './../../../shared/components/card/card.component';
 
 const RECIPES_DATA = [
     {

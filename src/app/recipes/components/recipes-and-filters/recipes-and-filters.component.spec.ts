@@ -16,12 +16,12 @@ import {
 import { ReactiveFormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
-import { AppState } from './../../models/state.model';
+import { AppState } from './../../../models/state.model';
 import { RecipesAndFiltersComponent } from './recipes-and-filters.component';
 import { FiltersComponent } from './../filters/filters.component';
 import { RecipesComponent } from './../recipes/recipes.component';
-import { RecipeComponent } from './../recipe/recipe.component';
-import { CardComponent } from './../card/card.component';
+import { RecipeComponent } from './../../../shared/components/recipe/recipe.component';
+import { CardComponent } from './../../../shared/components/card/card.component';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';

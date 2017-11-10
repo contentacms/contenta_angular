@@ -1,4 +1,4 @@
-import { AppState } from './../../models/state.model';
+import { AppState } from './../../../models/state.model';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
@@ -11,7 +11,7 @@ import 'rxjs/add/observable/of';
 
 import { MatButtonModule, MatCardModule, MatChipsModule, MatIconModule, MatListModule } from '@angular/material';
 import { RecipeDetailsComponent } from './recipe-details.component';
-import { TagCloudComponent } from './../tag-cloud/tag-cloud.component';
+import { TagCloudComponent } from './../../../shared/components/tag-cloud/tag-cloud.component';
 
 function createResponse(item): Observable<any> {
     return Observable.of(

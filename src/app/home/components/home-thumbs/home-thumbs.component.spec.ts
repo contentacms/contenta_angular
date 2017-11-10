@@ -1,3 +1,4 @@
+import { MatIconModule } from '@angular/material';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeThumbsComponent } from './home-thumbs.component';
@@ -8,9 +9,12 @@ describe('HomeThumbsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeThumbsComponent ]
+      imports: [
+        MatIconModule,
+      ],
+      declarations: [HomeThumbsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -46,7 +46,7 @@ describe('CardComponent', () => {
     component.linkText = 'Read more';
     fixture.detectChanges();
     const elm: HTMLElement = element.query(By.css('.actions a')).nativeElement;
-    expect(elm.innerText).toBe('Read more');
+    expect(elm.innerText).toBe('READ MORE');
   });
 
   it('should render link href in the template', () => {
