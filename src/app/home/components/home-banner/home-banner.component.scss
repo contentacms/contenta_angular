@@ -1,0 +1,65 @@
+@import "./../../../../styles/settings/breakpoints.scss";
+@import "./../../../../styles/settings/colors.scss";
+// Call to action
+.home-banner-section {
+    background-image: url("/assets/wood.jpg");
+    background-repeat: repeat-x;
+    background-position: center;
+    padding: 40px;
+    @include breakpoint($narrow-devices) {
+        padding: 80px;
+    }
+    .home-banner__inner {
+        @include breakpoint($narrow-devices) {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+    margin: {
+        left: -30px;
+        right: -30px;
+    }
+    .magazine {
+        @include breakpoint($narrow-devices) {
+            margin-right: 60px;
+        }
+        img {
+            max-width: 250px;
+            height: auto;
+        }
+    }
+    .cta-text {
+        color: white;
+        font-weight: lighter;
+        @include breakpoint($narrow-devices) {
+            max-width: 70%;
+        }
+        h2 {
+            font-size: 2rem;
+            color: white;
+        }
+        h2,
+        h3 {
+            font-weight: lighter;
+        }
+    }
+    .home-banner__bullets {
+        ul {
+            padding-left: 0;
+            li {
+                line-height: 1.7rem;
+                display: inline-block;
+                margin-right: 10px;
+                &:before {
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    background-color: $color--success;
+                    display: inline-block;
+                    border-radius: 100%;
+                }
+            }
+        }
+    }
+}

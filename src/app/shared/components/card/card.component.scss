@@ -20,23 +20,6 @@
             }
         }
     }
-    &.inversed {
-        padding-bottom: 0;
-        a {
-            margin-bottom: -10px;
-        }
-        .mat-card-image {
-            margin-bottom: 0;
-        }
-        .card-image {
-            @include breakpoint($narrow-devices) {
-                margin: {
-                    bottom: 0px;
-                    top: 0;
-                }
-            }
-        }
-    }
 }
 
 .card-title {

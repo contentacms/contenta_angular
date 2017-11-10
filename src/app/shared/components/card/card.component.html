@@ -1,5 +1,5 @@
-<mat-card class="card" [ngClass]="{inversed: inversed}">
-  <div *ngIf="!inversed" class="card-image">
+<mat-card class="card">
+  <div class="card-image">
     <a [routerLink]="link">
       <img *ngIf="image" mat-card-image [src]="image" [alt]="imageAlt">
     </a>
@@ -13,11 +13,6 @@
     </mat-card-subtitle>
   </mat-card-content>
   <mat-card-actions class="actions">
-    <a class="actions-link" [color]="'primary'" mat-raised-button mat-button [routerLink]="link">{{ linkText }}</a>
+    <a class="actions-link" [color]="'warn'" mat-raised-button mat-button [routerLink]="link">{{ linkText }}</a>
   </mat-card-actions>
-  <div *ngIf="inversed" class="card-image">
-    <a [routerLink]="link">
-      <img *ngIf="image" mat-card-image [src]="image" [alt]="imageAlt">
-    </a>
-  </div>
 </mat-card>

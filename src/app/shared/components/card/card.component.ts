@@ -10,7 +10,6 @@ export class CardComponent implements OnInit {
   @Input() imageAlt: string;
   @Input() link: string;
   @Input() linkText: string;
-  @Input() inversed: boolean = false;
 
   constructor() { }
 

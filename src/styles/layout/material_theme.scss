@@ -14,8 +14,8 @@ $custom-typography: mat-typography-config( $font-family: 'Scope One');
 @include mat-core($custom-typography);
 
 //Here the existing theme is being redfined
-$primary: mat-palette($mat-red, 500, 600, 500);
-$accent: mat-palette($mat-blue-grey, 700, 600, 500);
+$primary: mat-palette($mat-pink, 500, 600, 500);
+$accent: mat-palette($mat-green, 600, 600, 500);
 $theme: mat-light-theme($primary, $accent);
 $_umbra-color: rgba(150, 150, 150, 0.2);
 $_penumbra-color: rgba(150, 150, 150, 0.14);

@@ -23,7 +23,10 @@ export class MaterialIconsService {
     { name: 'timer', icon: 'timer' },
     { name: 'settings_filter', icon: 'settings_filter' },
     { name: 'people', icon: 'people' },
-    { name: 'check', icon: 'check' }
+    { name: 'check', icon: 'check' },
+    { name: 'kitchen', icon: 'kitchen' },
+    { name: 'cake', icon: 'cake' },
+    { name: 'local_florist', icon: 'local_florist' },
   ];
 
   constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
