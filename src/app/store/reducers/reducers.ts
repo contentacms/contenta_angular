@@ -7,11 +7,15 @@ export function appReducer(state: AppState, action: Action): AppState {
     case 'RECIPES_UPDATED': {
       return { ...state, ...action.payload };
     }
-    case  'RECIPE_UPDATED': {
+    case 'RECIPE_UPDATED': {
       const recipes = { ...state.recipes };
       recipes[action.payload.id] = action.payload;
 
       return { ...state, recipes };
+    }
+    case 'PROMOTED_RECIPES_UPDATED': {
+
+      return { ...state, promoted: action.payload };
     }
     default: {
       return state;

@@ -1,0 +1,32 @@
+@import "./../../../../styles/settings/breakpoints.scss";
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-list {
+    display: flex;
+    flex-flow: column;
+    @include breakpoint($narrow-devices) {
+        flex-flow: row;
+        flex-wrap: wrap;
+    }
+}
+
+.recipe-item {
+    margin-top: 15px;
+    flex: 1;
+    @include breakpoint($narrow-devices) {
+        margin-top: 40px;
+        flex: inherit;
+        width: 32%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        margin-right: 2%;
+
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+    }
+}

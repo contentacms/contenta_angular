@@ -1,0 +1,43 @@
+@import "./../../../../styles/settings/breakpoints.scss";
+@import "./../../../../styles/settings/colors.scss";
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-recipe-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-list {
+    display: flex;
+    flex-flow: column;
+    @include breakpoint($narrow-devices) {
+        flex-flow: row;
+        flex-wrap: wrap;
+    }
+}
+
+.recipe-item {
+    margin-top: 15px;
+    flex: 1;
+    @include breakpoint($narrow-devices) {
+        margin-top: 40px;
+        flex: inherit;
+        width: 31%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        margin-right: 2%;
+    }
+}
+
+.home-row {
+    padding: 0;
+    @include breakpoint($narrow-devices) {
+        padding: {
+            top: 80px;
+            bottom: 80px;
+        }
+    }
+}

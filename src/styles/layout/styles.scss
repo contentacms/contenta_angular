@@ -1,8 +1,8 @@
 @import "./typography.scss";
-
+@import "./../settings/colors.scss";
 body {
     margin: 0;
-    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-family: 'Scope One', serif;
     overflow: hidden;
 }
 
@@ -13,4 +13,13 @@ button {
 
 svg {
     fill: currentColor;
+}
+
+mat-sidenav-container.mat-drawer-container {
+    background-color: $background-color;
+}
+
+button.mat-raised-button {
+    line-height: 45px;
+    padding: 0 25px;
 }

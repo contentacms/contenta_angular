@@ -1,0 +1,7 @@
+// Custom mixin for the themed parts of this component.
+@mixin header-custom-theme($theme) {
+    $background: map-get($theme, "background");
+    .header-toolbar {
+        background-color: mat-color($background, "card");
+    }
+}

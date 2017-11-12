@@ -1,0 +1,62 @@
+<div *ngIf="recipe">
+  <h1 class="title">{{ recipe.title }}</h1>
+  <div class="recipe-detail">
+    <div *ngIf="recipe.image" class="recipe-banner-image">
+      <div class="mobile-title-wrapper">
+        <h1 class="mobile-title">{{ recipe.title }}</h1>
+        <div class="recipe-separator">
+          <mat-icon [svgIcon]="'room_service'" [color]="'accent'"></mat-icon>
+        </div>
+      </div>
+      <img [src]="recipe.image.imageFile.url" alt="recipe.title" />
+    </div>
+    <div class="recipe-banner-info">
+      <div class="recipe-attributes">
+        <div class="attribute prep-time">
+          <mat-icon [svgIcon]="'timer'"></mat-icon>
+          <div> Preparation time :
+            <span>{{ recipe.preparationTime }}</span>
+          </div>
+        </div>
+        <div class="attribute total-time">
+          <mat-icon [svgIcon]="'room_service'"></mat-icon>
+          <div> Cooking time :
+            <span>{{ recipe.totalTime }}</span>
+          </div>
+        </div>
+        <div class="attribute serves">
+          <mat-icon [svgIcon]="'people'"></mat-icon>
+          <div> Serves :
+            <span>todo
+              <</span>
+          </div>
+        </div>
+        <div class="attribute difficulty">
+          <mat-icon [svgIcon]="'opacity'"></mat-icon>
+          <div> Difficulty :
+            <span>{{ recipe.difficulty }}</span>
+          </div>
+        </div>
+      </div>
+      <app-tag-cloud [tags]="recipe.tags"></app-tag-cloud>
+    </div>
+  </div>
+  <div class="recipe-info">
+    <h2>What you'll need and how to make this dish</h2>
+    <div class="instructions">
+      <div class="ingredients">
+        <h3>Ingredients</h3>
+        <mat-list>
+          <mat-list-item *ngFor="let ingredient of recipe.ingredients; let i = index">
+            <mat-icon [color]="'accent'" [svgIcon]="'check'"></mat-icon>{{ ingredient }}</mat-list-item>
+        </mat-list>
+      </div>
+      <div></div>
+      <div class="method">
+        <h3>Method</h3>
+        <div>{{ recipe.instructions }}</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+</div>
