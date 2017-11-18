@@ -2,6 +2,7 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ServiceWorkerModule } from '@angular/service-worker'
 import 'hammerjs';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -44,7 +45,8 @@ import { BASE_URL, ContentaDatastore, ContentaServiceModule } from 'contenta-ang
     EffectsModule.forRoot([
       RecipesEffects
     ]),
-    StoreRouterConnectingModule
+    StoreRouterConnectingModule,
+    environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : []
   ],
   providers: [
     Backend,
