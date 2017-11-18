@@ -1,0 +1,65 @@
+{
+    "index": "/index.html",
+    "assetGroups": [
+        {
+            "name": "app",
+            "installMode": "prefetch",
+            "resources": {
+                "files": [
+                    "/favicon.ico",
+                    "/index.html"
+                ],
+                "versionedFiles": [
+                    "/*.bundle.css",
+                    "/*.bundle.js",
+                    "/*.chunk.js"
+                ]
+            }
+        },
+        {
+            "name": "assets",
+            "installMode": "lazy",
+            "updateMode": "prefetch",
+            "resources": {
+                "files": [
+                    "/assets/**"
+                ]
+            }
+        }
+    ],
+    "dataGroups": [
+        {
+            "name": "contenta-dev",
+            "urls": [
+                "https://cms-dev.contentacms.io/api"
+            ],
+            "cacheConfig": {
+                "strategy": "performance",
+                "maxSize": 100,
+                "maxAge": "3d"
+            }
+        },
+        {
+            "name": "contenta-prod",
+            "urls": [
+                "https://cms.contentacms.io/api"
+            ],
+            "cacheConfig": {
+                "strategy": "performance",
+                "maxSize": 100,
+                "maxAge": "3d"
+            }
+        },
+        {
+            "name": "images",
+            "urls": [
+                "https://www.cookipedia.co.uk"
+            ],
+            "cacheConfig": {
+                "strategy": "performance",
+                "maxSize": 100,
+                "maxAge": "3d"
+            }
+        }
+    ]
+}
