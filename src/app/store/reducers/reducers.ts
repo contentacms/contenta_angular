@@ -17,6 +17,19 @@ export function appReducer(state: AppState, action: Action): AppState {
 
       return { ...state, promoted: action.payload };
     }
+    case 'CATEGORIES_UPDATED': {
+
+      return { ...state, categories: action.payload };
+    }
+    case 'CATEGORIES_PROMOTED_RECIPE_UPDATED': {
+
+      return {
+        ...state, categoriesPromotedRecipes: {
+          ...state.categoriesPromotedRecipes,
+          [action.payload.category.id]: action.payload.recipes
+        }
+      };
+    }
     default: {
       return state;
     }

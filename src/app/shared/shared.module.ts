@@ -24,6 +24,7 @@ import {
   MatSidenavModule,
   MatToolbarModule
 } from '@angular/material';
+import { RecipeLongComponent } from './components/recipe-long/recipe-long.component';
 
 const SHARED_MODULES = [
   CommonModule,
@@ -49,7 +50,8 @@ const SHARED_MODULES = [
 const SHARED_COMPONENTS = [
   CardComponent,
   TagCloudComponent,
-  RecipeComponent
+  RecipeComponent,
+  RecipeLongComponent
 ];
 
 const SHARED_PIPES = [

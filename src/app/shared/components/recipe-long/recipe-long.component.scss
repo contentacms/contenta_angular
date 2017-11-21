@@ -1,0 +1,18 @@
+@import "./../../../../styles/settings/breakpoints.scss";
+.recipe-long {
+    @include breakpoint($narrow-devices) {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        .content {
+            flex-basis: 70%;
+        }
+        .image {
+            flex-basis: 25%;
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}

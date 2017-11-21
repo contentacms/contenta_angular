@@ -1,3 +1,4 @@
+import { Action } from './../actions/actions';
 import { ROUTER_NAVIGATION, RouterNavigationAction } from '@ngrx/router-store';
 import { Actions, Effect } from '@ngrx/effects';
 import { ActivatedRouteSnapshot, Params } from '@angular/router';
@@ -37,9 +38,25 @@ export class RecipesEffects {
     return this.backend.findPromotedRecipes(3).map(resp => ({ type: 'PROMOTED_RECIPES_UPDATED', payload: [...resp] }));
   });
 
+  @Effect() navigateToHomeGetCategories = this.handleNavigation('home', (r: ActivatedRouteSnapshot) => {
+    return this.backend.findCategories(3).map(resp => ({ type: 'CATEGORIES_UPDATED', payload: [...resp] }));
+  });
+
+  @Effect() categoriesFindRecipes: Observable<Action> = this.actions
+    .ofType('CATEGORIES_UPDATED')
+    .map((action: any) => action.payload)
+    .switchMap(payload => {
+      return payload;
+    }).mergeMap((category: any) => {
+      return this.backend.findCategoryRecipes(category.name).map(resp => {
+        return ({ type: 'CATEGORIES_PROMOTED_RECIPE_UPDATED', payload: { category, recipes: [...resp] } });
+      });
+    });
+
   constructor(private actions: Actions, private store: Store<State>, private backend: Backend) { }
 
-  private handleNavigation(segment: string, callback: (a: ActivatedRouteSnapshot, state: State) => Observable<any>) {
+  private handleNavigation(segment: string,
+                           callback: (a: ActivatedRouteSnapshot, state: State) => Observable<any>) {
     const nav = this.actions.ofType(ROUTER_NAVIGATION).
       filter((r: any) => filterAllSegments(r, segment)).
       map(firstSegment);
