@@ -1,0 +1,168 @@
+@import "./../../../../styles/settings/breakpoints.scss";
+@import "./../../../../styles/settings/colors.scss";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  @include breakpoint($narrow-devices) {
+    margin: 10px;
+    padding: 0;
+    background: transparent;
+  }
+}
+
+.recipe-detail {
+  @include breakpoint($narrow-devices) {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid $gray--very-light;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+}
+
+.recipe-banner-image {
+  position: relative;
+  border-bottom: 2px solid $gray--very-light;
+  margin: {
+    left: -15px;
+    right: -15px;
+  }
+
+  img {
+    max-width: 100%;
+    vertical-align: middle;
+  }
+
+  @include breakpoint($narrow-devices) {
+    border: none;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &:before {
+    background: rgba(0,0,0, 0.3);
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    @include breakpoint($narrow-devices) {
+      display: none;
+    }
+  }
+}
+
+.recipe-banner-info {
+  margin-top: 1rem;
+  @include breakpoint($narrow-devices) {
+    margin-top: 0;
+    padding: 1.5rem;
+    background: white;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.title {
+  display: none;
+  @include breakpoint($narrow-devices) {
+    display: block;
+  }
+  margin: {
+    top: 0;
+    bottom: 1.5rem;
+  }
+}
+
+.recipe-info {
+  margin: {
+    top: 2rem;
+    bottom: 2rem;
+  }
+}
+
+.recipe-attributes {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+
+  .attribute {
+    text-align: center;
+    flex: 1 0 50%; 
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: $gray--dark;
+    mat-icon {
+      vertical-align: bottom;
+      height: 40px;
+      width: 40px;
+      margin-bottom: 1rem;
+      color: $gray;
+    }
+  }
+}
+
+.description {
+  margin-top: 1rem;
+}
+
+.instructions {
+  @include breakpoint($narrow-devices) {
+    display: flex;
+    flex-wrap: wrap;
+
+    .ingredients,
+    .method {
+      flex: 1 0 50%;
+    }
+  }
+}
+
+.ingredients {
+  mat-icon {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+  }
+
+  & /deep/ .mat-list-item-content {
+    padding-left: 0;
+    height: 35px;
+  }
+}
+
+.mobile-title-wrapper {
+  position: absolute;
+  bottom: 30%;
+  text-align: center;
+  width: 80%;
+  left: 10%;
+  color: white;
+  @include breakpoint($narrow-devices) {
+    display: none;
+  }
+}
+
+.mobile-title {
+  font-size: 1.4rem;
+  font-weight: normal;
+  margin: {
+    top: 1rem;
+    bottom: 0.5rem;
+  }
+  text-align: center;
+}
+
+.recipe-separator {
+  text-align: center;
+  mat-icon {
+    color: white;
+  }
+}

@@ -8,7 +8,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "ngsw-config": "node_modules/.bin/ngsw-config dist src/ngsw-config.json",
+    "ngsw-copy": "cp node_modules/@angular/service-worker/ngsw-worker.js dist/",
+    "build-prod-ngsw": "ng build --prod && npm run ngsw-config && npm run ngsw-copy",
+    "serve-prod-ngsw": "npm run build-prod-ngsw && http-server dist -p 8080"
   },
   "private": true,
   "dependencies": {
@@ -39,7 +43,7 @@
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
-    "@angular/cli": "^1.5",
+    "@angular/cli": "^1.5.0",
     "@angular/compiler-cli": "^5.0.0",
     "@angular/language-service": "^5.0.0",
     "@types/jasmine": "2.5.45",

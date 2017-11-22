@@ -10,7 +10,6 @@
 .app-title {
     font-size: 13px;
     text-transform: uppercase;
-    color: white;
     @include breakpoint($narrow-devices) {
         display: none;
     }
@@ -35,9 +34,7 @@
     }
 }
 
-.menu-icon {
-    color: white;
-}
+.menu-icon {}
 
 .github-logo {
     img {

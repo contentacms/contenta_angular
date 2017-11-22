@@ -1,0 +1,59 @@
+@import "./../../../../styles/settings/breakpoints.scss";
+@import "./../../../../styles/settings/colors.scss";
+
+.recipes {
+    .mat-sidenav-container[fullscreen] {
+        top: 0;
+    }
+}
+
+.main-content-recipes {
+    margin: {
+        left: 15px;
+        right: 15px;
+        bottom: 30px;
+    }
+    @include breakpoint($narrow-devices) {
+        padding: {
+            left: 40px;
+            right: 40px;
+        }
+        margin: {
+            left: 0;
+            right: 0;
+        }
+    }
+}
+
+.toggle-filters {
+    position: fixed;
+    bottom: 3rem;
+    right: 0.5rem;
+    @include breakpoint($narrow-devices) {
+        right: 2rem;
+    }
+}
+
+.sidenav {
+    min-width: 250px;
+    max-width: 250px;   
+
+    @include breakpoint($narrow-devices) {
+        min-width: 250px;
+        box-shadow: 10px 0 40px -4px rgba(0,0,0,.2);
+    }
+}
+
+.loading_spinner {
+    text-align: center;
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    left: 35%;
+    top: 35%;
+    mat-spinner {
+        margin: auto;
+        max-width: 50px;
+        max-height: 50px;
+    }
+ }

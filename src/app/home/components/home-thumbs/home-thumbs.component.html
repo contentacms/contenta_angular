@@ -1,0 +1,13 @@
+<div class="home-thumbs">
+  <div class="home-thumbs-inner maxed-width">
+    <div class="thumb" *ngFor="let thumb of thumbs; let i = index;">
+      <mat-icon [color]="thumb.color" class="thumb-icon" [svgIcon]="thumb.icon"></mat-icon>
+      <h3 class="thumb-title">
+        {{thumb.name}}
+      </h3>
+      <p>
+        {{thumb.subtext}}
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,19 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
 // Material theme
 @import '~@angular/material/theming';
+@import "./../../app/components/header/_header-custom-theme.scss";
+@mixin custom-theme($theme) {
+    @include header-custom-theme($theme);
+}
 
-// NOTE: Theming is currently experimental and not yet publically released!
-
-@include mat-core();
+$custom-typography: mat-typography-config( $font-family: 'Scope One');
+// Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+// Override typography for all Angular Material, including mat-base-typography and all components.
+// Override the typography in the core CSS.
+@include mat-core($custom-typography);
 
 //Here the existing theme is being redfined
-$primary:  mat-palette($mat-teal, 800, 600, 500);
-$accent: mat-palette($mat-deep-orange, 700, 600, 500);
-
+$primary: mat-palette($mat-pink, 500, 600, 500);
+$accent: mat-palette($mat-green, 600, 600, 500);
 $theme: mat-light-theme($primary, $accent);
-
 $_umbra-color: rgba(150, 150, 150, 0.2);
 $_penumbra-color: rgba(150, 150, 150, 0.14);
-$_ambient-color: rgba(150, 150, 150, 0.12);
-
+$_ambient-color: rgba(224, 129, 129, 0.12);
 @include angular-material-theme($theme);
+@include custom-theme($theme);

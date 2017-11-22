@@ -1,0 +1,44 @@
+@import "./../../../../styles/settings/breakpoints.scss";
+@import "./../../../../styles/settings/colors.scss";
+:host {
+    margin-left: -30px;
+    margin-right: -30px;
+}
+
+.home-thumbs {
+    background: white;
+    .home-thumbs-inner {
+        @include breakpoint($narrow-devices) {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+    }
+    .thumb {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        flex-direction: column;
+        @include breakpoint($narrow-devices) {
+            padding: 0;
+            margin: 40px;
+            padding: {
+                right: 20px;
+                left: 20px;
+            }
+            margin: {
+                right: 0;
+                left: 0;
+            }
+            border-right: 1px solid $gray--very-light;
+        }
+        .thumb-icon {
+            height: 40px;
+            width: auto;
+        }
+        .thumb-title {
+            margin-bottom: 0px;
+        }
+        .thumb-subtext {}
+    }
+}

@@ -12,6 +12,7 @@ export class AppComponent implements OnInit  {
   @ViewChild('sidenav') sidenav: MatSidenav;
   menu: Array<Object> = [
     { name: 'Home', url: '', icon: 'home' },
+    { name: 'Recipes', url: './recipes', icon: 'settings' },
     { name: 'Features', url: './features', icon: 'settings' }
   ];
 

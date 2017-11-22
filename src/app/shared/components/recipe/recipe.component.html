@@ -1,0 +1,14 @@
+<app-card [image]="image" [imageAlt]="imageAlt" [link]="['/recipes', recipe.id]" [linkText]="'View recipe'">
+  <div class="title">
+    <a [routerLink]="['/recipes', recipe.id]">{{ recipe.title }}</a>
+  </div>
+  <div class="subtitle">
+    <div>
+      <mat-chip-list>
+        <mat-chip>{{ recipe.difficulty }}</mat-chip>
+      </mat-chip-list>
+    </div>
+    <div>
+      <mat-icon class="subtitle-icon" [color]="'accent'" [svgIcon]="'timer'"></mat-icon><span> {{ recipe.preparationTime }} min</span></div>
+  </div>
+</app-card>
