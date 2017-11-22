@@ -1,3 +1,4 @@
+import { HomeCategoryRecipesComponent } from './../home-category-recipes/home-category-recipes.component';
 import { By } from '@angular/platform-browser';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
@@ -50,9 +51,15 @@ const appState = [
   }
 ];
 
+const categories = [];
+
 class MockedStore {
-  select(item): Observable<any> {
-    return createResponse(appState);
+  select(item, subitem): Observable<any> {
+    if (subitem === 'promoted') {
+      return createResponse(appState);
+    } else {
+      return createResponse(categories);
+    }
   }
 }
 
@@ -64,11 +71,11 @@ describe('HomeComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        SharedModule,
+        SharedModule.forRoot(),
         HttpModule,
         RouterTestingModule.withRoutes([])
       ],
-      declarations: [HomeComponent, HomeBannerComponent, HomeThumbsComponent],
+      declarations: [HomeComponent, HomeBannerComponent, HomeThumbsComponent, HomeCategoryRecipesComponent],
       providers: [
         { provide: Store, useClass: MockedStore }
       ]

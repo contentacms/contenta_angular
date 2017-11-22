@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class HomeCategoryRecipesComponent implements OnInit, OnDestroy {
   categories: Observable<Array<Category>>;
-  categoriesPromotedRecipes: CategoriesPromotedRecipes;
+  categoriesPromotedRecipes: CategoriesPromotedRecipes = {};
   subscriptionCategoriesRecipes: Subscription;
 
   constructor(private store: Store<State>) {
@@ -24,7 +24,6 @@ export class HomeCategoryRecipesComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscriptionCategoriesRecipes = this.store.select('app', 'categoriesPromotedRecipes').subscribe(c => {
       this.categoriesPromotedRecipes = c;
-      console.log(this.categoriesPromotedRecipes);
     });
   }
 
