@@ -1,0 +1,13 @@
+<div *ngIf="recipe" class="recipe-long">
+  <div class="image">
+    <img [src]="image" [alt]="imageAlt" />
+  </div>
+  <div class="content">
+    <h3>{{recipe.title}}</h3>
+    <div>
+      {{recipe.instructions.substr(0,200)}} ...
+    </div>
+    <br/>
+    <a [routerLink]="['/recipes', recipe.id]" mat-button color="primary">Read more</a>
+  </div>
+</div>

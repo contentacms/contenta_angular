@@ -1,0 +1,35 @@
+@import "./../../../../styles/settings/breakpoints.scss";
+@import "./../../../../styles/settings/colors.scss";
+.header {
+    margin: {
+        top: 20px;
+        bottom: 20px;
+    }
+    text-align: center;
+    @include breakpoint($narrow-devices) {
+        margin: {
+            top: 40px;
+            bottom: 40px;
+        }
+    }
+}
+
+.categoriesPromoted {
+    margin-bottom: 20px;
+    @include breakpoint($narrow-devices) {
+        margin-bottom: 60px;
+        border-bottom: 1px solid $gray--very-light;
+        padding-bottom: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        .category-info {
+            width: 25%;
+        }
+        .recipe-info {
+            width: 75%;
+        }
+        &:last-child {
+            border: none;
+        }
+    }
+}

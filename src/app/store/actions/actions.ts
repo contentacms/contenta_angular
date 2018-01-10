@@ -12,5 +12,12 @@ export interface RecipesUpdated {
 };
 export interface RecipeUpdated { type: 'RECIPE_UPDATED', payload: Recipe };
 export interface PromotedRecipeUpdated { type: 'PROMOTED_RECIPES_UPDATED', payload: any };
+export interface CategoriesUpdated { type: 'CATEGORIES_UPDATED', payload: any };
+export interface CategoriesPromotedRecipeUpdated { type: 'CATEGORIES_PROMOTED_RECIPE_UPDATED', payload: any };
 
-export type Action = RouterAction<State> | RecipesUpdated | RecipeUpdated | PromotedRecipeUpdated;
+export type Action = RouterAction<State> |
+  RecipesUpdated |
+  RecipeUpdated |
+  PromotedRecipeUpdated |
+  CategoriesUpdated |
+  CategoriesPromotedRecipeUpdated;

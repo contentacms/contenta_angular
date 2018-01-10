@@ -4,7 +4,7 @@ import { Inject, Injectable } from '@angular/core';
 import { Filters } from '../models/filters.model';
 import 'rxjs/add/operator/map';
 import { environment } from './../../environments/environment';
-import { ContentaDatastore, Recipe } from 'contenta-angular-service';
+import { Category, ContentaDatastore, Recipe } from 'contenta-angular-service';
 
 @Injectable()
 export class Backend {
@@ -92,6 +92,44 @@ export class Backend {
       include: 'image,category,tags,image.field_image,image.imageFile',
       sort: '-created'
     };
+    const query = this.datastore.query(Recipe, queryParams);
+
+    return query;
+  }
+
+  /**
+   * Find 3 promoted recipes for the frontpage.
+   */
+  findCategories(limit = 4) {
+    const queryParams = {
+      page: { limit }
+    };
+    const query = this.datastore.query(Category, queryParams);
+
+    return query;
+  }
+
+  /**
+   * Find 3 promoted recipes for the frontpage.
+   */
+  findCategoryRecipes(categoryName: string, limit = 1) {
+    const queryParams = {
+      sort: '-created',
+      include: 'image,image.thumbnail',
+      filter: {
+        categoryName: {
+          condition: {
+            path: 'category.name',
+            value: categoryName
+          }
+        }
+      },
+      page: {
+        offset: 0,
+        limit
+      }
+    }
+
     const query = this.datastore.query(Recipe, queryParams);
 
     return query;
