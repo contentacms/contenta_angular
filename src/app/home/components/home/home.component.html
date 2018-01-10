@@ -1,7 +1,7 @@
 <div class="home-recipe-wrapper maxed-width">
   <div class="home-row recipe-list">
     <div class="recipe-item" *ngFor="let t of promotedRecipes | async; let i = index">
-      <app-recipe-cmp [recipe]="t" [image]="'https://via.placeholder.com/350x250'" [imageAlt]="t.image.name"></app-recipe-cmp>
+      <app-recipe-cmp [recipe]="t" [image]="t.image.imageFile.url" [imageAlt]="t.image.name"></app-recipe-cmp>
     </div>
   </div>
 </div>
