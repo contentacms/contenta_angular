@@ -1,0 +1,25 @@
+<div class="maxed-width">
+  <div class="header">
+    <h2>
+      Recipes
+    </h2>
+    <h3>
+      Explore recipes across every type of occasion, ingredient and skill level.
+    </h3>
+  </div>
+  <div class="categoriesPromoted" *ngFor="let category of categories| async; let i = index;">
+    <div *ngIf="category">
+      <div class="category-info">
+        <h3>
+          {{ category.name }}
+        </h3>
+        <p>
+          {{category.updatedAt}}
+        </p>
+      </div>
+      <div class="recipe-info">
+        <app-recipe-long *ngIf="categoriesPromotedRecipes[category.id]" [recipe]="categoriesPromotedRecipes[category.id][0]" [image]="categoriesPromotedRecipes[category.id][0].image.thumbnail.url"></app-recipe-long>
+      </div>
+    </div>
+  </div>
+</div>
