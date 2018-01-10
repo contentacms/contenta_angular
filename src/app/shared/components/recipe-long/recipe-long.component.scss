@@ -1,13 +1,10 @@
 @import "./../../../../styles/settings/breakpoints.scss";
 .recipe-long {
-<<<<<<< HEAD
-=======
     .image {
         img {
             max-width: 100%;
         }
     }
->>>>>>> origin/develop
     @include breakpoint($narrow-devices) {
         display: flex;
         flex-wrap: wrap;
@@ -18,12 +15,6 @@
         }
         .image {
             flex-basis: 25%;
-<<<<<<< HEAD
-            img {
-                max-width: 100%;
-            }
-=======
->>>>>>> origin/develop
         }
     }
 }
